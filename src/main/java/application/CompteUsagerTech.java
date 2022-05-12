@@ -1,3 +1,5 @@
+package application;
+
 public class CompteUsagerTech {
     String nomUsager;
     String motPasse;
