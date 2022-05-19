@@ -6,4 +6,9 @@ public class RegistreHistorique {
 
     private ArrayList<Historique> registreHistorique;
 
+
+
+    public void modifierRegistreHistorique(){
+
+    }
 }
