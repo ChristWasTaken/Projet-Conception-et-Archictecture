@@ -13,7 +13,6 @@ public class Billet {
 
     String etat;
     String gravite;
-    String categorieDemande;
     String courrielDemandeur;
     String notes;
     String description;
@@ -32,13 +31,12 @@ public class Billet {
 
     //Constructeur avec parametre pour add
     //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
-    public Billet(int idBillet, int idProjet, String etat, String gravite, String categorieDemande, String courrielDemandeur,
+    public Billet(int idBillet, int idProjet, String etat, String gravite, String courrielDemandeur,
                   String notes, LocalDate dateDebutBillet, RegistreHistorique registreHistorique) {
         this.idBillet = idBillet; // get key, set id
         this.idProjet = idProjet; // get id dans une picklist, set id
         this.etat = etat;
         this.gravite = gravite;
-        this.categorieDemande = categorieDemande;
         this.courrielDemandeur = courrielDemandeur;
         this.notes = notes;
         this.dateDebutBillet = dateDebutBillet;
@@ -83,14 +81,6 @@ public class Billet {
     }
 
     public void setGravite(String gravite) { this.gravite = gravite; }
-
-    public String getCategorieDemande() {
-        return categorieDemande;
-    }
-
-    public void setCategorieDemande(String categorieDemande) {
-        this.categorieDemande = categorieDemande;
-    }
 
     public String getCourrielDemandeur() {
         return courrielDemandeur;
@@ -140,28 +130,6 @@ public class Billet {
         this.registreHistorique = registreHistorique;
     }
 
-
-    /**
-     * Methodes de la classe
-     */
-
-    public void creeBillet() {
-
-    }
-
-    public void assignerBillet() {
-
-    }
-
-    public void changerEtatBillet() {
-
-    }
-
-    public void consulterDetailBillet() {
-
-    }
-
-
     /**
      * ToString
      */
@@ -173,7 +141,6 @@ public class Billet {
                 ", idUsagerTechAssigne=" + idUsagerTechAssigne +
                 ", etat='" + etat + '\'' +
                 ", gravite='" + gravite + '\'' +
-                ", categorieDemande='" + categorieDemande + '\'' +
                 ", courrielDemandeur='" + courrielDemandeur + '\'' +
                 ", notes='" + notes + '\'' +
                 ", description='" + description + '\'' +

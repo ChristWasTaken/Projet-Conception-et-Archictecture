@@ -77,15 +77,6 @@ public class Projet {
         this.registreUsagerTechAssigne = registreUsagerTechAssigne;
     }
 
-    /**
-     * Méthodes de la classe
-     */
-    public void creerProjet(){
-
-    }
-    public void assignerUsagerTech(){
-
-    }
 
     /**
      * ToString

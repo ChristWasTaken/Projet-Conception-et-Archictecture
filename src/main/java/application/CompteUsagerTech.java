@@ -13,9 +13,7 @@ public class CompteUsagerTech {
      * Constructeurs
      */
     //par défaut
-    public CompteUsagerTech() {
-
-    }
+    public CompteUsagerTech() { }
 
     //avec Parametre
     public CompteUsagerTech(String nomUsager, String motPasse, String courriel) {
@@ -51,16 +49,6 @@ public class CompteUsagerTech {
     public void setCourriel(String courriel) {
         this.courriel = courriel;
     }
-
-
-    /**
-     * Méthodes de la classe
-     */
-
-    public void creerCompteUsagerTech() {
-
-    }
-
 
     /**
      * ToString

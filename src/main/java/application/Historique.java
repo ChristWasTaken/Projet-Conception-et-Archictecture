@@ -56,15 +56,6 @@ public class Historique {
 
 
     /**
-     * Méthodes de la classe
-     */
-
-    public void creerHistorique(){
-
-    }
-
-
-    /**
      * ToString
      */
     @Override
