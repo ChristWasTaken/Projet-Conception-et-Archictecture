@@ -7,18 +7,19 @@ public class Billet {
     /**
      * Attributs de la classe
      */
-    int idBillet;
-    int idProjet;
-    int idUsagerTechAssigne;
+    private int idBillet;
+    private int idProjet;
+    private int idUsagerTechAssigne;
 
-    String etat;
-    String gravite;
-    String courrielDemandeur;
-    String notes;
-    String description;
+    private String etat;
+    private String gravite;
+    private String courrielDemandeur;
+    private String notes;
+    private String description;
 
-    LocalDate dateAssigne;
-    LocalDate dateDebutBillet;
+    private String categorie;
+    private LocalDate dateAssigne;
+    private LocalDate dateDebutBillet;
 
     RegistreHistorique registreHistorique;
 
@@ -31,18 +32,22 @@ public class Billet {
 
     //Constructeur avec parametre pour add
     //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
-    public Billet(int idBillet, int idProjet, String etat, String gravite, String courrielDemandeur,
-                  String notes, LocalDate dateDebutBillet, RegistreHistorique registreHistorique) {
-        this.idBillet = idBillet; // get key, set id
-        this.idProjet = idProjet; // get id dans une picklist, set id
+
+
+    public Billet(int idBillet, int idProjet, int idUsagerTechAssigne, String etat, String gravite, String courrielDemandeur, String notes, String description, String categorie, LocalDate dateAssigne, LocalDate dateDebutBillet, RegistreHistorique registreHistorique) {
+        this.idBillet = idBillet;
+        this.idProjet = idProjet;
+        this.idUsagerTechAssigne = idUsagerTechAssigne;
         this.etat = etat;
         this.gravite = gravite;
         this.courrielDemandeur = courrielDemandeur;
         this.notes = notes;
+        this.description = description;
+        this.categorie = categorie;
+        this.dateAssigne = dateAssigne;
         this.dateDebutBillet = dateDebutBillet;
         this.registreHistorique = registreHistorique;
     }
-
 
     /**
      * Getters and setters
@@ -130,6 +135,14 @@ public class Billet {
         this.registreHistorique = registreHistorique;
     }
 
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
+
     /**
      * ToString
      */
@@ -144,6 +157,7 @@ public class Billet {
                 ", courrielDemandeur='" + courrielDemandeur + '\'' +
                 ", notes='" + notes + '\'' +
                 ", description='" + description + '\'' +
+                ", categorie='" + categorie + '\'' +
                 ", dateAssigne=" + dateAssigne +
                 ", dateDebutBillet=" + dateDebutBillet +
                 ", registreHistorique=" + registreHistorique +
