@@ -28,6 +28,7 @@ public class RegistreHistorique {
 
 
     public void ajouterHistoriqueAuRegistre(Historique historique){
+
         this.registreHistorique.add(historique.getIdHistorique(), historique);
     }
 

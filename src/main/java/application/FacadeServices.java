@@ -40,4 +40,12 @@ public class FacadeServices {
             return billetExistant.asBilletDTO();
         }
     }
+
+    public boolean billetExists (int idBilletDTO){
+        return registreBillet.billetExists(idBilletDTO);
+    }
+
+    public void changerEtatBillet(String[] transitModifications) {
+        registreBillet.changerEtatBillet(transitModifications);
+    }
 }

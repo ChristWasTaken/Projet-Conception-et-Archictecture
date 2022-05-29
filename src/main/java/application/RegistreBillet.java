@@ -68,4 +68,27 @@ public class RegistreBillet {
 
         return registreBillet;
     }
+
+    public boolean billetExists(int idBillet){
+        try {
+            this.registreBillet.get(idBillet);
+            return true;
+        } catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    /**
+     * @param transitModifications contient le id du billet à changer à la position 0
+     * et le String du nouvel état à assigner au billet.
+     */
+    public void changerEtatBillet(String[] transitModifications) {
+        int idBilletDto = Integer.parseInt(transitModifications[0]);
+        String nouvelEtat = transitModifications[1];
+        Billet billetTemporaire = chercherParNumero(idBilletDto);
+        billetTemporaire.setEtat(nouvelEtat);
+        this.registreBillet.put(billetTemporaire.getIdBillet(), billetTemporaire);
+
+    }
 }
