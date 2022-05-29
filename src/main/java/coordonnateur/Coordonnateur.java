@@ -17,6 +17,16 @@ public class Coordonnateur {
         
         FacadeServices facadeServices = new FacadeServices();
         facadeServices.assignerUsagerTech(1,1);
+
+
+
+        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com","Notes 1","Description1","Anomalie",LocalDate.now());
+
+        int idBillet = facadeServices.creerBillet(billetDto);
+
+        System.out.println(idBillet);
+       // billetDto = facadeServices.chercherParIdBillet(idBillet);
+
     }
 
 

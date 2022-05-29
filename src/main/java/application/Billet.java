@@ -7,21 +7,25 @@ public class Billet {
     /**
      * Attributs de la classe
      */
-    private int idBillet;
+    private int idBillet=0;
     private int idProjet;
     private int idUsagerTechAssigne;
 
-    private String etat;
-    private String gravite;
-    private String courrielDemandeur;
-    private String notes;
-    private String description;
+    private String etat="";
 
-    private String categorie;
+
+    private String gravite="";
+    private String courrielDemandeur="";
+    private String notes="";
+    private String description="";
+
+    private String categorie="";
     private LocalDate dateAssigne;
     private LocalDate dateDebutBillet;
 
     RegistreHistorique registreHistorique;
+
+
 
     /**
      * constructeur
@@ -35,24 +39,21 @@ public class Billet {
     //par défaut: état: ouvert
 
 
-    public Billet(int idBillet, int idProjet, int idUsagerTechAssigne, String etat, String gravite, String courrielDemandeur, String notes, String description, String categorie, LocalDate dateAssigne, LocalDate dateDebutBillet, RegistreHistorique registreHistorique) {
-        this.idBillet = idBillet;
-        this.idProjet = idProjet;
-        this.idUsagerTechAssigne = idUsagerTechAssigne;
-        this.etat = etat;
-        this.gravite = gravite;
-        this.courrielDemandeur = courrielDemandeur;
-        this.notes = notes;
-        this.description = description;
-        this.categorie = categorie;
-        this.dateAssigne = dateAssigne;
-        this.dateDebutBillet = dateDebutBillet;
-        this.registreHistorique = registreHistorique;
+    public Billet(BilletDTO billet) {
+        this.setIdBillet(billet.getIdBillet());;
+        this.setIdProjet(billet.getIdProjet());
+        this.setIdUsagerTechAssigne(billet.getIdUsagerTechAssigne());;
+        this.setEtat(billet.getEtat());
+        this.setGravite(billet.getGravite());
+        this.setCourrielDemandeur(billet.getCourrielDemandeur());
+        this.setNotes(billet.getNotes());
+        this.setDescription(billet.getDescription());
+        this.setCategorie(billet.getCategorie());
+        this.setDateAssigne(billet.getDateAssigne());
+        this.setDateDebutBillet(billet.getDateDebutBillet());
+        this.setRegistreHistorique(billet.getRegistreHistorique());
     }
 
-    /**
-     * Getters and setters
-     */
     public int getIdBillet() {
         return idBillet;
     }
@@ -65,7 +66,10 @@ public class Billet {
         return idProjet;
     }
 
-    public void setIdProjet(int idProjet) { this.idProjet = idProjet; }
+    public void setIdProjet(int idProjet) {
+        this.idProjet = idProjet;
+    }
+
     public int getIdUsagerTechAssigne() {
         return idUsagerTechAssigne;
     }
@@ -86,7 +90,9 @@ public class Billet {
         return gravite;
     }
 
-    public void setGravite(String gravite) { this.gravite = gravite; }
+    public void setGravite(String gravite) {
+        this.gravite = gravite;
+    }
 
     public String getCourrielDemandeur() {
         return courrielDemandeur;
@@ -110,6 +116,14 @@ public class Billet {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
 
     public LocalDate getDateAssigne() {
@@ -136,32 +150,27 @@ public class Billet {
         this.registreHistorique = registreHistorique;
     }
 
-    public String getCategorie() {
-        return categorie;
-    }
-
-    public void setCategorie(String categorie) {
-        this.categorie = categorie;
-    }
-
     /**
-     * ToString
+     * Getters and setters
      */
-    @Override
-    public String toString() {
-        return "Billet{" +
-                "idBillet=" + idBillet +
-                ", idProjet=" + idProjet +
-                ", idUsagerTechAssigne=" + idUsagerTechAssigne +
-                ", etat='" + etat + '\'' +
-                ", gravite='" + gravite + '\'' +
-                ", courrielDemandeur='" + courrielDemandeur + '\'' +
-                ", notes='" + notes + '\'' +
-                ", description='" + description + '\'' +
-                ", categorie='" + categorie + '\'' +
-                ", dateAssigne=" + dateAssigne +
-                ", dateDebutBillet=" + dateDebutBillet +
-                ", registreHistorique=" + registreHistorique +
-                '}';
+
+
+    BilletDTO asBilletDTO(){
+        final BilletDTO billetDTO = new BilletDTO();
+
+        billetDTO.setIdBillet(this.getIdBillet());
+        billetDTO.setIdProjet(this.getIdProjet());
+        billetDTO.setIdUsagerTechAssigne(this.getIdUsagerTechAssigne());
+        billetDTO.setEtat(this.getEtat());
+        billetDTO.setGravite(this.getGravite());
+        billetDTO.setCourrielDemandeur(this.getCourrielDemandeur());
+        billetDTO.setNotes(this.getNotes());
+        billetDTO.setDescription(this.getDescription());
+        billetDTO.setCategorie(this.getCategorie());
+        billetDTO.setDateAssigne(this.getDateAssigne());
+        billetDTO.setDateDebutBillet(this.getDateDebutBillet());
+        billetDTO.setRegistreHistorique(this.getRegistreHistorique());
+
+        return billetDTO;
     }
 }
