@@ -23,13 +23,12 @@ public class Projet {
 
     //avec paramètres
     //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
-    public Projet(int idProjet, String nomProjet, LocalDate dateDebut, LocalDate dateFin,
-                  RegistreUsagerTechAssigne registreUsagerTechAssigne) {
+    public Projet(int idProjet, String nomProjet, LocalDate dateDebut, LocalDate dateFin) {
         this.idProjet = idProjet; // get key, set id
         this.nomProjet = nomProjet;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
-        this.registreUsagerTechAssigne = registreUsagerTechAssigne;
+        this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
     }
 
 
@@ -75,6 +74,11 @@ public class Projet {
 
     public void setRegistreUsagerTechAssigne(RegistreUsagerTechAssigne registreUsagerTechAssigne) {
         this.registreUsagerTechAssigne = registreUsagerTechAssigne;
+    }
+
+    public void ajouterUsagerAuRegistre(CompteUsagerTech compteUsagerTech){
+        this.registreUsagerTechAssigne.ajouterUsager(compteUsagerTech);
+        this.registreUsagerTechAssigne.afficherUsager();
     }
 
 

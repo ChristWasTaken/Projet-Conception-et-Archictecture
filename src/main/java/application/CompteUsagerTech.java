@@ -4,9 +4,11 @@ public class CompteUsagerTech {
     /**
      * Attributs de la classe
      */
+    private int idUsager;
     String nomUsager;
     String motPasse;
     String courriel;
+
 
 
     /**
@@ -16,12 +18,12 @@ public class CompteUsagerTech {
     public CompteUsagerTech() { }
 
     //avec Parametre
-    public CompteUsagerTech(String nomUsager, String motPasse, String courriel) {
+    public CompteUsagerTech(int idUsager, String nomUsager, String motPasse, String courriel) {
+        this.idUsager = idUsager;
         this.nomUsager = nomUsager;
         this.motPasse = motPasse;
         this.courriel = courriel;
     }
-
 
     /**
      * Getters and setters
@@ -48,6 +50,14 @@ public class CompteUsagerTech {
 
     public void setCourriel(String courriel) {
         this.courriel = courriel;
+    }
+
+    public int getIdUsager() {
+        return idUsager;
+    }
+
+    public void setIdUsager(int idUsager) {
+        this.idUsager = idUsager;
     }
 
     /**
