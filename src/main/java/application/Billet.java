@@ -32,6 +32,7 @@ public class Billet {
 
     //Constructeur avec parametre pour add
     //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
+    //par défaut: état: ouvert
 
 
     public Billet(int idBillet, int idProjet, int idUsagerTechAssigne, String etat, String gravite, String courrielDemandeur, String notes, String description, String categorie, LocalDate dateAssigne, LocalDate dateDebutBillet, RegistreHistorique registreHistorique) {

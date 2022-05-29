@@ -7,6 +7,7 @@ public class Historique {
     /**
      * Attributs de la classe
      */
+    private int idHistorique;
     private LocalDate date;
     private int usagerTechAssigne;
     private String commentaires;
@@ -20,16 +21,26 @@ public class Historique {
     }
 
     //avec paramètres
-    public Historique(LocalDate date, int usagerTechAssigne, String commentaires) {
+
+
+    public Historique(int idHistorique, LocalDate date, int usagerTechAssigne, String commentaires) {
+        this.idHistorique = idHistorique;
         this.date = date;
         this.usagerTechAssigne = usagerTechAssigne;
         this.commentaires = commentaires;
     }
 
-
     /**
      * Getters dans setters
      */
+    public int getIdHistorique() {
+        return idHistorique;
+    }
+
+    public void setIdHistorique(int idHistorique) {
+        this.idHistorique = idHistorique;
+    }
+
     public LocalDate getDate() {
         return date;
     }
@@ -54,14 +65,14 @@ public class Historique {
         this.commentaires = commentaires;
     }
 
-
     /**
      * ToString
      */
     @Override
     public String toString() {
         return "Historique{" +
-                "date=" + date +
+                "idHistorique=" + idHistorique +
+                ", date=" + date +
                 ", usagerTechAssigne=" + usagerTechAssigne +
                 ", commentaires='" + commentaires + '\'' +
                 '}';
