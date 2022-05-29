@@ -173,4 +173,22 @@ public class Billet {
 
         return billetDTO;
     }
+
+    @Override
+    public String toString() {
+        return "Billet{" +
+                "idBillet=" + idBillet +
+                ", idProjet=" + idProjet +
+                ", idUsagerTechAssigne=" + idUsagerTechAssigne +
+                ", etat='" + etat + '\'' +
+                ", gravite='" + gravite + '\'' +
+                ", courrielDemandeur='" + courrielDemandeur + '\'' +
+                ", notes='" + notes + '\'' +
+                ", description='" + description + '\'' +
+                ", categorie='" + categorie + '\'' +
+                ", dateAssigne=" + dateAssigne +
+                ", dateDebutBillet=" + dateDebutBillet +
+                ", registreHistorique=" + registreHistorique +
+                '}';
+    }
 }

@@ -32,7 +32,7 @@ public class Coordonnateur {
         //changerEtatBillet (c'est fucked up que le main soit dans le coordonateur. En attendant je fais mes calls ici moi aussi)
         String[]transitModifications =  packPres.changerEtatBillet(facadeServices,1,"Fermé");
         facadeServices.changerEtatBillet(transitModifications);
-
+        facadeServices.afficherRegistreBillet();
     }
 
 

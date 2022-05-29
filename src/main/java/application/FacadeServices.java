@@ -1,6 +1,7 @@
 package application;
 
 import java.time.LocalDate;
+import java.util.TreeMap;
 
 public class FacadeServices {
 
@@ -21,7 +22,7 @@ public class FacadeServices {
     public int creerBillet(BilletDTO billetDto) {
         Billet billet = new Billet(billetDto);
 
-        Historique historique = new Historique(1, LocalDate.now(),"Création du billet");
+        Historique historique = new Historique(0, LocalDate.now(),"Création du billet");
         registreHistorique.ajouterHistoriqueAuRegistre(historique);
         return registreBillet.ajouterBilletAuRegistre(billet);
 
@@ -47,5 +48,11 @@ public class FacadeServices {
 
     public void changerEtatBillet(String[] transitModifications) {
         registreBillet.changerEtatBillet(transitModifications);
+    }
+
+    public void afficherRegistreBillet(){
+        TreeMap registre = registreBillet.afficherRegistreBillet();
+        System.out.println(registre);
+
     }
 }
