@@ -1,1 +1,170 @@
-<mxfile host="app.diagrams.net" modified="2022-05-30T20:36:00.415Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36" version="18.1.3" etag="6ApMRd7kqRqRegIfqPl4" type="github"><diagram id="jSGSyYUK09qbJrXf6BZk">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-05-30T20:36:24.013Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36" etag="ACvdW9V7e6ByFr_JsTJ0" version="18.1.3" type="github">
+  <diagram id="jSGSyYUK09qbJrXf6BZk" name="Page-1">
+    <mxGraphModel dx="1022" dy="1605" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e-iaKW5NvEa7yYwTC992-1" value="Application" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="200" y="560" width="690" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-2" value="Application" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="200" y="-90" width="1070" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-3" value="Coordonnateur" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-4" value="FacadeService" style="html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="70" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-5" value="RegistreBillet" style="html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="550" y="70" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-6" value="Billet" style="html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="820" y="70" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-7" value="BilletDTO" style="html=1;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="70" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-8" value="RegistreHistorique" style="html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="970" y="210" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-9" value="nouveauBillet: Billet&lt;br&gt;" style="html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="670" y="210" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-10" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="140" y="91" width="150" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-11" value="2:ajouter(billetDto):int" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="30" relative="1" as="geometry">
+            <mxPoint x="400" y="50" as="sourcePoint" />
+            <mxPoint x="550" y="50" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-12" value="1:creerBillet(billetDto: BilletDTO):int" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="30" relative="1" as="geometry">
+            <mxPoint x="139.99999999999977" y="50" as="sourcePoint" />
+            <mxPoint x="300" y="50" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-13" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="400" y="91" width="150" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="660" y="91" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-15" value="3:nouveauBillet := Billet(billetDto)" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="30" relative="1" as="geometry">
+            <mxPoint x="660" y="50" as="sourcePoint" />
+            <mxPoint x="810" y="50" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="930" y="91" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-17" value="4:getIdProjet()&lt;br&gt;5:getEtat()&lt;br&gt;6:getGravite()&lt;br&gt;7:getCourrielDemandeur()&lt;br&gt;8:getDescription()&lt;br&gt;9:getCategorie&lt;br&gt;" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="120" relative="1" as="geometry">
+            <mxPoint x="930" y="50" as="sourcePoint" />
+            <mxPoint x="1080" y="50" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-18" value="Historique" style="html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="1131" y="310" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-19" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="130" as="sourcePoint" />
+            <mxPoint x="680" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-20" value="14: id = getBilletId()" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="130" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-21" value="&lt;span style=&quot;font-size: 11px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;12:getIdHistorique()&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="250" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-22" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="930" y="140" as="sourcePoint" />
+            <mxPoint x="1010" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=none;exitX=1.091;exitY=0.72;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="e-iaKW5NvEa7yYwTC992-8" target="e-iaKW5NvEa7yYwTC992-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="150" as="sourcePoint" />
+            <mxPoint x="1020" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-24" value="10:creer(historique: Historique)&lt;br&gt;11: ajouter(historique)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="940" y="130" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-25" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="260" as="sourcePoint" />
+            <mxPoint x="600" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-26" value="RegistreBillet:&lt;br&gt;TreeMap&amp;lt;Interger, Billet&amp;gt;" style="html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-27" value="RegistreHistorique:&lt;br&gt;Arraylis&amp;lt;Integer, Historique&amp;gt;" style="html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="940" y="390" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-28" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="e-iaKW5NvEa7yYwTC992-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1025" y="370" as="sourcePoint" />
+            <mxPoint x="1024.5" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-29" value="&lt;span style=&quot;font-size: 11px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;13:ajouterHistorique(id, nouvelHistorique)&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="800" y="310" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-30" value="15:ajouterBillet(id, nouveauBillet)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="170" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-31" value="Coordonnateur" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="670" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-32" value="&lt;b&gt;Diagramme de communication:&lt;br&gt;Créer Billet&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="-130" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-33" value="&lt;b&gt;Diagramme de communication:&lt;br&gt;Consulter liste billet&lt;br&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="510" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-34" value="Facade" style="html=1;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="330" y="670" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-35" value="RegistreBillet" style="html=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="640" y="670" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-36" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="150" y="691" width="170" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+          <mxGeometry x="440" y="691" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-38" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="149.99999999999977" y="660" as="sourcePoint" />
+            <mxPoint x="330" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-39" value="1:consulterListeBillet():TreeMap&amp;lt;Integer,Billet&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="610" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-40" value="2:consulterListeBillet():TreeMap&amp;lt;Integer,Billet&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="620" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e-iaKW5NvEa7yYwTC992-41" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="659.9999999999995" as="sourcePoint" />
+            <mxPoint x="630" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
