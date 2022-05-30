@@ -11,11 +11,11 @@ Vous devez déterminer l’architecture et faire un prototype fonctionnel pour u
 Concentrez-vous sur la logique d’affaires, l’interface usager et le support de persistance seront déterminés dans une phase ultérieure du projet.
 Le travail est à faire en équipes de quatre personnes (maximum).
 
-Fonctions principales
-•	Créer un compte usager technique  
-•	Créer un projet
-•	Assigner les usagers techniques aux projets
-•	Définir les catégories
+Fonctions principales<br/>
+•	Créer un compte usager technique <br/> 
+•	Créer un projet<br/>
+•	Assigner les usagers techniques aux projets<br/>
+•	Définir les catégories<br/>
 •	Créer un billet (e-mail du demandeur, date, notes, projet, gravité faible/moyenne/élevée)
 •	Assigner un billet (date, personne en charge, description du problème)
 •	Changer l’état d’un billet (Ouvert, Travail en cours, Bloqué, En attente de déploiement, Fermé). On note le changement d’état à l’historique du billet : date, usager, commentaire).
