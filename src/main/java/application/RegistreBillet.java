@@ -32,7 +32,7 @@ public class RegistreBillet {
      * Getter de l'instance
      */
 
-    public static RegistreBillet getInstance() {
+    public static RegistreBillet getRegistreBilletInstance() {
         if (registreBilletInstance == null) {
             registreBilletInstance = new RegistreBillet();
         }
@@ -95,5 +95,9 @@ public class RegistreBillet {
     void consulterEtatBillet(int idBillet) {
         String etat = chercherBilletParId(idBillet).getEtat();
         System.out.println("L'état du billet demandé est: " + etat);
+    }
+
+    public void modifierBillet(int id, Billet billetModifiable) {
+        this.registreBillet.put(id, billetModifiable);
     }
 }

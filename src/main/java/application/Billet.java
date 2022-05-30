@@ -42,7 +42,7 @@ public class Billet {
     public Billet(BilletDTO billet) {
         this.setIdBillet(billet.getIdBillet());;
         this.setIdProjet(billet.getIdProjet());
-        this.setIdUsagerTechAssigne(billet.getIdUsagerTechAssigne());;
+        this.setUsagerTechnique(billet.getIdUsagerTechAssigne());;
         this.setEtat(billet.getEtat());
         this.setGravite(billet.getGravite());
         this.setCourrielDemandeur(billet.getCourrielDemandeur());
@@ -74,7 +74,7 @@ public class Billet {
         return idUsagerTechAssigne;
     }
 
-    public void setIdUsagerTechAssigne(int idUsagerTechAssigne) {
+    public void setUsagerTechnique(int idUsagerTechAssigne) {
         this.idUsagerTechAssigne = idUsagerTechAssigne;
     }
 

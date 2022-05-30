@@ -7,8 +7,8 @@ public class FacadeServices {
 
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
     private RegistreProjet registreProjet = RegistreProjet.getInstance();
-    private RegistreBillet registreBillet = RegistreBillet.getInstance();
-
+    private RegistreBillet registreBillet = RegistreBillet.getRegistreBilletInstance();
+    private RegistreCategories registreCategories = RegistreCategories.getRegistreCategorieInstance();
 
     public FacadeServices() {
     }
@@ -65,7 +65,13 @@ public class FacadeServices {
     }
 
     public void ajoutDeCategorie(String categorieBillet) {
-        RegistreCategories instance = RegistreCategories.getRegistreCategorieInstance();
-        instance.ajouterUneCategorie(categorieBillet);
+        registreCategories.ajouterUneCategorie(categorieBillet);
+    }
+
+    public void assignerBillet(BilletDTO billetDTO){
+        int id = billetDTO.getIdBillet();
+        Billet billetModifiable = registreBillet.chercherBilletParId(id);
+        billetModifiable.setUsagerTechnique(billetDTO.getIdUsagerTechAssigne());
+        registreBillet.modifierBillet(id, billetModifiable);
     }
 }

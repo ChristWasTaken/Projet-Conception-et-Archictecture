@@ -20,6 +20,7 @@ public class Coordonnateur {
         FacadeServices facadeServices = new FacadeServices();
         facadeServices.assignerUsagerTech(1,1);
 
+        // Créer une catégorie de billet
         String categorieBillet = "Anomalie";
         facadeServices.ajoutDeCategorie(categorieBillet);
 
@@ -30,7 +31,7 @@ public class Coordonnateur {
 
         int idBillet = facadeServices.creerBillet(billetDto);
 
-        System.out.println(idBillet);
+//        System.out.println(idBillet);
        // billetDto = facadeServices.chercherParIdBillet(idBillet);
 
         //changerEtatBillet (c'est fucked up que le main soit dans le coordonateur. En attendant je fais mes calls ici moi aussi)
@@ -39,6 +40,16 @@ public class Coordonnateur {
         facadeServices.afficherRegistreBillet();
         //consulterEtatBillet
         facadeServices.consulterEtatBillet(1);
+
+        //assigner un usager à un billet
+        CompteUsagerTech usager2 = new CompteUsagerTech(2, "Toto", "mdp", "email@hotmail.com");
+        billetDto.setIdUsagerTechAssigne(2);
+        billetDto.setIdBillet(1);
+//        System.out.println(billetDto);
+        facadeServices.assignerBillet(billetDto);
+        facadeServices.afficherRegistreBillet();
+
+
     }
 
 
