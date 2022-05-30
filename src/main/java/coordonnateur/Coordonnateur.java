@@ -20,9 +20,13 @@ public class Coordonnateur {
         FacadeServices facadeServices = new FacadeServices();
         facadeServices.assignerUsagerTech(1,1);
 
+        String categorieBillet = "Anomalie";
+        facadeServices.ajoutDeCategorie(categorieBillet);
 
-
-        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com","Notes 1","Description1","Anomalie",LocalDate.now());
+        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
+                "Notes 1","Description1",
+                RegistreCategories.getRegistreCategorieInstance().recupererCategorie("Anomalie"),
+                LocalDate.now());
 
         int idBillet = facadeServices.creerBillet(billetDto);
 

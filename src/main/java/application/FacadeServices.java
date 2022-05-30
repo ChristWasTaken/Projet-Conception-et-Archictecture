@@ -39,7 +39,7 @@ public class FacadeServices {
      */
 
     public BilletDTO chercherParIdBillet(int idBillet) {
-        Billet billetExistant = registreBillet.chercherParNumero(idBillet);
+        Billet billetExistant = registreBillet.chercherBilletParId(idBillet);
         if (billetExistant == null) {
             return null;
         } else {
@@ -62,5 +62,10 @@ public class FacadeServices {
 
     public void consulterEtatBillet(int idBillet){
         registreBillet.consulterEtatBillet(idBillet);
+    }
+
+    public void ajoutDeCategorie(String categorieBillet) {
+        RegistreCategories instance = RegistreCategories.getRegistreCategorieInstance();
+        instance.ajouterUneCategorie(categorieBillet);
     }
 }

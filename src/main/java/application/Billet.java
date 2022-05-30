@@ -19,7 +19,7 @@ public class Billet {
     private String notes="";
     private String description="";
 
-    private String categorie="";
+    private CategorieBillet categorie;
     private LocalDate dateAssigne;
     private LocalDate dateDebutBillet;
 
@@ -118,11 +118,11 @@ public class Billet {
         this.description = description;
     }
 
-    public String getCategorie() {
+    public CategorieBillet getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(String categorie) {
+    public void setCategorie(CategorieBillet categorie) {
         this.categorie = categorie;
     }
 
@@ -184,8 +184,8 @@ public class Billet {
                 ", gravite='" + gravite + '\'' +
                 ", courrielDemandeur='" + courrielDemandeur + '\'' +
                 ", notes='" + notes + '\'' +
-                ", description='" + description + '\'' +
-                ", categorie='" + categorie + '\'' +
+                ", description='" + description + " \' "
+                + categorie + '\'' +
                 ", dateAssigne=" + dateAssigne +
                 ", dateDebutBillet=" + dateDebutBillet +
                 ", registreHistorique=" + registreHistorique +

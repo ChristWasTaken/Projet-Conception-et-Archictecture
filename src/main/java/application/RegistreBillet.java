@@ -52,7 +52,7 @@ public class RegistreBillet {
     /**
      * Récupère un Billet par son Id
      */
-    public Billet chercherParNumero(int idBillet) {
+    public Billet chercherBilletParId(int idBillet) {
         return this.registreBillet.get(idBillet);
     }
 
@@ -86,14 +86,14 @@ public class RegistreBillet {
   void changerEtatBillet(String[] transitModifications) {
         int idBilletDto = Integer.parseInt(transitModifications[0]);
         String nouvelEtat = transitModifications[1];
-        Billet billetTemporaire = chercherParNumero(idBilletDto);
+        Billet billetTemporaire = chercherBilletParId(idBilletDto);
         billetTemporaire.setEtat(nouvelEtat);
         this.registreBillet.put(billetTemporaire.getIdBillet(), billetTemporaire);
 
     }
 
     void consulterEtatBillet(int idBillet) {
-        String etat = chercherParNumero(idBillet).getEtat();
+        String etat = chercherBilletParId(idBillet).getEtat();
         System.out.println("L'état du billet demandé est: " + etat);
     }
 }
