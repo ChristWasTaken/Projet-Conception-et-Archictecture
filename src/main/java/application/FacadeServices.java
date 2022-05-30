@@ -58,6 +58,9 @@ public class FacadeServices {
     public void afficherRegistreBillet(){
         TreeMap registre = registreBillet.afficherRegistreBillet();
         System.out.println(registre);
+    }
 
+    public void consulterEtatBillet(int idBillet){
+        registreBillet.consulterEtatBillet(idBillet);
     }
 }

@@ -33,6 +33,8 @@ public class Coordonnateur {
         String[]transitModifications =  packPres.changerEtatBillet(facadeServices,1,"Fermé");
         facadeServices.changerEtatBillet(transitModifications);
         facadeServices.afficherRegistreBillet();
+        //consulterEtatBillet
+        facadeServices.consulterEtatBillet(1);
     }
 
 
