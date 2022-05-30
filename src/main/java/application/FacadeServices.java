@@ -8,7 +8,7 @@ public class FacadeServices {
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
     private RegistreProjet registreProjet = RegistreProjet.getInstance();
     private RegistreBillet registreBillet = RegistreBillet.getInstance();
-    private RegistreHistorique registreHistorique = new RegistreHistorique();
+
 
     public FacadeServices() {
     }
@@ -20,10 +20,15 @@ public class FacadeServices {
     }
 
     public int creerBillet(BilletDTO billetDto) {
+
+        Historique historique = new Historique(LocalDate.now(),"Création de l'historique");
+        RegistreHistorique registreHistorique = new RegistreHistorique();
+        registreHistorique.ajouterHistoriqueAuRegistre(historique);
+        historique.setIdHistorique(historique.getIdHistorique());
+        billetDto.setRegistreHistorique(registreHistorique);
+
         Billet billet = new Billet(billetDto);
 
-        Historique historique = new Historique(0, LocalDate.now(),"Création du billet");
-        registreHistorique.ajouterHistoriqueAuRegistre(historique);
         return registreBillet.ajouterBilletAuRegistre(billet);
 
 

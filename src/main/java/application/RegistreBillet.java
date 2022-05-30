@@ -19,7 +19,7 @@ public class RegistreBillet {
     /**
      * Dernier numéro attribué à un billet.
      */
-    private int dernierNumeroBilletAttribue = 0;
+    private static int dernierNumeroBilletAttribue = 0;
 
 
     /**
@@ -40,7 +40,7 @@ public class RegistreBillet {
     }
 
     /**
-     * Enregistre le billet
+     * Ajouter billet au registre
      */
     public int ajouterBilletAuRegistre(Billet nouveauBillet) {
         nouveauBillet.setIdBillet(this.prochainIdBillet());

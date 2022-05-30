@@ -1,11 +1,14 @@
 package application;
 
-import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class RegistreHistorique {
-    private ArrayList<Historique> registreHistorique =  new ArrayList<>();
+    private TreeMap<Integer, Historique> registreHistorique =  new TreeMap<>();
 
-
+    /**
+     * Dernier numéro attribué à un historique.
+     */
+    private static int dernierNumeroHistoriqueAttribue = 0;
 
 
     /**
@@ -17,22 +20,53 @@ public class RegistreHistorique {
     /**
      * Getters and setters
      */
-    public ArrayList<Historique> getRegistreHistorique() {
+
+    public TreeMap<Integer, Historique> getRegistreHistorique() {
         return registreHistorique;
     }
 
-    public void setRegistreHistorique(ArrayList<Historique> registreHistorique) {
+    public void setRegistreHistorique(TreeMap<Integer, Historique> registreHistorique) {
         this.registreHistorique = registreHistorique;
     }
 
-
-
-    public void ajouterHistoriqueAuRegistre(Historique historique){
-
-        this.registreHistorique.add(historique.getIdHistorique(), historique);
+    /**
+     * Ajouter historique au registre
+     */
+    public int ajouterHistoriqueAuRegistre(Historique historique){
+        historique.setIdHistorique(this.prochainIdHistorique());
+        this.registreHistorique.put(historique.getIdHistorique(), historique);
+        return historique.getIdHistorique();
     }
+
+
+    /**
+     * Récupère un historique par son Id
+     */
+    public Historique chercherParNumero(int idHistorique) {
+        return this.registreHistorique.get(idHistorique);
+    }
+
+    /**
+     * incrémentation automatique du IDHistorique
+     */
+    private int prochainIdHistorique() {
+        return ++dernierNumeroHistoriqueAttribue;
+    }
+
+
+    public TreeMap afficherRegistreHistorique() {
+        return registreHistorique;
+    }
+
 
     public void modifierRegistreHistorique(){
 
+    }
+
+    @Override
+    public String toString() {
+        return "RegistreHistorique{" +
+                "registreHistorique=" + registreHistorique +
+                '}';
     }
 }
