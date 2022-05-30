@@ -18,6 +18,7 @@ Fonctions principales
 •	Définir les catégories
 •	Créer un billet (e-mail du demandeur, date, notes, projet, gravité faible/moyenne/élevée)
 •	Assigner un billet (date, personne en charge, description du problème)
+          [a relative link](Assigner_Billet_UC.drawio)
 •	Changer l’état d’un billet (Ouvert, Travail en cours, Bloqué, En attente de déploiement, Fermé). On note le changement d’état à l’historique du billet : date, usager, commentaire).
 •	Consulter la liste des billets (Filtres par date d’ouverture, demandeur, état, personne en charge, projet, catégorie, gravité)
 •	Consulter le détail d’un billet (par id)
