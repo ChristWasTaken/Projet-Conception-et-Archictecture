@@ -60,8 +60,8 @@ public class FacadeServices {
         System.out.println(registre);
     }
 
-    public void consulterEtatBillet(int idBillet){
-        registreBillet.consulterEtatBillet(idBillet);
+    public BilletDTO consulterDetailBillet(int idBillet){
+        return registreBillet.consulterDetailBillet(idBillet);
     }
 
 

@@ -92,9 +92,11 @@ public class RegistreBillet {
 
     }
 
-    void consulterEtatBillet(int idBillet) {
-        String etat = chercherBilletParId(idBillet).getEtat();
-        System.out.println("L'état du billet demandé est: " + etat);
+    BilletDTO consulterDetailBillet(int idBillet) {
+        Billet billetTemporaire = chercherBilletParId(idBillet);
+
+        return billetTemporaire.asBilletDTO();
+
     }
 
     public void modifierBillet(int id, Billet billetModifiable) {

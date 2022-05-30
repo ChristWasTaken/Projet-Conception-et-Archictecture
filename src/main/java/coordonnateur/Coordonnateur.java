@@ -39,7 +39,7 @@ public class Coordonnateur {
         facadeServices.changerEtatBillet(transitModifications);
         facadeServices.afficherRegistreBillet();
         //consulterEtatBillet
-        facadeServices.consulterEtatBillet(1);
+        System.out.println(facadeServices.consulterDetailBillet(1));
 
         //assigner un usager à un billet
         CompteUsagerTech usager2 = new CompteUsagerTech(2, "Toto", "mdp", "email@hotmail.com");
