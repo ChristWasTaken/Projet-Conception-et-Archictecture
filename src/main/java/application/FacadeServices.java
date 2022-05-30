@@ -64,10 +64,22 @@ public class FacadeServices {
         registreBillet.consulterEtatBillet(idBillet);
     }
 
+
+    /**
+     * @param categorieBillet contient le nom de la catégorie à ajouter à la position 0
+     * Aucune utilisation de DTO puisque la classe contient 1 seul paramètre.
+     */
     public void ajoutDeCategorie(String categorieBillet) {
         registreCategories.ajouterUneCategorie(categorieBillet);
     }
 
+    /**
+     * Assigner un billet à un usager
+     * Utilisation d'un BTO au lieux d'Id directement pour ultérieurement changer cette
+     * méthode qui modifie n'importe quel paramètre du billet.
+     * @param billetDTO contient l'id du billet à assigner à la position 0
+     *                  et l'id de l'usager à assigner à la position 1
+     */
     public void assignerBillet(BilletDTO billetDTO){
         int id = billetDTO.getIdBillet();
         Billet billetModifiable = registreBillet.chercherBilletParId(id);
