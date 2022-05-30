@@ -26,7 +26,6 @@ public class Billet {
     RegistreHistorique registreHistorique;
 
 
-
     /**
      * constructeur
      */

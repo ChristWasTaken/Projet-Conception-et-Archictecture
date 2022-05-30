@@ -24,7 +24,11 @@ public class Historique {
     //avec paramètres
 
     public Historique(LocalDate date, String commentaires) {
-        this.idHistorique = idHistorique;
+        this.date = date;
+        this.commentaires = commentaires;
+    }
+
+    public Historique(LocalDate date, int usagerTechAssigne, String commentaires) {
         this.date = date;
         this.usagerTechAssigne = usagerTechAssigne;
         this.commentaires = commentaires;

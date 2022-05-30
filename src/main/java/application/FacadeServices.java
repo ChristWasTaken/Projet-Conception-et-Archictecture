@@ -52,8 +52,10 @@ public class FacadeServices {
     }
 
     public void changerEtatBillet(String[] transitModifications) {
-        registreBillet.changerEtatBillet(transitModifications);
-    }
+        Billet billet = registreBillet.chercherBilletParId(Integer.parseInt(transitModifications[0]));
+        billet.setEtat(transitModifications[1]);
+        registreBillet.modifierBillet(billet.getIdBillet(), billet);
+            }
 
     public void afficherRegistreBillet(){
         TreeMap registre = registreBillet.afficherRegistreBillet();
@@ -81,9 +83,15 @@ public class FacadeServices {
      *                  et l'id de l'usager à assigner à la position 1
      */
     public void assignerBillet(BilletDTO billetDTO){
-        int id = billetDTO.getIdBillet();
-        Billet billetModifiable = registreBillet.chercherBilletParId(id);
-        billetModifiable.setUsagerTechnique(billetDTO.getIdUsagerTechAssigne());
+
+        Billet billetModifiable = new Billet(billetDTO);
+        int id = billetModifiable.getIdBillet();
+
+        billetModifiable.getRegistreHistorique().ajouterHistoriqueAuRegistre(
+                new Historique(LocalDate.now(),
+                        billetModifiable.getIdUsagerTechAssigne(),
+                        billetModifiable.getNotes()) );
+
         registreBillet.modifierBillet(id, billetModifiable);
     }
 }

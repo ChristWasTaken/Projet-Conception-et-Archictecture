@@ -45,6 +45,8 @@ public class Coordonnateur {
         CompteUsagerTech usager2 = new CompteUsagerTech(2, "Toto", "mdp", "email@hotmail.com");
         billetDto.setIdUsagerTechAssigne(2);
         billetDto.setIdBillet(1);
+        billetDto.setDateAssigne(LocalDate.now());
+        billetDto.setDescription("Description2");
 //        System.out.println(billetDto);
         facadeServices.assignerBillet(billetDto);
         facadeServices.afficherRegistreBillet();
