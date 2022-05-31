@@ -19,6 +19,11 @@ public class FacadeServices {
         projetAAssigne.ajouterUsagerAuRegistre(usagerAAssigne);
     }
 
+    public void creerProjet(ProjetDTO projetDTO){
+        Projet nouveauProjet = new Projet(projetDTO);
+        registreProjet.ajouterProjet(nouveauProjet);
+    }
+
     public int creerBillet(BilletDTO billetDto) {
 
         Historique historique = new Historique(LocalDate.now(),"Création de l'historique");

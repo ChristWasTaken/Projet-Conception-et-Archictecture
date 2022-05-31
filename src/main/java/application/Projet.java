@@ -31,6 +31,14 @@ public class Projet {
         this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
     }
 
+    //Constructeur avec DTO
+    public Projet(ProjetDTO projetDTO){
+        this.setIdProjet(projetDTO.getIdProjet());
+        this.setNomProjet(projetDTO.getNomProjet());
+        this.setDateDebut(projetDTO.getDateDebut());
+        this.setDateFin(projetDTO.getDateFin());
+        this.setRegistreUsagerTechAssigne(projetDTO.getRegistreUsagerTechAssigne());
+    }
 
 
 
