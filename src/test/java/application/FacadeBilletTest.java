@@ -1,16 +1,13 @@
 package application;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import presentation.PackPres;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class FacadeServicesTest {
+class FacadeBilletTest {
     PackPres packPres = new PackPres();
-    FacadeServices facadeServices = new FacadeServices();
+    FacadeBillet facadeBillet = new FacadeBillet();
     RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
 //    @BeforeAll
 //    void beforeAll(){
@@ -52,21 +49,21 @@ class FacadeServicesTest {
         ProjetDTO projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
         CompteUsagerTech usager = new CompteUsagerTech(1, "Alain", "mdp", "email");
         registreUsagerTech.ajouterUsager(usager);
-        facadeServices.creerProjet(projet);
-        facadeServices.assignerUsagerTech(1,1);
+        facadeBillet.creerProjet(projet);
+        facadeBillet.assignerUsagerTech(1,1);
         // Créer une catégorie de billet
         String categorieBillet = "Anomalie";
         //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
         projet.getRegistreCategories().ajouterUneCategorie(categorieBillet);
-        facadeServices.ajoutDeCategorie(projet);
+        facadeBillet.ajoutDeCategorie(projet);
         BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
                 "Notes 1","Description1",LocalDate.now());
-        int idBillet = facadeServices.creerBillet(billetDto);
+        int idBillet = facadeBillet.creerBillet(billetDto);
         System.out.println(idBillet);
-       facadeServices.changerEtatBillet(billetDto,"Fermé");
-        facadeServices.afficherRegistreBillet();
+       facadeBillet.changerEtatBillet(billetDto,"Fermé");
+        facadeBillet.afficherRegistreBillet();
         //consulterEtatBillet
-        System.out.println(facadeServices.consulterDetailBillet(1));
+        System.out.println(facadeBillet.consulterDetailBillet(1));
 
     }
 

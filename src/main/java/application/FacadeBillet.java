@@ -76,14 +76,14 @@ public class FacadeBillet {
 
 
 
-    public TreeMap consulterListeBillet(int idBillet){
+    public TreeMap consulterListeBilletDTO(int idBillet){
         TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
 
         return registre;
     }
 
 
-    public TreeMap recupererRegistreBillet(){
+    public TreeMap recupererRegistreBilletDTO(){
         TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
 
         return registre;

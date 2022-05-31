@@ -32,7 +32,8 @@ public class RegistreProjet {
         return projet;
     }
 
-    public TreeMap afficherRegistreProjet(){
+    public TreeMap recupererRegistreProjetAsDTO(){
+
 
         return registreProjet;
     }

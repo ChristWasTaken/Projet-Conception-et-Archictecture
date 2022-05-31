@@ -22,8 +22,8 @@ public class Projet {
     public Projet() {
     }
 
-    //avec paramètres
-    //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
+
+    //constructeur avec parametre de base
     public Projet(int idProjet, String nomProjet, LocalDate dateDebut, LocalDate dateFin) {
         this.idProjet = idProjet; // get key, set id
         this.nomProjet = nomProjet;
