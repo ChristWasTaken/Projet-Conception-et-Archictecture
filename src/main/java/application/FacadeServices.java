@@ -70,7 +70,6 @@ public class FacadeServices {
         return registreBillet.consulterDetailBillet(idBillet);
     }
 
-
     public void ajoutDeCategorie(ProjetDTO projet) {
         Projet projetExistant = new Projet(projet);
         registreProjet.modifierProjet(projetExistant);
