@@ -3,25 +3,15 @@ package application;
 import java.time.LocalDate;
 import java.util.TreeMap;
 
-public class FacadeServices {
+public class FacadeBillet {
 
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-    private RegistreProjet registreProjet = RegistreProjet.getInstance();
+  //  private RegistreProjet registreProjet = RegistreProjet.getInstance();
     private RegistreBillet registreBillet = RegistreBillet.getInstance();
 
-    public FacadeServices() {
+    public FacadeBillet() {
     }
 
-    public void assignerUsagerTech(int idUsager, int idProjet) {
-        CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(idUsager);
-        Projet projetAAssigne = registreProjet.trouverProjet(idProjet);
-        projetAAssigne.ajouterUsagerAuRegistre(usagerAAssigne);
-    }
-
-    public void creerProjet(ProjetDTO projetDTO){
-        Projet nouveauProjet = new Projet(projetDTO);
-        registreProjet.ajouterProjet(nouveauProjet);
-    }
 
     public int creerBillet(BilletDTO billetDto) {
 
@@ -35,14 +25,13 @@ public class FacadeServices {
 
         return registreBillet.ajouterBilletAuRegistre(billet);
 
-
     }
 
     /**
      * Trouver un Billet par son idBillet
      */
 
-    public BilletDTO chercherParIdBillet(int idBillet) {
+    public BilletDTO consulterBilletParId(int idBillet) {
         Billet billetExistant = registreBillet.chercherBilletParId(idBillet);
         if (billetExistant == null) {
             return null;
@@ -51,29 +40,19 @@ public class FacadeServices {
         }
     }
 
+    //////CHANGER CETTE MÉTHOD DE PLACE DOIT ALLER DANS BILLET
     public boolean billetExists (int idBilletDTO){
         return registreBillet.billetExists(idBilletDTO);
     }
 
+
+    ////// Voir à changer la méthode pour qu'elle passe seulement un DTO à partir du coordonnateur - selon réponse du prof
     public void changerEtatBillet(BilletDTO billetDTO, String nouvelEtat) {
         Billet billet = registreBillet.chercherBilletParId(billetDTO.getIdBillet());
         billet.setEtat(nouvelEtat);
         registreBillet.modifierBillet(billet.getIdBillet(), billet);
-            }
-
-    public void afficherRegistreBillet(){
-        TreeMap registre = registreBillet.afficherRegistreBillet();
-        System.out.println(registre);
     }
 
-    public BilletDTO consulterDetailBillet(int idBillet){
-        return registreBillet.consulterDetailBillet(idBillet);
-    }
-
-    public void ajoutDeCategorie(ProjetDTO projet) {
-        Projet projetExistant = new Projet(projet);
-        registreProjet.modifierProjet(projetExistant);
-    }
 
     /**
      * Assigner un billet à un usager
@@ -94,4 +73,21 @@ public class FacadeServices {
 
         registreBillet.modifierBillet(id, billetModifiable);
     }
+
+
+
+    public TreeMap consulterListeBillet(int idBillet){
+        TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
+
+        return registre;
+    }
+
+
+    public TreeMap recupererRegistreBillet(){
+        TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
+
+        return registre;
+    }
+
+
 }

@@ -14,9 +14,9 @@ public class RegistreUsagerTechAssigne {
         this.registreUsagerTechAssigne.add(compteUsagerTech);
     }
 
-    public void afficherUsager(){
-        for(CompteUsagerTech tmp : registreUsagerTechAssigne){
-            System.out.println(tmp);
-        }
-    }
+//    public void afficherUsager(){
+//        for(CompteUsagerTech tmp : registreUsagerTechAssigne){
+//            System.out.println(tmp);
+//        }
+//    }
 }
