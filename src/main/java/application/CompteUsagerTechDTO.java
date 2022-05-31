@@ -1,6 +1,12 @@
 package application;
 
-public class CompteUsagerTech {
+/**
+ * Class CompteUsagerTechDTO
+ *
+ * @author Gabrielle
+ * @since 2022-05-31
+ **/
+public class CompteUsagerTechDTO {
     /**
      * Attributs de la classe
      */
@@ -9,25 +15,24 @@ public class CompteUsagerTech {
     String motPasse;
     String courriel;
 
-
-
-    /**
-     * Constructeurs
-     */
-    //par défaut
-    public CompteUsagerTech() { }
-
-
-    public CompteUsagerTech(CompteUsagerTechDTO compteUsagerTechDTO){
-        this.setIdUsager(compteUsagerTechDTO.getIdUsager());
-        this.setNomUsager(compteUsagerTechDTO.getNomUsager());
-        this.setMotPasse(compteUsagerTechDTO.getMotPasse());
-        this.setCourriel(compteUsagerTechDTO.getCourriel());
+    public CompteUsagerTechDTO() {
     }
 
-    /**
-     * Getters and setters
-     */
+    public CompteUsagerTechDTO(int idUsager, String nomUsager, String motPasse, String courriel) {
+        this.idUsager = idUsager;
+        this.nomUsager = nomUsager;
+        this.motPasse = motPasse;
+        this.courriel = courriel;
+    }
+
+    public int getIdUsager() {
+        return idUsager;
+    }
+
+    public void setIdUsager(int idUsager) {
+        this.idUsager = idUsager;
+    }
+
     public String getNomUsager() {
         return nomUsager;
     }
@@ -52,21 +57,11 @@ public class CompteUsagerTech {
         this.courriel = courriel;
     }
 
-    public int getIdUsager() {
-        return idUsager;
-    }
-
-    public void setIdUsager(int idUsager) {
-        this.idUsager = idUsager;
-    }
-
-    /**
-     * ToString
-     */
     @Override
     public String toString() {
-        return "CompteUsagerTech{" +
-                "nomUsager='" + nomUsager + '\'' +
+        return "CompteUsagerTechDTO{" +
+                "idUsager=" + idUsager +
+                ", nomUsager='" + nomUsager + '\'' +
                 ", motPasse='" + motPasse + '\'' +
                 ", courriel='" + courriel + '\'' +
                 '}';

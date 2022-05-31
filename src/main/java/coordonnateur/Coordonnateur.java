@@ -11,21 +11,24 @@ public class Coordonnateur {
         PackPres packPres = new PackPres();
         RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
         ProjetDTO projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-        CompteUsagerTech usager = new CompteUsagerTech(1, "Alain", "mdp", "email");
+        CompteUsagerTechDTO usager = new CompteUsagerTechDTO(1, "Alain", "mdp", "email");
 
-        registreUsagerTech.ajouterUsager(usager);
+
 
         
-        FacadeServices facadeServices = new FacadeServices();
-        facadeServices.creerProjet(projet);
-        facadeServices.assignerUsagerTech(1,1);
+//        FacadeServices facadeServices = new FacadeServices();
+//        facadeServices.creerProjet(projet);
+//        facadeServices.assignerUsagerTech(1,1);
+
+        FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
+        facadeCompteUsager.creerCompteUsagerTech(usager);
 
 
-        // Créer une catégorie de billet
-        String categorieBillet = "Anomalie";
-        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
-        projet.getRegistreCategories().ajouterUneCategorie(categorieBillet);
-        facadeServices.ajoutDeCategorie(projet);
+//        // Créer une catégorie de billet
+//        String categorieBillet = "Anomalie";
+//        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
+//        projet.getRegistreCategories().ajouterUneCategorie(categorieBillet);
+//        facadeServices.ajoutDeCategorie(projet);
 
 //        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
 //                "Notes 1","Description1",
