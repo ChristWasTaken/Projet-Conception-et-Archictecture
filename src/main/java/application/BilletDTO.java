@@ -17,11 +17,12 @@ public class BilletDTO {
     private String notes;
     private String description;
 
-    private CategorieBillet categorie;
     private LocalDate dateAssigne;
     private LocalDate dateDebutBillet;
 
-    RegistreHistorique registreHistorique;
+    private Categorie categorie;
+
+    private RegistreHistorique registreHistorique;
 
 
     public BilletDTO() {
@@ -31,7 +32,7 @@ public class BilletDTO {
     //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
     //par défaut: état: ouvert
 
-   public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, CategorieBillet categorie, LocalDate dateDebutBillet) {
+   public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, Categorie categorie, LocalDate dateDebutBillet) {
 
         this.idBillet = idBillet;
         this.idProjet = idProjet;
@@ -111,11 +112,11 @@ public class BilletDTO {
         this.description = description;
     }
 
-    public CategorieBillet getCategorie() {
+    public Categorie getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(CategorieBillet categorie) {
+    public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
 

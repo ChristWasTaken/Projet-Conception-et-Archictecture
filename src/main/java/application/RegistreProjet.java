@@ -23,7 +23,11 @@ public class RegistreProjet {
         this.registreProjet.put(projet.getIdProjet(), projet);
     }
 
-    public  Projet trouverProjet(int idProjet){
+    public void modifierProjet(Projet projet){
+        this.registreProjet.replace(projet.getIdProjet(), projet);
+    }
+
+    public Projet trouverProjet(int idProjet){
         Projet projet = this.registreProjet.get(idProjet);
         return projet;
     }

@@ -8,7 +8,6 @@ public class FacadeServices {
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
     private RegistreProjet registreProjet = RegistreProjet.getInstance();
     private RegistreBillet registreBillet = RegistreBillet.getRegistreBilletInstance();
-    private RegistreCategories registreCategories = RegistreCategories.getRegistreCategorieInstance();
 
     public FacadeServices() {
     }
@@ -72,12 +71,9 @@ public class FacadeServices {
     }
 
 
-    /**
-     * @param categorieBillet contient le nom de la catégorie à ajouter à la position 0
-     * Aucune utilisation de DTO puisque la classe contient 1 seul paramètre.
-     */
-    public void ajoutDeCategorie(String categorieBillet) {
-        registreCategories.ajouterUneCategorie(categorieBillet);
+    public void ajoutDeCategorie(ProjetDTO projet) {
+        Projet projetExistant = new Projet(projet);
+        registreProjet.modifierProjet(projetExistant);
     }
 
     /**

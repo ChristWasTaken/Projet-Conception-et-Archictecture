@@ -2,7 +2,7 @@ package application;
 
 import java.time.LocalDate;
 
-public class Billet {
+class Billet {
 
     /**
      * Attributs de la classe
@@ -19,11 +19,11 @@ public class Billet {
     private String notes="";
     private String description="";
 
-    private CategorieBillet categorie;
     private LocalDate dateAssigne;
     private LocalDate dateDebutBillet;
 
-    RegistreHistorique registreHistorique;
+    private Categorie categorie;
+    private RegistreHistorique registreHistorique;
 
 
     /**
@@ -117,11 +117,11 @@ public class Billet {
         this.description = description;
     }
 
-    public CategorieBillet getCategorie() {
+    public Categorie getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(CategorieBillet categorie) {
+    public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
 

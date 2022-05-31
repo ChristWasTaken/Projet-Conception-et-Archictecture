@@ -4,29 +4,18 @@ import java.util.ArrayList;
 
 public class RegistreCategories {
 
-    /**
-     * Singleton pour gérer les catégories de billet
-     */
-    private static RegistreCategories instance;
-    private ArrayList<CategorieBillet> registreCategories;
+    private ArrayList<Categorie> registreCategories;
 
-    private RegistreCategories() {
+    public RegistreCategories() {
         this.registreCategories = new ArrayList<>();
     }
 
-    public static RegistreCategories getRegistreCategorieInstance() {
-        if (instance == null) {
-            instance = new RegistreCategories();
-        }
-        return instance;
-    }
-
-    /**
+     /**
      * Ajoute une catégorie de billet
      */
     public void ajouterUneCategorie(String categorieBillet) {
 
-        this.registreCategories.add(new CategorieBillet(categorieBillet));
+        this.registreCategories.add(new Categorie(categorieBillet));
     }
 
     /**
@@ -34,16 +23,18 @@ public class RegistreCategories {
      *
      * @return ArrayList<CategorieBillet>
      */
-    public ArrayList<CategorieBillet> recupererListeCategories() {
+    public ArrayList<Categorie> recupererListeCategories() {
         return registreCategories;
     }
 
-    public CategorieBillet recupererCategorie(String categorieBillet) {
-        for (CategorieBillet categorie : registreCategories) {
+    public Categorie recupererCategorie(String categorieBillet) {
+        for (Categorie categorie : registreCategories) {
             if (categorie.getCategorie().equals(categorieBillet)) {
                 return categorie;
             }
         }
         return null;
     }
+
+
 }

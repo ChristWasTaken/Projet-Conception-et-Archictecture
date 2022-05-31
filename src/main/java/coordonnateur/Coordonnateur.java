@@ -17,18 +17,22 @@ public class Coordonnateur {
 
         
         FacadeServices facadeServices = new FacadeServices();
-        facadeServices.assignerUsagerTech(1,1);
         facadeServices.creerProjet(projet);
+        facadeServices.assignerUsagerTech(1,1);
+
+
         // Créer une catégorie de billet
         String categorieBillet = "Anomalie";
-        facadeServices.ajoutDeCategorie(categorieBillet);
+        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
+        projet.getRegistreCategories().ajouterUneCategorie(categorieBillet);
+        facadeServices.ajoutDeCategorie(projet);
 
-        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
-                "Notes 1","Description1",
-                RegistreCategories.getRegistreCategorieInstance().recupererCategorie("Anomalie"),
-                LocalDate.now());
-
-        int idBillet = facadeServices.creerBillet(billetDto);
+//        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
+//                "Notes 1","Description1",
+//                RegistreCategories.getRegistreCategorieInstance().recupererCategorie("Anomalie"),
+//                LocalDate.now());
+//
+//        int idBillet = facadeServices.creerBillet(billetDto);
 
 //        System.out.println(idBillet);
        // billetDto = facadeServices.chercherParIdBillet(idBillet);
@@ -40,15 +44,15 @@ public class Coordonnateur {
         //consulterEtatBillet
         System.out.println(facadeServices.consulterDetailBillet(1));
 
-        //assigner un usager à un billet
-        CompteUsagerTech usager2 = new CompteUsagerTech(2, "Toto", "mdp", "email@hotmail.com");
-        billetDto.setIdUsagerTechAssigne(2);
-        billetDto.setIdBillet(1);
-        billetDto.setDateAssigne(LocalDate.now());
-        billetDto.setDescription("Description2");
-//        System.out.println(billetDto);
-        facadeServices.assignerBillet(billetDto);
-        facadeServices.afficherRegistreBillet();
+//        //assigner un usager à un billet
+//        CompteUsagerTech usager2 = new CompteUsagerTech(2, "Toto", "mdp", "email@hotmail.com");
+//        billetDto.setIdUsagerTechAssigne(2);
+//        billetDto.setIdBillet(1);
+//        billetDto.setDateAssigne(LocalDate.now());
+//        billetDto.setDescription("Description2");
+////        System.out.println(billetDto);
+//        facadeServices.assignerBillet(billetDto);
+//        facadeServices.afficherRegistreBillet();
 
 
     }

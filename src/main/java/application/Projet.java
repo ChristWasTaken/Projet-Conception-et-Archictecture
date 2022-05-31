@@ -12,6 +12,7 @@ public class Projet {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private RegistreUsagerTechAssigne registreUsagerTechAssigne;
+    private RegistreCategories registreCategories;
 
 
     /**
@@ -38,6 +39,7 @@ public class Projet {
         this.setDateDebut(projetDTO.getDateDebut());
         this.setDateFin(projetDTO.getDateFin());
         this.setRegistreUsagerTechAssigne(projetDTO.getRegistreUsagerTechAssigne());
+        this.setRegistreCategories(projetDTO.getRegistreCategories());
     }
 
 
@@ -91,6 +93,13 @@ public class Projet {
         this.registreUsagerTechAssigne.afficherUsager();
     }
 
+    public RegistreCategories getRegistreCategories() {
+        return registreCategories;
+    }
+
+    public void setRegistreCategories(RegistreCategories registreCategories) {
+        this.registreCategories = registreCategories;
+    }
 
     /**
      * ToString

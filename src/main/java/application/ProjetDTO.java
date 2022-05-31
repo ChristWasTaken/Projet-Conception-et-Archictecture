@@ -17,6 +17,7 @@ public class ProjetDTO {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private RegistreUsagerTechAssigne registreUsagerTechAssigne;
+    private RegistreCategories registreCategories;
 
     /**
      * constructeurs
@@ -31,6 +32,7 @@ public class ProjetDTO {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
+        this.registreCategories = new RegistreCategories();
     }
 
     /**
@@ -76,6 +78,14 @@ public class ProjetDTO {
         this.registreUsagerTechAssigne = registreUsagerTechAssigne;
     }
 
+    public RegistreCategories getRegistreCategories() {
+        return registreCategories;
+    }
+
+    public void setRegistreCategories(RegistreCategories registreCategories) {
+        this.registreCategories = registreCategories;
+    }
+
     /**
      * ToString
      */
@@ -87,6 +97,7 @@ public class ProjetDTO {
                 ", dateDebut=" + dateDebut +
                 ", dateFin=" + dateFin +
                 ", registreUsagerTechAssigne=" + registreUsagerTechAssigne +
+                ", registreCategories=" + registreCategories +
                 '}';
     }
 }
