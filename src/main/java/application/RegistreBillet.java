@@ -79,18 +79,6 @@ public class RegistreBillet {
         }
     }
 
-    /**
-     * @param transitModifications contient le id du billet à changer à la position 0
-     * et le String du nouvel état à assigner au billet.
-     */
-  void changerEtatBillet(String[] transitModifications) {
-        int idBilletDto = Integer.parseInt(transitModifications[0]);
-        String nouvelEtat = transitModifications[1];
-        Billet billetTemporaire = chercherBilletParId(idBilletDto);
-        billetTemporaire.setEtat(nouvelEtat);
-        this.registreBillet.put(billetTemporaire.getIdBillet(), billetTemporaire);
-
-    }
 
     BilletDTO consulterDetailBillet(int idBillet) {
         Billet billetTemporaire = chercherBilletParId(idBillet);

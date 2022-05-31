@@ -55,9 +55,9 @@ public class FacadeServices {
         return registreBillet.billetExists(idBilletDTO);
     }
 
-    public void changerEtatBillet(String[] transitModifications) {
-        Billet billet = registreBillet.chercherBilletParId(Integer.parseInt(transitModifications[0]));
-        billet.setEtat(transitModifications[1]);
+    public void changerEtatBillet(BilletDTO billetDTO, String nouvelEtat) {
+        Billet billet = registreBillet.chercherBilletParId(billetDTO.getIdBillet());
+        billet.setEtat(nouvelEtat);
         registreBillet.modifierBillet(billet.getIdBillet(), billet);
             }
 

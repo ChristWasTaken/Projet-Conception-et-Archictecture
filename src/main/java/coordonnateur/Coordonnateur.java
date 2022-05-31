@@ -38,11 +38,11 @@ public class Coordonnateur {
        // billetDto = facadeServices.chercherParIdBillet(idBillet);
 
         //changerEtatBillet (c'est fucked up que le main soit dans le coordonateur. En attendant je fais mes calls ici moi aussi)
-        String[]transitModifications =  packPres.changerEtatBillet(facadeServices,1,"Fermé");
-        facadeServices.changerEtatBillet(transitModifications);
-        facadeServices.afficherRegistreBillet();
-        //consulterEtatBillet
-        System.out.println(facadeServices.consulterDetailBillet(1));
+
+//        facadeServices.changerEtatBillet();
+//        facadeServices.afficherRegistreBillet();
+//        //consulterEtatBillet
+//        System.out.println(facadeServices.consulterDetailBillet(1));
 
 //        //assigner un usager à un billet
 //        CompteUsagerTech usager2 = new CompteUsagerTech(2, "Toto", "mdp", "email@hotmail.com");
