@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-05-30T19:56:05.469Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36" etag="GPYbbbB9j4GIUJMrmnfu" version="18.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-31T16:08:59.178Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36" etag="V9CtmrCKZQg6jlzqv11M" version="18.1.3" type="github">
   <diagram id="52IZLL7xsQzxs3NUUl1_" name="Page-1">
-    <mxGraphModel dx="1033" dy="988" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1064" dy="988" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -8,13 +8,13 @@
           <mxGeometry x="40" y="170" width="150" height="50" as="geometry" />
         </mxCell>
         <mxCell id="hDqs2hNm1gBTOTLuySX5-3" value="Application" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="260" y="80" width="720" height="320" as="geometry" />
+          <mxGeometry x="260" y="80" width="970" height="510" as="geometry" />
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--2" value="registreCategorie : &lt;br&gt;ArrayList&amp;lt;CategorieBillet&amp;gt;&amp;nbsp;" style="html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="540" y="340" width="150" height="50" as="geometry" />
+          <mxGeometry x="780" y="340" width="150" height="50" as="geometry" />
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--3" value="CategorieBillet" style="html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="820" y="170" width="110" height="50" as="geometry" />
+          <mxGeometry x="1060" y="170" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="zlBf4Wz0gLvxMZk6vgf--4" target="zlBf4Wz0gLvxMZk6vgf--3" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -22,10 +22,13 @@
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="zlBf4Wz0gLvxMZk6vgf--4" target="zlBf4Wz0gLvxMZk6vgf--2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="zlBf4Wz0gLvxMZk6vgf--4" value="registreCategorie : &lt;br&gt;RegistreCategories" style="html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="530" y="170" width="170" height="50" as="geometry" />
+        <mxCell id="zlBf4Wz0gLvxMZk6vgf--4" value="projetDto : ProjetDTO" style="html=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="770" y="170" width="170" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="zlBf4Wz0gLvxMZk6vgf--22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="zlBf4Wz0gLvxMZk6vgf--5" target="zlBf4Wz0gLvxMZk6vgf--4" edge="1">
+        <mxCell id="zlBf4Wz0gLvxMZk6vgf--22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" parent="1" source="zlBf4Wz0gLvxMZk6vgf--5" target="TzgPYY4RlzZjaDo3wwwL-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TzgPYY4RlzZjaDo3wwwL-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="zlBf4Wz0gLvxMZk6vgf--5" target="TzgPYY4RlzZjaDo3wwwL-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--5" value="FacadeServices" style="html=1;strokeWidth=2;" parent="1" vertex="1">
@@ -37,15 +40,15 @@
             <mxPoint x="295" y="175" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zlBf4Wz0gLvxMZk6vgf--7" value="1: ajoutDeCategorie(categorieBillet : String)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--6" connectable="0" vertex="1">
+        <mxCell id="zlBf4Wz0gLvxMZk6vgf--7" value="1: ajoutDeCategorie(projetDto : ProjetDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--6" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
             <mxPoint x="-58" y="-20" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--8" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="708" y="175" as="sourcePoint" />
-            <mxPoint x="814" y="175" as="targetPoint" />
+            <mxPoint x="948" y="175" as="sourcePoint" />
+            <mxPoint x="1054" y="175" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--9" value="4 : nouvelleCategorie : = CategorieBillet(categorieBillet:String)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--8" connectable="0" vertex="1">
@@ -55,19 +58,19 @@
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--12" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="421" y="173" as="sourcePoint" />
-            <mxPoint x="521" y="173" as="targetPoint" />
+            <mxPoint x="420" y="180" as="sourcePoint" />
+            <mxPoint x="520" y="180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zlBf4Wz0gLvxMZk6vgf--13" value="2 : registreCategorie := getRegistreCategorieInstance()&lt;br&gt;3 : AjouterUneCategorie(categorieBillet : String)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--12" connectable="0" vertex="1">
+        <mxCell id="zlBf4Wz0gLvxMZk6vgf--13" value="2 : registreProjet := getInstance()&lt;br&gt;3: projetExistant := Projet(projetDto)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--12" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
-            <mxPoint x="2" y="-22" as="offset" />
+            <mxPoint x="-9" y="-30" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--14" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="591" y="226" as="sourcePoint" />
-            <mxPoint x="591" y="333.5" as="targetPoint" />
+            <mxPoint x="831" y="226" as="sourcePoint" />
+            <mxPoint x="831" y="333.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--15" value="5 : ajouterUneCategorie(nouvelleCategorie : CategorieBillet)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--14" connectable="0" vertex="1">
@@ -83,6 +86,23 @@
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--28" value="Diagramme de communication:&lt;br style=&quot;font-size: 14px;&quot;&gt;Définir une catégorie de billet" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="30" y="50" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TzgPYY4RlzZjaDo3wwwL-1" value="registreProjet : RegistreProjet" style="html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="530" y="300" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TzgPYY4RlzZjaDo3wwwL-2" value="projetExistant : Projet" style="html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="530" y="170" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TzgPYY4RlzZjaDo3wwwL-5" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="380" y="230" as="sourcePoint" />
+            <mxPoint x="520" y="322.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TzgPYY4RlzZjaDo3wwwL-6" value="4: id := projetExistant.getIdProjet():int&lt;br&gt;5: modifierProjet(id, projetExistant)&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="TzgPYY4RlzZjaDo3wwwL-5">
+          <mxGeometry x="0.176" relative="1" as="geometry">
+            <mxPoint x="7" y="-25" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
