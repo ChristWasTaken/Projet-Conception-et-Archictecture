@@ -2,8 +2,13 @@ package application;
 
 import java.time.LocalDate;
 
-public class Projet {
-
+/**
+ * Class ProjetDTO
+ *
+ * @author Gabrielle
+ * @since 2022-05-31
+ **/
+public class ProjetDTO {
     /**
      * Attributs de la classe
      */
@@ -13,31 +18,24 @@ public class Projet {
     private LocalDate dateFin;
     private RegistreUsagerTechAssigne registreUsagerTechAssigne;
 
-
     /**
      * constructeurs
      */
     //par défaut
-    public Projet() {
+    public ProjetDTO() {
     }
 
-    //avec paramètres
-    //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
-    public Projet(int idProjet, String nomProjet, LocalDate dateDebut, LocalDate dateFin) {
-        this.idProjet = idProjet; // get key, set id
+    public ProjetDTO(int idProjet, String nomProjet, LocalDate dateDebut, LocalDate dateFin) {
+        this.idProjet = idProjet;
         this.nomProjet = nomProjet;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
     }
 
-
-
-
     /**
      * Getters and setters
      */
-
     public int getIdProjet() {
         return idProjet;
     }
@@ -78,18 +76,12 @@ public class Projet {
         this.registreUsagerTechAssigne = registreUsagerTechAssigne;
     }
 
-    public void ajouterUsagerAuRegistre(CompteUsagerTech compteUsagerTech){
-        this.registreUsagerTechAssigne.ajouterUsager(compteUsagerTech);
-        this.registreUsagerTechAssigne.afficherUsager();
-    }
-
-
     /**
      * ToString
      */
     @Override
     public String toString() {
-        return "Projet{" +
+        return "ProjetDTO{" +
                 "idProjet=" + idProjet +
                 ", nomProjet='" + nomProjet + '\'' +
                 ", dateDebut=" + dateDebut +
