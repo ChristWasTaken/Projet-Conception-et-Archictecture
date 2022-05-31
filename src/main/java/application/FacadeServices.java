@@ -7,7 +7,7 @@ public class FacadeServices {
 
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
     private RegistreProjet registreProjet = RegistreProjet.getInstance();
-    private RegistreBillet registreBillet = RegistreBillet.getRegistreBilletInstance();
+    private RegistreBillet registreBillet = RegistreBillet.getInstance();
 
     public FacadeServices() {
     }

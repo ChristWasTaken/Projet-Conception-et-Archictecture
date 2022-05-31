@@ -5,7 +5,7 @@ import java.util.TreeMap;
 public class RegistreUsagerTech {
     
     private TreeMap<Integer, CompteUsagerTech> registreUsagerTech;
-    private static RegistreUsagerTech registreUsagerTechInstance;
+    private static RegistreUsagerTech Instance;
 
     private RegistreUsagerTech() {
         this.registreUsagerTech = new TreeMap<Integer, CompteUsagerTech>();
@@ -13,10 +13,10 @@ public class RegistreUsagerTech {
 
     //Methode pour acceder a l'instance de la classe registreUsagerTech
     public static RegistreUsagerTech getInstance(){
-        if(registreUsagerTechInstance == null){
-            registreUsagerTechInstance = new RegistreUsagerTech();
+        if(Instance == null){
+            Instance = new RegistreUsagerTech();
         }
-        return registreUsagerTechInstance;
+        return Instance;
     }
 
 

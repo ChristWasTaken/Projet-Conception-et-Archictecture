@@ -8,7 +8,7 @@ public class RegistreBillet {
     /**
      * Instance unique.
      */
-    private static RegistreBillet registreBilletInstance = new RegistreBillet();
+    private static RegistreBillet Instance = new RegistreBillet();
 
 
     /**
@@ -32,11 +32,11 @@ public class RegistreBillet {
      * Getter de l'instance
      */
 
-    public static RegistreBillet getRegistreBilletInstance() {
-        if (registreBilletInstance == null) {
-            registreBilletInstance = new RegistreBillet();
+    public static RegistreBillet getInstance() {
+        if (Instance == null) {
+            Instance = new RegistreBillet();
         }
-        return registreBilletInstance;
+        return Instance;
     }
 
     /**
