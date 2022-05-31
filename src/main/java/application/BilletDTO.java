@@ -32,7 +32,18 @@ public class BilletDTO {
     //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
     //par défaut: état: ouvert
 
-   public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, Categorie categorie, LocalDate dateDebutBillet) {
+
+    public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, LocalDate dateDebutBillet) {
+        this.idProjet = idProjet;
+        this.etat = etat;
+        this.gravite = gravite;
+        this.courrielDemandeur = courrielDemandeur;
+        this.notes = notes;
+        this.description = description;
+        this.dateDebutBillet = dateDebutBillet;
+    }
+
+    public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, Categorie categorie, LocalDate dateDebutBillet) {
 
         this.idBillet = idBillet;
         this.idProjet = idProjet;

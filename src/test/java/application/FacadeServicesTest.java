@@ -1,11 +1,26 @@
 package application;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import presentation.PackPres;
+
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class FacadeServicesTest {
+    PackPres packPres = new PackPres();
+    FacadeServices facadeServices = new FacadeServices();
+    RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
+//    @BeforeAll
+//    void beforeAll(){
+//
+//    }
+
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
+
     }
 
     @org.junit.jupiter.api.AfterEach
@@ -32,8 +47,27 @@ class FacadeServicesTest {
     void billetExists() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void changerEtatBillet() {
+        ProjetDTO projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+        CompteUsagerTech usager = new CompteUsagerTech(1, "Alain", "mdp", "email");
+        registreUsagerTech.ajouterUsager(usager);
+        facadeServices.creerProjet(projet);
+        facadeServices.assignerUsagerTech(1,1);
+        // Créer une catégorie de billet
+        String categorieBillet = "Anomalie";
+        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
+        projet.getRegistreCategories().ajouterUneCategorie(categorieBillet);
+        facadeServices.ajoutDeCategorie(projet);
+        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
+                "Notes 1","Description1",LocalDate.now());
+        int idBillet = facadeServices.creerBillet(billetDto);
+        System.out.println(idBillet);
+       facadeServices.changerEtatBillet(billetDto,"Fermé");
+        facadeServices.afficherRegistreBillet();
+        //consulterEtatBillet
+        System.out.println(facadeServices.consulterDetailBillet(1));
+
     }
 
     @org.junit.jupiter.api.Test
@@ -48,7 +82,7 @@ class FacadeServicesTest {
     void ajoutDeCategorie() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void assignerBillet() {
     }
 }
