@@ -90,7 +90,6 @@ public class Projet {
 
     public void ajouterUsagerAuRegistre(CompteUsagerTech compteUsagerTech){
         this.registreUsagerTechAssigne.ajouterUsager(compteUsagerTech);
-        this.registreUsagerTechAssigne.afficherUsager();
     }
 
     public RegistreCategories getRegistreCategories() {
