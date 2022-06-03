@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-03T20:46:10.460Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="29-dBC0L3328mX1dunmY" version="18.2.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-03T21:05:20.930Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="6vM9i2YW5rrhr08h-tTE" version="18.2.0" type="github">
   <diagram id="52IZLL7xsQzxs3NUUl1_" name="Page-1">
-    <mxGraphModel dx="1064" dy="2088" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="887" dy="1923" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -246,8 +246,8 @@
         <mxCell id="dk3OCbrw461VhQ2k63uT-48" value="Diagramme de communication:&lt;br style=&quot;font-size: 14px;&quot;&gt;Ouvrir un projet" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="40" y="-1080" width="220" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="dk3OCbrw461VhQ2k63uT-50" value="registreCategorie :&lt;br&gt;ArrayList&amp;lt;Categorie&amp;gt;" style="html=1;strokeWidth=2;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="682.5" y="-491" width="137.5" height="50" as="geometry" />
+        <mxCell id="dk3OCbrw461VhQ2k63uT-50" value="categoriesBillet :&lt;br&gt;ArrayList&amp;lt;Categorie&amp;gt;" style="html=1;strokeWidth=2;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="690" y="-491" width="130" height="50" as="geometry" />
         </mxCell>
         <mxCell id="dk3OCbrw461VhQ2k63uT-52" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -275,7 +275,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dk3OCbrw461VhQ2k63uT-60" value="Projet" style="html=1;strokeWidth=2;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="685" y="-390" width="135" height="50" as="geometry" />
+          <mxGeometry x="690" y="-390" width="130" height="50" as="geometry" />
         </mxCell>
         <mxCell id="dk3OCbrw461VhQ2k63uT-62" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="160" relative="1" as="geometry">
