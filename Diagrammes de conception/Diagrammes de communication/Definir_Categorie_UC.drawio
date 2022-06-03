@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-03T20:42:44.859Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="Q0mjghqk5Khrn-8Z7abk" version="18.2.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-03T20:46:10.460Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="29-dBC0L3328mX1dunmY" version="18.2.0" type="github">
   <diagram id="52IZLL7xsQzxs3NUUl1_" name="Page-1">
     <mxGraphModel dx="1064" dy="2088" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -47,7 +47,7 @@
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--13" value="6: projetExistant := Projet(projetDto)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--12" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
-            <mxPoint x="15" y="-20" as="offset" />
+            <mxPoint x="-2" y="-20" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--21" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="hDqs2hNm1gBTOTLuySX5-2" target="zlBf4Wz0gLvxMZk6vgf--5" edge="1">
@@ -76,7 +76,7 @@
         </mxCell>
         <mxCell id="TzgPYY4RlzZjaDo3wwwL-6" value="7 : registreProjet := getInstance()&lt;br&gt;8: id := projetExistant.getIdProjet():int&lt;br&gt;9: modifierProjet(id, projetExistant)&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="TzgPYY4RlzZjaDo3wwwL-5" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
-            <mxPoint x="32" y="-13" as="offset" />
+            <mxPoint x="22" y="-13" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dk3OCbrw461VhQ2k63uT-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="dk3OCbrw461VhQ2k63uT-1" target="dk3OCbrw461VhQ2k63uT-10">
@@ -285,11 +285,8 @@
         </mxCell>
         <mxCell id="dk3OCbrw461VhQ2k63uT-63" value="5: projetExistant := Projet()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="dk3OCbrw461VhQ2k63uT-62">
           <mxGeometry x="0.176" relative="1" as="geometry">
-            <mxPoint x="-25" y="-18" as="offset" />
+            <mxPoint x="-15" y="-13" as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="dk3OCbrw461VhQ2k63uT-64" value="Text" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="600" y="-640" width="40" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
