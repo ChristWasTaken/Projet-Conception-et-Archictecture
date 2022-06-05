@@ -1,23 +1,35 @@
 package application;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import presentation.PackPres;
 
+import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
 
 class FacadeBilletTest {
-    PackPres packPres = new PackPres();
+
     FacadeBillet facadeBillet = new FacadeBillet();
     RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-//    @BeforeAll
-//    void beforeAll(){
-//
-//    }
+    FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
+    FacadeProjet facadeProjet = new FacadeProjet();
 
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
-
+        ProjetDTO projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+        CompteUsagerTechDTO usagerDTO = new CompteUsagerTechDTO(1,"Roger","mdp","email");
+        facadeCompteUsager.creerCompteUsagerTech(usagerDTO);
+        facadeProjet.creerProjet(projet);
+        facadeProjet.assignerUsagerTech(1,1);
+        // Créer une catégorie de billet
+        String categorieBillet = "Anomalie";
+        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
+        projet.getRegistreCategories().ajouterUneCategorie(categorieBillet);
+        facadeProjet.ajouterCategorie(projet);
+        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
+                "Notes 1","Description1",LocalDate.now());
+        billetDto.setCategorie(projet.getRegistreCategories().recupererCategorie(categorieBillet));
+        int idBillet = facadeBillet.creerBillet(billetDto);
     }
 
     @org.junit.jupiter.api.AfterEach
@@ -46,24 +58,21 @@ class FacadeBilletTest {
 
     @Test
     void changerEtatBillet() {
-        ProjetDTO projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-        CompteUsagerTech usager = new CompteUsagerTech(1, "Alain", "mdp", "email");
-        registreUsagerTech.ajouterUsager(usager);
-        facadeBillet.creerProjet(projet);
-        facadeBillet.assignerUsagerTech(1,1);
-        // Créer une catégorie de billet
-        String categorieBillet = "Anomalie";
-        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
-        projet.getRegistreCategories().ajouterUneCategorie(categorieBillet);
-        facadeBillet.ajoutDeCategorie(projet);
-        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
-                "Notes 1","Description1",LocalDate.now());
-        int idBillet = facadeBillet.creerBillet(billetDto);
-        System.out.println(idBillet);
-       facadeBillet.changerEtatBillet(billetDto,"Fermé");
-        facadeBillet.afficherRegistreBillet();
-        //consulterEtatBillet
-        System.out.println(facadeBillet.consulterDetailBillet(1));
+        //Debut
+        BilletDTO billetDTO = facadeBillet.consulterBilletParId(1);
+        billetDTO.setEtat("Fermé");
+        RegistreHistorique registreHistorique = billetDTO.getRegistreHistorique();
+        int usager = registreHistorique.chercherParNumero(1).getUsagerTechAssigne();
+        Historique historique = new Historique(LocalDate.now(),usager,"Travail terminé. Fermeture du billet");
+        registreHistorique.ajouterHistoriqueAuRegistre(historique);
+        billetDTO.setRegistreHistorique(registreHistorique);
+        //Fin - De tout ce qui se passe dans la couche présentation
+
+        facadeBillet.changerEtatBillet(billetDTO);
+        assertEquals("Fermé",facadeBillet.consulterBilletParId(1).getEtat());
+        assertEquals(2,facadeBillet.consulterBilletParId(1).getRegistreHistorique().getRegistreHistorique().size());
+        System.out.println(facadeBillet.consulterBilletParId(1));
+
 
     }
 

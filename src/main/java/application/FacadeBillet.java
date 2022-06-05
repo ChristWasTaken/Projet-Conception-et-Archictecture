@@ -40,16 +40,12 @@ public class FacadeBillet {
         }
     }
 
-    //////CHANGER CETTE MÉTHOD DE PLACE DOIT ALLER DANS BILLET
-    public boolean billetExists (int idBilletDTO){
-        return registreBillet.billetExists(idBilletDTO);
-    }
-
 
     ////// Voir à changer la méthode pour qu'elle passe seulement un DTO à partir du coordonnateur - selon réponse du prof
-    public void changerEtatBillet(BilletDTO billetDTO, String nouvelEtat) {
+    public void changerEtatBillet(BilletDTO billetDTO) {
         Billet billet = registreBillet.chercherBilletParId(billetDTO.getIdBillet());
-        billet.setEtat(nouvelEtat);
+        billet.setEtat(billetDTO.getEtat());
+        billet.setRegistreHistorique(billetDTO.getRegistreHistorique());
         registreBillet.modifierBillet(billet.getIdBillet(), billet);
     }
 
