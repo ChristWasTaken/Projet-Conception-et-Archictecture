@@ -21,6 +21,7 @@ class FacadeBilletTest {
         facadeCompteUsager.creerCompteUsagerTech(usagerDTO);
         facadeProjet.creerProjet(projet);
         facadeProjet.assignerUsagerTech(1,1);
+
         // Créer une catégorie de billet
         String categorieBillet = "Anomalie";
         //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade

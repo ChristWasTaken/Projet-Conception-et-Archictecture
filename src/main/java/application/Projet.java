@@ -42,6 +42,12 @@ class Projet {
         this.setRegistreUsagerTechAssigne(projetDTO.getRegistreUsagerTechAssigne());
         this.setCategoriesBillet(projetDTO.getCategoriesBillet());
     }
+
+    /**
+     * Constructeur ProjetDTO de l'objet Projet
+     *
+     * @return ProjetDTO
+     */
     ProjetDTO asProjetDTO(){
         final ProjetDTO projetDTO = new ProjetDTO();
 

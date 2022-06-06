@@ -18,5 +18,6 @@ class CoordonnateurTest {
         coordonnateur.definirCategorie(projetDTO, categorieBillet);
         assertEquals(categorieBillet, projetDTO.getCategoriesBillet().get(0).getCategorie());
         assertEquals(1, projetDTO.getCategoriesBillet().size());
+
     }
 }
