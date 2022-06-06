@@ -19,7 +19,7 @@ class Billet {
     private String notes="";
     private String description="";
 
-    private LocalDate dateAssigne;
+    private LocalDate dateAssignee;
     private LocalDate dateDebutBillet;
 
     private Categorie categorie;
@@ -48,7 +48,7 @@ class Billet {
         this.setNotes(billet.getNotes());
         this.setDescription(billet.getDescription());
         this.setCategorie(billet.getCategorie());
-        this.setDateAssigne(billet.getDateAssigne());
+        this.setDateAssignee(billet.getDateAssigne());
         this.setDateDebutBillet(billet.getDateDebutBillet());
         this.setRegistreHistorique(billet.getRegistreHistorique());
     }
@@ -125,12 +125,12 @@ class Billet {
         this.categorie = categorie;
     }
 
-    public LocalDate getDateAssigne() {
-        return dateAssigne;
+    public LocalDate getDateAssignee() {
+        return dateAssignee;
     }
 
-    public void setDateAssigne(LocalDate dateAssigne) {
-        this.dateAssigne = dateAssigne;
+    public void setDateAssignee(LocalDate dateAssignee) {
+        this.dateAssignee = dateAssignee;
     }
 
     public LocalDate getDateDebutBillet() {
@@ -166,7 +166,7 @@ class Billet {
         billetDTO.setNotes(this.getNotes());
         billetDTO.setDescription(this.getDescription());
         billetDTO.setCategorie(this.getCategorie());
-        billetDTO.setDateAssigne(this.getDateAssigne());
+        billetDTO.setDateAssigne(this.getDateAssignee());
         billetDTO.setDateDebutBillet(this.getDateDebutBillet());
         billetDTO.setRegistreHistorique(this.getRegistreHistorique());
 
@@ -185,7 +185,7 @@ class Billet {
                 ", notes='" + notes + '\'' +
                 ", description='" + description + " \' "
                 + categorie + '\'' +
-                ", dateAssigne=" + dateAssigne +
+                ", dateAssigne=" + dateAssignee +
                 ", dateDebutBillet=" + dateDebutBillet +
                 ", registreHistorique=" + registreHistorique +
                 '}';

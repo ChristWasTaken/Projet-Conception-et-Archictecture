@@ -8,7 +8,7 @@ public class RegistreBillet {
     /**
      * Instance unique.
      */
-    private static RegistreBillet Instance = new RegistreBillet();
+    private static RegistreBillet instance = new RegistreBillet();
 
 
     /**
@@ -33,10 +33,10 @@ public class RegistreBillet {
      */
 
     public static RegistreBillet getInstance() {
-        if (Instance == null) {
-            Instance = new RegistreBillet();
+        if (instance == null) {
+            instance = new RegistreBillet();
         }
-        return Instance;
+        return instance;
     }
 
     /**

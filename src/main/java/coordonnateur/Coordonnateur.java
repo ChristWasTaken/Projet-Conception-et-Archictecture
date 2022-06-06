@@ -1,10 +1,6 @@
 package coordonnateur;
 
 import application.*;
-import jdk.jfr.Category;
-import presentation.PackPres;
-
-import java.time.LocalDate;
 
 public class Coordonnateur {
 
@@ -22,7 +18,7 @@ public class Coordonnateur {
     }
 
     public void definirCategorie(ProjetDTO projetDto, String nouvelleCategorie){
-        projetDto.ajouterCategoriesBillet(new Categorie(nouvelleCategorie));
+        projetDto.ajouterCategorieBillet(new Categorie(nouvelleCategorie));
         FacadeProjet facadeProjet = new FacadeProjet();
         facadeProjet.ajouterCategorie(projetDto);
     }

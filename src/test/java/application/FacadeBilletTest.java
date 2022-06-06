@@ -1,7 +1,6 @@
 package application;
 
 import org.junit.jupiter.api.*;
-import presentation.PackPres;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
@@ -25,7 +24,7 @@ class FacadeBilletTest {
         // Créer une catégorie de billet
         String categorieBillet = "Anomalie";
         //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
-        projet.ajouterCategoriesBillet(new Categorie(categorieBillet));
+        projet.ajouterCategorieBillet(new Categorie(categorieBillet));
 //        facadeProjet.ajouterCategorie(projet);
         BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
                 "Notes 1","Description1",LocalDate.now());

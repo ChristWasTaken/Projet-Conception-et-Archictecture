@@ -8,7 +8,7 @@ public class Historique {
      * Attributs de la classe
      */
     private int idHistorique = 0;
-    private int idBilletAssocié=0;
+    private int idBilletAssocie = 0;
     private LocalDate date;
     private int usagerTechAssigne;
     private String commentaires;
@@ -45,12 +45,12 @@ public class Historique {
         this.idHistorique = idHistorique;
     }
 
-    public int getIdBilletAssocié() {
-        return idBilletAssocié;
+    public int getIdBilletAssocie() {
+        return idBilletAssocie;
     }
 
-    public void setIdBilletAssocié(int idBilletAssocié) {
-        this.idBilletAssocié = idBilletAssocié;
+    public void setIdBilletAssocie(int idBilletAssocie) {
+        this.idBilletAssocie = idBilletAssocie;
     }
 
     public LocalDate getDate() {
@@ -84,7 +84,7 @@ public class Historique {
     public String toString() {
         return "Historique{" +
                 "idHistorique=" + idHistorique +
-                ", idBilletAssocié=" + idBilletAssocié +
+                ", idBilletAssocié=" + idBilletAssocie +
                 ", date=" + date +
                 ", usagerTechAssigne=" + usagerTechAssigne +
                 ", commentaires='" + commentaires + '\'' +

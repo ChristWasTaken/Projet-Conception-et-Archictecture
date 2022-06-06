@@ -90,7 +90,7 @@ public class ProjetDTO {
      * Ajouter une catégorie à l'ArrayList
      * @param categorie
      */
-    public void ajouterCategoriesBillet(Categorie categorie) {
+    public void ajouterCategorieBillet(Categorie categorie) {
         this.categoriesBillet.add(categorie);
     }
 
