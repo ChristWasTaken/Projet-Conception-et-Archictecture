@@ -1,12 +1,12 @@
 package application;
 
-class Categorie {
+public class Categorie {
     private String categorie;
 
-    protected Categorie() {
+    public Categorie() {
     }
 
-    protected Categorie(String categorie) {
+    public Categorie(String categorie) {
         this.categorie = categorie;
     }
 

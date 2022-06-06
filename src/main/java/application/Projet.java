@@ -1,8 +1,9 @@
 package application;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Projet {
+class Projet {
 
     /**
      * Attributs de la classe
@@ -12,8 +13,7 @@ public class Projet {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private RegistreUsagerTechAssigne registreUsagerTechAssigne;
-    private RegistreCategories registreCategories;
-
+    private ArrayList<Categorie> categoriesBillet;
 
     /**
      * constructeurs
@@ -30,6 +30,7 @@ public class Projet {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
+        this.categoriesBillet = new ArrayList<>();
     }
 
     //Constructeur avec DTO
@@ -39,11 +40,20 @@ public class Projet {
         this.setDateDebut(projetDTO.getDateDebut());
         this.setDateFin(projetDTO.getDateFin());
         this.setRegistreUsagerTechAssigne(projetDTO.getRegistreUsagerTechAssigne());
-        this.setRegistreCategories(projetDTO.getRegistreCategories());
+        this.setCategoriesBillet(projetDTO.getCategoriesBillet());
     }
+    ProjetDTO asProjetDTO(){
+        final ProjetDTO projetDTO = new ProjetDTO();
 
+        projetDTO.setIdProjet(this.getIdProjet());
+        projetDTO.setNomProjet(this.getNomProjet());
+        projetDTO.setDateDebut(this.getDateDebut());
+        projetDTO.setDateFin(this.getDateFin());
+        projetDTO.setRegistreUsagerTechAssigne(this.getRegistreUsagerTechAssigne());
+        projetDTO.setCategoriesBillet(this.getCategoriesBillet());
 
-
+        return projetDTO;
+    }
     /**
      * Getters and setters
      */
@@ -92,12 +102,16 @@ public class Projet {
         this.registreUsagerTechAssigne.ajouterUsager(compteUsagerTech);
     }
 
-    public RegistreCategories getRegistreCategories() {
-        return registreCategories;
+    public ArrayList<Categorie> getCategoriesBillet() {
+        return categoriesBillet;
     }
 
-    public void setRegistreCategories(RegistreCategories registreCategories) {
-        this.registreCategories = registreCategories;
+    public void setCategoriesBillet(ArrayList<Categorie> categoriesBillet) {
+        this.categoriesBillet = categoriesBillet;
+    }
+
+    public void ajouterCategoriesBillet(Categorie categorie) {
+        this.categoriesBillet.add(categorie);
     }
 
     /**

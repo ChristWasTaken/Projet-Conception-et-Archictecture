@@ -1,6 +1,7 @@
 package application;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  * Class ProjetDTO
@@ -17,8 +18,7 @@ public class ProjetDTO {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private RegistreUsagerTechAssigne registreUsagerTechAssigne;
-    private RegistreCategories registreCategories;
-
+    private ArrayList<Categorie> categoriesBillet;
     /**
      * constructeurs
      */
@@ -32,7 +32,7 @@ public class ProjetDTO {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
-        this.registreCategories = new RegistreCategories();
+        this.categoriesBillet = new ArrayList<>();
     }
 
     /**
@@ -78,12 +78,16 @@ public class ProjetDTO {
         this.registreUsagerTechAssigne = registreUsagerTechAssigne;
     }
 
-    public RegistreCategories getRegistreCategories() {
-        return registreCategories;
+    public ArrayList<Categorie> getCategoriesBillet() {
+        return categoriesBillet;
     }
 
-    public void setRegistreCategories(RegistreCategories registreCategories) {
-        this.registreCategories = registreCategories;
+    public void setCategoriesBillet(ArrayList<Categorie> categoriesBillet) {
+        this.categoriesBillet = categoriesBillet;
+    }
+
+    public void ajouterCategoriesBillet(Categorie categorie) {
+        this.categoriesBillet.add(categorie);
     }
 
     /**
@@ -96,8 +100,6 @@ public class ProjetDTO {
                 ", nomProjet='" + nomProjet + '\'' +
                 ", dateDebut=" + dateDebut +
                 ", dateFin=" + dateFin +
-                ", registreUsagerTechAssigne=" + registreUsagerTechAssigne +
-                ", registreCategories=" + registreCategories +
-                '}';
+                ", registreUsagerTechAssigne=" + registreUsagerTechAssigne;
     }
 }

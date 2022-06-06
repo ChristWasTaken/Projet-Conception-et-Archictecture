@@ -24,11 +24,11 @@ class FacadeBilletTest {
         // Créer une catégorie de billet
         String categorieBillet = "Anomalie";
         //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
-        projet.getRegistreCategories().ajouterUneCategorie(categorieBillet);
-        facadeProjet.ajouterCategorie(projet);
+        projet.ajouterCategoriesBillet(new Categorie(categorieBillet));
+//        facadeProjet.ajouterCategorie(projet);
         BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
                 "Notes 1","Description1",LocalDate.now());
-        billetDto.setCategorie(projet.getRegistreCategories().recupererCategorie(categorieBillet));
+//        billetDto.setCategorie(projet.getRegistreCategories().recupererCategorie(categorieBillet));
         int idBillet = facadeBillet.creerBillet(billetDto);
     }
 
