@@ -72,59 +72,69 @@ public class RegistreBillet {
         return registreBillet;
     }
 
+    TreeMap consulterListeBillets(){
+        TreeMap<Integer,BilletDTO> listeDTO = new TreeMap<>();
+        registreBillet.forEach((key,value) -> {
+            listeDTO.put(key, value.asBilletDTO());
+        });
+
+        return listeDTO;
+    }
+
     TreeMap consulterListeBillets(String champs, Object object) {
-        Map<Integer, Billet> listeTriee = registreBillet.entrySet()
+        TreeMap <Integer,BilletDTO> listeDTO = consulterListeBillets();
+        Map<Integer, BilletDTO> listeTriee = listeDTO.entrySet()
                 .stream()
-                .filter(c -> filtrerChamps(champs, object, c))
+                .filter(billetDTOEntry -> filtrerChamps(champs, object, billetDTOEntry))
                 .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
 
         return new TreeMap<>(listeTriee);
     }
 
-    private boolean filtrerChamps(String champs, Object object, Map.Entry<Integer, Billet> c) {
+    private boolean filtrerChamps(String champs, Object object, Map.Entry<Integer, BilletDTO> billetDTOEntry) {
         Boolean reponse = false;
         switch (champs) {
             case "date":
                 if (champs.equals("date")) {
                     Date date = (Date) object;
-                    if (date.equals(c.getValue().getDateDebutBillet())) {
+                    if (date.equals(billetDTOEntry.getValue().getDateDebutBillet())) {
                         reponse = true;
                     }
                 }
                 break;
             case "demandeur":
                 String demandeur = (String) object;
-                if (demandeur.equals(c.getValue().getCourrielDemandeur())) {
+                if (demandeur.equals(billetDTOEntry.getValue().getCourrielDemandeur())) {
                     reponse = true;
                 }
                 break;
             case "etat":
                 String etat = (String) object;
-                if (etat.equals(c.getValue().getEtat())) {
+                if (etat.equals(billetDTOEntry.getValue().getEtat())) {
                     reponse = true;
                 }
                 break;
             case "tech":
                 int usager = (int) object;
-                if (usager == (c.getValue().getIdUsagerTechAssigne())) {
+                if (usager == (billetDTOEntry.getValue().getIdUsagerTechAssigne())) {
                     reponse = true;
                 }
                 break;
             case "projet":
                 int projet = (int) object;
-                if (projet == c.getValue().getIdProjet()) {
+                if (projet == billetDTOEntry.getValue().getIdProjet()) {
                     reponse = true;
                 }
                 break;
             case "categorie":
                 String categorie = (String) object;
-                if (categorie.equals(c.getValue().getCategorie().getCategorie())) {
+                if (categorie.equals(billetDTOEntry.getValue().getCategorie().getCategorie())) {
                     reponse = true;
                 }
                 break;
             case "gravite":
                 String gravite = (String) object;
-                if (gravite.equals(c.getValue().getGravite())) {
+                if (gravite.equals(billetDTOEntry.getValue().getGravite())) {
                     reponse = true;
                 }
                 break;
