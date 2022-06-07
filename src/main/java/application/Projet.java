@@ -116,6 +116,10 @@ class Projet {
         this.categoriesBillet = categoriesBillet;
     }
 
+    /**
+     * Ajouter une catégorie à l'ArrayList
+     * @param categorie
+     */
     public void ajouterCategoriesBillet(Categorie categorie) {
         this.categoriesBillet.add(categorie);
     }

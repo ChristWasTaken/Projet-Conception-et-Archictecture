@@ -15,8 +15,7 @@ public class CompteUsagerTechDTO {
     String motPasse;
     String courriel;
 
-    public CompteUsagerTechDTO() {
-    }
+    public CompteUsagerTechDTO() {}
 
     public CompteUsagerTechDTO(int idUsager, String nomUsager, String motPasse, String courriel) {
         this.idUsager = idUsager;

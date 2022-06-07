@@ -3,8 +3,7 @@ package application;
 public class Categorie {
     private String categorie;
 
-    public Categorie() {
-    }
+    public Categorie() {}
 
     public Categorie(String categorie) {
         this.categorie = categorie;

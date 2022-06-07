@@ -24,7 +24,6 @@ public class BilletDTO {
 
     private RegistreHistorique registreHistorique;
 
-
     public BilletDTO() {
     }
 

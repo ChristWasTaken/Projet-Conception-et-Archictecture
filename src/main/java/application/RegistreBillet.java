@@ -25,6 +25,7 @@ public class RegistreBillet {
     private static int dernierNumeroBilletAttribue = 0;
 
 
+
     /**
      * Constructeur par défaut
      */
@@ -58,6 +59,7 @@ public class RegistreBillet {
     public Billet chercherBilletParId(int idBillet) {
         return this.registreBillet.get(idBillet);
     }
+
 
     /**
      * incrémentation automatique du IDBillet

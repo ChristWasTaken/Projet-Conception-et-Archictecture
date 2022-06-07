@@ -7,12 +7,11 @@ class Billet {
     /**
      * Attributs de la classe
      */
-    private int idBillet=0;
+    private int idBillet;
     private int idProjet;
     private int idUsagerTechAssigne;
 
     private String etat="";
-
 
     private String gravite="";
     private String courrielDemandeur="";
@@ -52,6 +51,33 @@ class Billet {
         this.setDateDebutBillet(billet.getDateDebutBillet());
         this.setRegistreHistorique(billet.getRegistreHistorique());
     }
+
+    /**
+     * Conversion du billet en DTO
+     */
+
+    BilletDTO asBilletDTO(){
+        final BilletDTO billetDTO = new BilletDTO();
+
+        billetDTO.setIdBillet(this.getIdBillet());
+        billetDTO.setIdProjet(this.getIdProjet());
+        billetDTO.setIdUsagerTechAssigne(this.getIdUsagerTechAssigne());
+        billetDTO.setEtat(this.getEtat());
+        billetDTO.setGravite(this.getGravite());
+        billetDTO.setCourrielDemandeur(this.getCourrielDemandeur());
+        billetDTO.setNotes(this.getNotes());
+        billetDTO.setDescription(this.getDescription());
+        billetDTO.setCategorie(this.getCategorie());
+        billetDTO.setDateAssigne(this.getDateAssigne());
+        billetDTO.setDateDebutBillet(this.getDateDebutBillet());
+        billetDTO.setRegistreHistorique(this.getRegistreHistorique());
+
+        return billetDTO;
+    }
+
+    /**
+     * Getters et Setters
+     */
 
     public int getIdBillet() {
         return idBillet;
@@ -148,10 +174,6 @@ class Billet {
     public void setRegistreHistorique(RegistreHistorique registreHistorique) {
         this.registreHistorique = registreHistorique;
     }
-
-    /**
-     * Getters and setters
-     */
 
 
     BilletDTO asBilletDTO(){

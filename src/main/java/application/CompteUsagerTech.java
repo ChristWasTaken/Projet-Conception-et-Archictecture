@@ -1,6 +1,6 @@
 package application;
 
-public class CompteUsagerTech {
+class CompteUsagerTech {
     /**
      * Attributs de la classe
      */
@@ -8,8 +8,6 @@ public class CompteUsagerTech {
     String nomUsager;
     String motPasse;
     String courriel;
-
-
 
     /**
      * Constructeurs
@@ -23,6 +21,15 @@ public class CompteUsagerTech {
         this.setNomUsager(compteUsagerTechDTO.getNomUsager());
         this.setMotPasse(compteUsagerTechDTO.getMotPasse());
         this.setCourriel(compteUsagerTechDTO.getCourriel());
+    }
+
+    CompteUsagerTechDTO asCompteUsagerTechDTO() {
+        CompteUsagerTechDTO compteUsagerTechDTO = new CompteUsagerTechDTO();
+        compteUsagerTechDTO.setIdUsager(this.getIdUsager());
+        compteUsagerTechDTO.setNomUsager(this.getNomUsager());
+        compteUsagerTechDTO.setMotPasse(this.getMotPasse());
+        compteUsagerTechDTO.setCourriel(this.getCourriel());
+        return compteUsagerTechDTO;
     }
 
     /**
