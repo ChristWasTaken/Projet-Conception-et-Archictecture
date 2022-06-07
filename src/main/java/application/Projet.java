@@ -13,7 +13,7 @@ class Projet {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private RegistreUsagerTechAssigne registreUsagerTechAssigne;
-    private ArrayList<Categorie> categoriesBillet;
+    private ArrayList<Categorie> listeCategories;
 
     /**
      * constructeurs
@@ -30,7 +30,7 @@ class Projet {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
-        this.categoriesBillet = new ArrayList<>();
+        this.listeCategories = new ArrayList<>();
     }
 
     //Constructeur avec DTO
@@ -40,11 +40,11 @@ class Projet {
         this.setDateDebut(projetDTO.getDateDebut());
         this.setDateFin(projetDTO.getDateFin());
         this.setRegistreUsagerTechAssigne(projetDTO.getRegistreUsagerTechAssigne());
-        this.setCategoriesBillet(projetDTO.getCategoriesBillet());
+        this.setListeCategories(projetDTO.getCategoriesBillet());
     }
 
     /**
-     * Constructeur ProjetDTO de l'objet Projet
+     * Convertie l'instance en DTO
      *
      * @return ProjetDTO
      */
@@ -56,7 +56,7 @@ class Projet {
         projetDTO.setDateDebut(this.getDateDebut());
         projetDTO.setDateFin(this.getDateFin());
         projetDTO.setRegistreUsagerTechAssigne(this.getRegistreUsagerTechAssigne());
-        projetDTO.setCategoriesBillet(this.getCategoriesBillet());
+        projetDTO.setCategoriesBillet(this.getListeCategories());
 
         return projetDTO;
     }
@@ -108,12 +108,12 @@ class Projet {
         this.registreUsagerTechAssigne.ajouterUsager(compteUsagerTech);
     }
 
-    public ArrayList<Categorie> getCategoriesBillet() {
-        return categoriesBillet;
+    public ArrayList<Categorie> getListeCategories() {
+        return listeCategories;
     }
 
-    public void setCategoriesBillet(ArrayList<Categorie> categoriesBillet) {
-        this.categoriesBillet = categoriesBillet;
+    public void setListeCategories(ArrayList<Categorie> listeCategories) {
+        this.listeCategories = listeCategories;
     }
 
     /**
@@ -121,7 +121,7 @@ class Projet {
      * @param categorie
      */
     public void ajouterCategoriesBillet(Categorie categorie) {
-        this.categoriesBillet.add(categorie);
+        this.listeCategories.add(categorie);
     }
 
     /**

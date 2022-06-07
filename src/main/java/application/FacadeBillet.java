@@ -6,7 +6,6 @@ import java.util.TreeMap;
 public class FacadeBillet {
 
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-  //  private RegistreProjet registreProjet = RegistreProjet.getInstance();
     private RegistreBillet registreBillet = RegistreBillet.getInstance();
 
     public FacadeBillet() {
@@ -72,18 +71,18 @@ public class FacadeBillet {
 
 
 
-    public TreeMap consulterListeBilletDTO(int idBillet){
-        TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
-
-        return registre;
-    }
-
-
-    public TreeMap recupererRegistreBilletDTO(){
-        TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
-
-        return registre;
-    }
+//    public TreeMap consulterListeBilletDTO(int idBillet){
+//        TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
+//
+//        return registre;
+//    }
+//
+//
+//    public TreeMap recupererRegistreBilletDTO(){
+//        TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
+//
+//        return registre;
+//    }
 
     public TreeMap consulterListeBillet(String champs, Object object){
         return registreBillet.consulterListeBillets(champs,object);

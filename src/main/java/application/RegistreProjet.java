@@ -7,6 +7,8 @@ public class RegistreProjet {
     private TreeMap<Integer, Projet> registreProjet;
     private static RegistreProjet Instance;
 
+    public static int dernierNumeroProjetAttribue = 0;
+
     private RegistreProjet() {
         this.registreProjet = new TreeMap<Integer, Projet>();
     }
@@ -19,8 +21,16 @@ public class RegistreProjet {
         return Instance;
     }
 
-    public void ajouterProjet(Projet projet){
-        this.registreProjet.put(projet.getIdProjet(), projet);
+    public int ajouterProjet(Projet nouveauProjet){
+        nouveauProjet.setIdProjet(this.prochainIdProjet());
+        this.registreProjet.put(nouveauProjet.getIdProjet(), nouveauProjet);
+
+        return nouveauProjet.getIdProjet();
+    }
+
+    public int prochainIdProjet(){
+        dernierNumeroProjetAttribue++;
+        return dernierNumeroProjetAttribue;
     }
 
     public void modifierProjet(Projet projet){
@@ -33,9 +43,12 @@ public class RegistreProjet {
     }
 
     public TreeMap recupererRegistreProjetAsDTO(){
+        TreeMap<Integer, ProjetDTO> registreProjetDTO = new TreeMap<Integer, ProjetDTO>();
+        for(Projet projet : this.registreProjet.values()){
+            registreProjetDTO.put(projet.getIdProjet(), projet.asProjetDTO());
+        }
+        return registreProjetDTO;
 
-
-        return registreProjet;
     }
 
 }

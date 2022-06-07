@@ -69,12 +69,17 @@ public class RegistreBillet {
     }
 
 
-    public TreeMap afficherRegistreBillet() {
+//    public TreeMap afficherRegistreBillet() {
+//
+//        return registreBillet;
+//    }
 
-        return registreBillet;
+    public void modifierBillet(int id, Billet billetModifiable) {
+        this.registreBillet.put(id, billetModifiable);
     }
 
-    TreeMap consulterListeBillets(){
+    // Changer le nom pour quelque chose qui indique que ça convertit la liste en DTO?
+    public TreeMap<Integer, BilletDTO> consulterListeBillets(){
         TreeMap<Integer,BilletDTO> listeDTO = new TreeMap<>();
         registreBillet.forEach((key,value) -> {
             listeDTO.put(key, value.asBilletDTO());
@@ -83,7 +88,7 @@ public class RegistreBillet {
         return listeDTO;
     }
 
-    TreeMap consulterListeBillets(String champs, Object object) {
+    public TreeMap<Integer, BilletDTO> consulterListeBillets(String champs, Object object) {
         TreeMap <Integer,BilletDTO> listeDTO = consulterListeBillets();
         Map<Integer, BilletDTO> listeTriee = listeDTO.entrySet()
                 .stream()
@@ -145,10 +150,5 @@ public class RegistreBillet {
                 reponse = false;
         }
         return reponse;
-    }
-
-
-    public void modifierBillet(int id, Billet billetModifiable) {
-        this.registreBillet.put(id, billetModifiable);
     }
 }

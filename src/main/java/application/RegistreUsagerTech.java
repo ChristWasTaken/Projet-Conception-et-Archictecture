@@ -28,4 +28,12 @@ public class RegistreUsagerTech {
         CompteUsagerTech usager = this.registreUsagerTech.get(idUsager);
         return usager;
     }
+
+    public TreeMap recupererRegistreUsagerTechAsDTO(){
+        TreeMap<Integer, CompteUsagerTechDTO> registreUsagerTechDTO = new TreeMap<Integer, CompteUsagerTechDTO>();
+        for(CompteUsagerTech usager : this.registreUsagerTech.values()){
+            registreUsagerTechDTO.put(usager.getIdUsager(), usager.asCompteUsagerTechDTO());
+        }
+        return registreUsagerTechDTO;
+    }
 }

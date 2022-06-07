@@ -22,9 +22,7 @@ public class Coordonnateur {
         FacadeProjet facadeProjet = new FacadeProjet();
         facadeProjet.ajouterCategorie(projetDto);
     }
-
-
-
+    
     public void creeBillet() {
 
     }

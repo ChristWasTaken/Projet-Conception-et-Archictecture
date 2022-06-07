@@ -68,7 +68,7 @@ class Billet {
         billetDTO.setNotes(this.getNotes());
         billetDTO.setDescription(this.getDescription());
         billetDTO.setCategorie(this.getCategorie());
-        billetDTO.setDateAssigne(this.getDateAssigne());
+        billetDTO.setDateAssigne(this.getDateAssignee());
         billetDTO.setDateDebutBillet(this.getDateDebutBillet());
         billetDTO.setRegistreHistorique(this.getRegistreHistorique());
 
@@ -173,26 +173,6 @@ class Billet {
 
     public void setRegistreHistorique(RegistreHistorique registreHistorique) {
         this.registreHistorique = registreHistorique;
-    }
-
-
-    BilletDTO asBilletDTO(){
-        final BilletDTO billetDTO = new BilletDTO();
-
-        billetDTO.setIdBillet(this.getIdBillet());
-        billetDTO.setIdProjet(this.getIdProjet());
-        billetDTO.setIdUsagerTechAssigne(this.getIdUsagerTechAssigne());
-        billetDTO.setEtat(this.getEtat());
-        billetDTO.setGravite(this.getGravite());
-        billetDTO.setCourrielDemandeur(this.getCourrielDemandeur());
-        billetDTO.setNotes(this.getNotes());
-        billetDTO.setDescription(this.getDescription());
-        billetDTO.setCategorie(this.getCategorie());
-        billetDTO.setDateAssigne(this.getDateAssignee());
-        billetDTO.setDateDebutBillet(this.getDateDebutBillet());
-        billetDTO.setRegistreHistorique(this.getRegistreHistorique());
-
-        return billetDTO;
     }
 
     @Override
