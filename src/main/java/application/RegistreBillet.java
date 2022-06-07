@@ -1,6 +1,9 @@
 package application;
 
+import java.util.Date;
+import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 public class RegistreBillet {
 
@@ -69,23 +72,69 @@ public class RegistreBillet {
         return registreBillet;
     }
 
-    boolean billetExists(int idBillet){
-        try {
-            this.registreBillet.get(idBillet);
-            return true;
-        } catch (Exception e)
-        {
-            return false;
+    TreeMap consulterListeBillets(String champs, Object object) {
+        Map<Integer, Billet> listeTriee = registreBillet.entrySet()
+                .stream()
+                .filter(c -> filtrerChamps(champs, object, c))
+                .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
+
+        return new TreeMap<>(listeTriee);
+    }
+
+    private boolean filtrerChamps(String champs, Object object, Map.Entry<Integer, Billet> c) {
+        Boolean reponse = false;
+        switch (champs) {
+            case "date":
+                if (champs.equals("date")) {
+                    Date date = (Date) object;
+                    if (date.equals(c.getValue().getDateDebutBillet())) {
+                        reponse = true;
+                    }
+                }
+                break;
+            case "demandeur":
+                String demandeur = (String) object;
+                if (demandeur.equals(c.getValue().getCourrielDemandeur())) {
+                    reponse = true;
+                }
+                break;
+            case "etat":
+                String etat = (String) object;
+                if (etat.equals(c.getValue().getEtat())) {
+                    reponse = true;
+                }
+                break;
+            case "tech":
+                int usager = (int) object;
+                if (usager == (c.getValue().getIdUsagerTechAssigne())) {
+                    reponse = true;
+                }
+                break;
+            case "projet":
+                int projet = (int) object;
+                if (projet == c.getValue().getIdProjet()) {
+                    reponse = true;
+                }
+                break;
+            case "categorie":
+                String categorie = (String) object;
+                if (categorie.equals(c.getValue().getCategorie().getCategorie())) {
+                    reponse = true;
+                }
+                break;
+            case "gravite":
+                String gravite = (String) object;
+                if (gravite.equals(c.getValue().getGravite())) {
+                    reponse = true;
+                }
+                break;
+
+            default:
+                reponse = false;
         }
+        return reponse;
     }
 
-
-    BilletDTO consulterDetailBillet(int idBillet) {
-        Billet billetTemporaire = chercherBilletParId(idBillet);
-
-        return billetTemporaire.asBilletDTO();
-
-    }
 
     public void modifierBillet(int id, Billet billetModifiable) {
         this.registreBillet.put(id, billetModifiable);

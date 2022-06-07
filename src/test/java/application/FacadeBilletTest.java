@@ -29,7 +29,11 @@ class FacadeBilletTest {
         BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
                 "Notes 1","Description1",LocalDate.now());
 //        billetDto.setCategorie(projet.getRegistreCategories().recupererCategorie(categorieBillet));
-        int idBillet = facadeBillet.creerBillet(billetDto);
+        facadeBillet.creerBillet(billetDto);
+        billetDto.setGravite("Urgent");
+        facadeBillet.creerBillet(billetDto);
+        billetDto.setGravite("Normal");
+        facadeBillet.creerBillet(billetDto);
     }
 
     @org.junit.jupiter.api.AfterEach
@@ -76,19 +80,24 @@ class FacadeBilletTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void afficherRegistreBillet() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void consulterDetailBillet() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void ajoutDeCategorie() {
     }
 
     @Test
     void assignerBillet() {
+    }
+
+    @Test
+    void consulterListeBillet() {
+        System.out.println(facadeBillet.consulterListeBillet("gravite","Urgent"));
     }
 }

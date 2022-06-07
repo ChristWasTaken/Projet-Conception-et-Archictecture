@@ -85,5 +85,8 @@ public class FacadeBillet {
         return registre;
     }
 
+    public TreeMap consulterListeBillet(String champs, Object object){
+        return registreBillet.consulterListeBillets(champs,object);
+    }
 
 }
