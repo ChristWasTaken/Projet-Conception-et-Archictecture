@@ -40,6 +40,7 @@ public class BilletDTO {
         this.notes = notes;
         this.description = description;
         this.dateDebutBillet = dateDebutBillet;
+        this.registreHistorique = new RegistreHistorique();
     }
 
     public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, Categorie categorie, LocalDate dateDebutBillet) {
@@ -55,7 +56,7 @@ public class BilletDTO {
         this.categorie = categorie;
         this.dateAssigne = dateAssigne;
         this.dateDebutBillet = dateDebutBillet;
-        this.registreHistorique = registreHistorique;
+        this.registreHistorique = new RegistreHistorique();
    }
 
     public int getIdBillet() {

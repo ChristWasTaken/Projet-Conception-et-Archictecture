@@ -14,11 +14,13 @@ public class FacadeBillet {
 
     public int creerBillet(BilletDTO billetDto) {
 
-        Historique historique = new Historique(LocalDate.now(),"Création de l'historique");
-        RegistreHistorique registreHistorique = new RegistreHistorique();
-        registreHistorique.ajouterHistoriqueAuRegistre(historique);
-        historique.setIdHistorique(historique.getIdHistorique());
-        billetDto.setRegistreHistorique(registreHistorique);
+        Historique historique = new Historique(LocalDate.now()
+                ,"Création de l'historique");
+//        RegistreHistorique registreHistorique = new RegistreHistorique();
+        billetDto.getRegistreHistorique()
+                .ajouterHistoriqueAuRegistre(historique);
+//        historique.setIdHistorique(historique.getIdHistorique());
+//        billetDto.setRegistreHistorique(registreHistorique);
 
         Billet billet = new Billet(billetDto);
 
@@ -53,20 +55,21 @@ public class FacadeBillet {
      * Assigner un billet à un usager
      * Utilisation d'un BTO au lieux d'Id directement pour ultérieurement changer cette
      * méthode qui modifie n'importe quel paramètre du billet.
-     * @param billetDTO contient l'id du billet à assigner à la position 0
-     *                  et l'id de l'usager à assigner à la position 1
+     * @param billetDTO contient l'id du billet à assigner et l'id de l'usager à assigner.
      */
     public void assignerBillet(BilletDTO billetDTO){
 
         Billet billetModifiable = new Billet(billetDTO);
-        int id = billetModifiable.getIdBillet();
+        System.out.println(billetDTO);
+
 
         billetModifiable.getRegistreHistorique().ajouterHistoriqueAuRegistre(
                 new Historique(LocalDate.now(),
                         billetModifiable.getIdUsagerTechAssigne(),
                         billetModifiable.getNotes()) );
+        System.out.println(billetDTO);
+        registreBillet.modifierBillet(billetModifiable.getIdBillet(), billetModifiable);
 
-        registreBillet.modifierBillet(id, billetModifiable);
     }
 
 

@@ -13,12 +13,10 @@ public class FacadeProjet {
         registreProjet.ajouterProjet(nouveauProjet);
     }
 
-
     public void ajouterCategorie(ProjetDTO projet) {
         Projet projetExistant = new Projet(projet);
         registreProjet.modifierProjet(projetExistant);
     }
-
 
     public void assignerUsagerTech(int idUsager, int idProjet) {
         CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(idUsager);

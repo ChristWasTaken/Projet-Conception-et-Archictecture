@@ -4,6 +4,8 @@ import application.*;
 
 public class Coordonnateur {
 
+    FacadeProjet facadeProjet = new FacadeProjet();
+    FacadeBillet facadeBillet = new FacadeBillet();
 
     public void creerCompteUsagerTech() {
 
@@ -13,13 +15,15 @@ public class Coordonnateur {
 
     }
 
-    public void assignerUsagerTech(){
+    public void assignerBilletAUsagerTech(BilletDTO billetDTO, CompteUsagerTechDTO compteUsagerTechDTO){
+        billetDTO.setIdUsagerTechAssigne(compteUsagerTechDTO.getIdUsager());
 
+        facadeBillet.assignerBillet(billetDTO);
     }
 
-    public void definirCategorie(ProjetDTO projetDto, String nouvelleCategorie){
+    public void definirCategorieDeBillet(ProjetDTO projetDto, String nouvelleCategorie){
         projetDto.ajouterCategorieBillet(new Categorie(nouvelleCategorie));
-        FacadeProjet facadeProjet = new FacadeProjet();
+
         facadeProjet.ajouterCategorie(projetDto);
     }
     
@@ -27,7 +31,7 @@ public class Coordonnateur {
 
     }
 
-    public void assignerBillet() {
+    public void assignerBilletAUsagerTech() {
 
     }
 
