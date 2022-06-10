@@ -22,8 +22,8 @@ public class FacadeProjet {
     }
 
 
-    public void assignerUsagerTech(CompteUsagerTechDTO UsagerDTO, ProjetDTO projetDTO) {
-        CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(UsagerDTO.getIdUsager());
+    public void assignerUsagerTech(CompteUsagerTechDTO usagerDTO, ProjetDTO projetDTO) {
+        CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(usagerDTO.getIdUsager());
         Projet projetAAssigne = registreProjet.trouverProjet(projetDTO.getIdProjet());
         projetAAssigne.ajouterUsagerAuRegistre(usagerAAssigne);
     }
