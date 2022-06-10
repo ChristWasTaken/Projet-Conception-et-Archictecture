@@ -1,5 +1,7 @@
 package application;
 
+import accesPersistence.UsagerTechDAO;
+
 public class FacadeProjet {
 
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
@@ -20,9 +22,9 @@ public class FacadeProjet {
     }
 
 
-    public void assignerUsagerTech(int idUsager, int idProjet) {
-        CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(idUsager);
-        Projet projetAAssigne = registreProjet.trouverProjet(idProjet);
+    public void assignerUsagerTech(CompteUsagerTechDTO UsagerDTO, ProjetDTO projetDTO) {
+        CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(UsagerDTO.getIdUsager());
+        Projet projetAAssigne = registreProjet.trouverProjet(projetDTO.getIdProjet());
         projetAAssigne.ajouterUsagerAuRegistre(usagerAAssigne);
     }
 }
