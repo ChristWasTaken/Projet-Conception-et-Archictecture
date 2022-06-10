@@ -1,5 +1,7 @@
 package application;
 
+import accesPersistence.UsagerTechDAO;
+
 public class FacadeProjet {
 
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
