@@ -7,12 +7,18 @@ public class Coordonnateur {
     FacadeProjet facadeProjet = new FacadeProjet();
     FacadeBillet facadeBillet = new FacadeBillet();
 
+    FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
+
     public void creerCompteUsagerTech() {
 
     }
 
-    public void creerProjet(){
+    public void creerProjet(ProjetDTO projetDTO){
+        facadeProjet.creerProjet(projetDTO);
+    }
 
+    public void assignerCompteUsagerTechAProjet(CompteUsagerTechDTO usagerTechDTO, ProjetDTO projetDTO){
+        facadeProjet.assignerUsagerTech(usagerTechDTO, projetDTO);
     }
 
     public void assignerBilletAUsagerTech(BilletDTO billetDTO, CompteUsagerTechDTO compteUsagerTechDTO){
