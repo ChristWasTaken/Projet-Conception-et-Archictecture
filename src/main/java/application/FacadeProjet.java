@@ -20,9 +20,9 @@ public class FacadeProjet {
         registreProjet.modifierProjet(projetExistant);
     }
 
-    public void assignerUsagerTech(int idUsager, int idProjet) {
-        CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(idUsager);
-        Projet projetAAssigne = registreProjet.trouverProjet(idProjet);
+    public void assignerUsagerTech(CompteUsagerTechDTO usagerDTO, ProjetDTO projetDTO) {
+        CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(usagerDTO.getIdUsager());
+        Projet projetAAssigne = registreProjet.trouverProjet(projetDTO.getIdProjet());
         projetAAssigne.ajouterUsagerAuRegistre(usagerAAssigne);
     }
 }
