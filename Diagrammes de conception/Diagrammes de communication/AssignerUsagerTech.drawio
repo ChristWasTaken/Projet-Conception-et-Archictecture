@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-06T19:22:58.547Z" agent="5.0 (Windows)" etag="BGXN1HdKDBA5qCQ1tEwR" version="18.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-10T19:23:19.546Z" agent="5.0 (Windows)" etag="o-QZvt93FGs7myZg1DYb" version="19.0.1" type="github">
   <diagram id="K0o0jhx-SNK4bHOGCNAz" name="Page-1">
-    <mxGraphModel dx="1422" dy="744" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -21,13 +21,13 @@
         </mxCell>
         <mxCell id="X13s5hJ5W_4LY24NtN4I-5" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;fontSize=12;" parent="1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="180" y="199" as="sourcePoint" />
-            <mxPoint x="240" y="199" as="targetPoint" />
+            <mxPoint x="180" y="180" as="sourcePoint" />
+            <mxPoint x="240" y="180" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="X13s5hJ5W_4LY24NtN4I-6" value="1: assignerUsagerTech(idUsagger : int, idProjet : int)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" parent="X13s5hJ5W_4LY24NtN4I-5" connectable="0" vertex="1">
+        <mxCell id="X13s5hJ5W_4LY24NtN4I-6" value="1: assignerUsagerTech(usagerDTO : CompteUsagerTechDTO, projetDTO : ProjetDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" parent="X13s5hJ5W_4LY24NtN4I-5" connectable="0" vertex="1">
           <mxGeometry x="0.3" y="1" relative="1" as="geometry">
-            <mxPoint x="-9" y="-19" as="offset" />
+            <mxPoint x="11" y="-19" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="X13s5hJ5W_4LY24NtN4I-7" value="RegistreUsagerTech" style="html=1;fontSize=12;fillColor=#CCCCCC;" parent="1" vertex="1">
