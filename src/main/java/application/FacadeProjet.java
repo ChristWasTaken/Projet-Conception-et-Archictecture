@@ -6,13 +6,14 @@ public class FacadeProjet {
 
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
     private RegistreProjet registreProjet = RegistreProjet.getInstance();
-
+    private Proxy proxy = new Proxy();
     public FacadeProjet() {
     }
 
     public void creerProjet(ProjetDTO projetDTO){
         Projet nouveauProjet = new Projet(projetDTO);
         registreProjet.ajouterProjet(nouveauProjet);
+        proxy.persisterNouveauProjet(projetDTO);
     }
 
     public void ajouterCategorie(ProjetDTO projet) {
