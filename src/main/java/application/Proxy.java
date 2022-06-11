@@ -15,8 +15,8 @@ public class Proxy {
     /**
      * Methode pour envoyer un projet a la persistence
      */
-    public void persisterNouveauProjet(ProjetDTO projetDTO){
-        facadePersistence.persisterNouveauProjet(projetDTO);
+    public void persisterProjet(ProjetDTO projetDTO){
+        facadePersistence.persisterProjet(projetDTO);
     }
 
     /**

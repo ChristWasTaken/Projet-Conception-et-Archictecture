@@ -10,8 +10,8 @@ import application.ProjetDTO;
  **/
 public class FacadePersistence {
     private ProjetDAO projetDAO = new ProjetDAO();
-    public void persisterNouveauProjet(ProjetDTO projetDTO){
-        projetDAO.persisterNouveauProjet(projetDTO);
+    public void persisterProjet(ProjetDTO projetDTO){
+        projetDAO.persisterProjet(projetDTO);
     }
 
     public ProjetDTO chercherProjetDTOParId(int id){
