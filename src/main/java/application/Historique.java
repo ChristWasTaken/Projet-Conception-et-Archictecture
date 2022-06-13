@@ -82,12 +82,12 @@ public class Historique {
      */
     @Override
     public String toString() {
-        return "Historique{" +
+        return  "Historique{" +
                 "idHistorique=" + idHistorique +
                 ", idBilletAssocié=" + idBilletAssocie +
                 ", date=" + date +
                 ", usagerTechAssigne=" + usagerTechAssigne +
                 ", commentaires='" + commentaires + '\'' +
-                '}';
+                '}'  +"\n";
     }
 }

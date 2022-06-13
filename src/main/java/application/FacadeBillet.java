@@ -43,10 +43,18 @@ public class FacadeBillet {
 
 
     ////// Voir à changer la méthode pour qu'elle passe seulement un DTO à partir du coordonnateur - selon réponse du prof
-    public void changerEtatBillet(BilletDTO billetDTO) {
-        Billet billet = registreBillet.chercherBilletParId(billetDTO.getIdBillet());
-        billet.setEtat(billetDTO.getEtat());
-        billet.setRegistreHistorique(billetDTO.getRegistreHistorique());
+    public void changerEtatBillet(BilletDTO billetDTO, String etat, String commentaire)
+    {
+        billetDTO.setEtat(etat);
+        RegistreHistorique registreHistorique = billetDTO.getRegistreHistorique();
+
+        // Ici on a le choix de passer le id de l'usager original (ce que ça fait actuellement), ou le changer
+        // pour que ce soit reçu en parametre.
+        int usager = registreHistorique.chercherParNumero(1).getUsagerTechAssigne();
+        Historique historique = new Historique(LocalDate.now(),usager,commentaire);
+        registreHistorique.ajouterHistoriqueAuRegistre(historique);
+        billetDTO.setRegistreHistorique(registreHistorique);
+        Billet billet = new Billet(billetDTO);
         registreBillet.modifierBillet(billet.getIdBillet(), billet);
     }
 

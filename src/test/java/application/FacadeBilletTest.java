@@ -26,10 +26,10 @@ class FacadeBilletTest {
         String categorieBillet = "Anomalie";
         //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
         projet.ajouterCategorieBillet(new Categorie(categorieBillet));
-//        facadeProjet.ajouterCategorie(projet);
+
         BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
                 "Notes 1","Description1",LocalDate.now());
-//        billetDto.setCategorie(projet.getRegistreCategories().recupererCategorie(categorieBillet));
+
         facadeBillet.creerBillet(billetDto);
         billetDto.setGravite("Urgent");
         facadeBillet.creerBillet(billetDto);
@@ -65,18 +65,12 @@ class FacadeBilletTest {
     void changerEtatBillet() {
         //Debut
         BilletDTO billetDTO = facadeBillet.consulterBilletParId(1);
-        billetDTO.setEtat("Fermé");
-        RegistreHistorique registreHistorique = billetDTO.getRegistreHistorique();
-        int usager = registreHistorique.chercherParNumero(1).getUsagerTechAssigne();
-        Historique historique = new Historique(LocalDate.now(),usager,"Travail terminé. Fermeture du billet");
-        registreHistorique.ajouterHistoriqueAuRegistre(historique);
-        billetDTO.setRegistreHistorique(registreHistorique);
-        //Fin - De tout ce qui se passe dans la couche présentation
 
-        facadeBillet.changerEtatBillet(billetDTO);
+        facadeBillet.changerEtatBillet(billetDTO, "Fermé","Travail terminé. Fermeture du billet");
         assertEquals("Fermé",facadeBillet.consulterBilletParId(1).getEtat());
-        assertEquals(2,facadeBillet.consulterBilletParId(1).getRegistreHistorique().getRegistreHistorique().size());
         System.out.println(facadeBillet.consulterBilletParId(1));
+        assertEquals(2,facadeBillet.consulterBilletParId(1).getRegistreHistorique().getRegistreHistorique().size());
+
 
 
     }

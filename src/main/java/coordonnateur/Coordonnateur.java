@@ -41,8 +41,8 @@ public class Coordonnateur {
 
     }
 
-    public void changerEtatBillet() {
-
+    public void changerEtatBillet(BilletDTO billetDTO, String etat, int idUsager, String noteHistorique) {
+        facadeBillet.changerEtatBillet(billetDTO,etat,noteHistorique);
     }
 
     public void consulterListeBillets() {

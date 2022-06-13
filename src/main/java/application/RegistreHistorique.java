@@ -65,8 +65,7 @@ public class RegistreHistorique {
 
     @Override
     public String toString() {
-        return "RegistreHistorique{" +
-                "registreHistorique=" + registreHistorique +
+        return "RegistreHistorique{"  + "\n"+ registreHistorique  +
                 '}';
     }
 }
