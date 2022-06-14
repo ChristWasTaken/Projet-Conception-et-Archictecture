@@ -3,6 +3,7 @@ package application;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,8 +38,11 @@ class FacadeProjetTest {
 
     @Test
     void TestAssignerUsagerTechAvecProjetDTOUsagerDTO() {
-        ProjetDTO projetDTO = new ProjetDTO(1, "ProjetHyperSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-        CompteUsagerTechDTO usagerDTO = new CompteUsagerTechDTO(1,"Roger","mdp","email");
+        ProjetDTO projetDTO = proxy.chercherProjetDTOParId(1);
+        CompteUsagerTechDTO usagerDTO = proxy.chercherCompteUsagerTechDTOParId(1);
+        assertEquals(1, projetDTO.getIdProjet());
+        assertEquals(1, usagerDTO.getIdUsager());
+
         facadeCompteUsager.creerCompteUsagerTech(usagerDTO);
         facadeProjet.creerProjet(projetDTO);
 
@@ -52,8 +56,9 @@ class FacadeProjetTest {
         assertEquals(projetDTO.getNomProjet(), projetAAssigne.getNomProjet());
 
         projetAAssigne.ajouterUsagerAuRegistre(usagerAAssigne);
-        //TODO add test pour verifier que l'usager est dans le registre
+        projetAAssigne.getRegistreUsagerTechAssigne().afficherUsager();
 
         proxy.persisterProjet(projetAAssigne.asProjetDTO());
+        assertNotEquals(projetDTO, proxy.chercherProjetDTOParId(1));
     }
 }

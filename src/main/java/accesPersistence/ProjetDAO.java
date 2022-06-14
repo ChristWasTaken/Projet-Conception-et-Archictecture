@@ -7,9 +7,9 @@ import java.util.TreeMap;
 
  class ProjetDAO extends CommonDAO {
 
-    private static ProjetDTO projet1 = new ProjetDTO(2, "ProjetTopSecret2", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-    private static ProjetDTO projet2 = new ProjetDTO(3, "ProjetTopSecret3", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-    private static ProjetDTO projet3 = new ProjetDTO(4, "ProjetTopSecret4", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+    private static ProjetDTO projet1 = new ProjetDTO(1, "ProjetTopSecret1", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+    private static ProjetDTO projet2 = new ProjetDTO(2, "ProjetTopSecret2", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+    private static ProjetDTO projet3 = new ProjetDTO(3, "ProjetTopSecret3", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
     private TreeMap<Integer, ProjetDTO> collectionProjets;
      public ProjetDAO() {
          this.collectionProjets = new TreeMap<>();
