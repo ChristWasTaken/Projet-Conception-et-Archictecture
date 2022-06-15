@@ -24,6 +24,9 @@ import java.util.TreeMap;
 
      public ProjetDTO chercherProjetDTOParId(int id){
          ProjetDTO projetDTO = this.collectionProjets.get(id);
+         if(projetDTO == null) {
+             System.out.println("Aucun projet avec cette id");
+         }
          return projetDTO;
      }
  }

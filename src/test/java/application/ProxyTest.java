@@ -25,6 +25,12 @@ class ProxyTest {
     }
 
     @Test
+    void testChercherProjetNonExistantDeLaPersistanceRetourneProjetNull(){
+        ProjetDTO projet = facadePersistence.chercherProjetDTOParId(15);
+        assertEquals(null, projet);
+    }
+
+    @Test
     void testPersisterCompteUsagerTechVerifieEqualsAvecUsagerChercherAvecMemeId() {
         CompteUsagerTechDTO usager = new CompteUsagerTechDTO(4,"Roger","mdp","email");
         facadePersistence.persisterCompteUsagerTech(usager);
@@ -36,5 +42,11 @@ class ProxyTest {
     void testChercherCompteUsagerTechDTOParIdCheckUsagerTrouverALeMemeId() {
         CompteUsagerTechDTO usager = facadePersistence.chercherCompteUsagerTechDTOParId(3);
         assertEquals(3, usager.getIdUsager());
+    }
+
+    @Test
+    void testChercherCompteUsagerTechDTOParIdNonExistantRetournUserNull(){
+        CompteUsagerTechDTO usager = facadePersistence.chercherCompteUsagerTechDTOParId(13);
+        assertEquals(null, usager);
     }
 }
