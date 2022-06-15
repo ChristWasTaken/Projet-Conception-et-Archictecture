@@ -12,7 +12,7 @@ class RegistreProjetTest {
 
 
     @Test
-    void ajouterProjet() {
+    void testAjouterProjetAuRegistreVerifieSizeRegistre() {
         ProjetDTO projetDTO = proxy.chercherProjetDTOParId(1);
         Projet nouveauProjet = new Projet(projetDTO);
 
@@ -22,7 +22,7 @@ class RegistreProjetTest {
     }
 
     @Test
-    void trouverProjet() {
+    void testTrouverProjetRetourneProjetDansRegsitre() {
         ProjetDTO projetDTO = proxy.chercherProjetDTOParId(1);
         Projet nouveauProjet = new Projet(projetDTO);
         registreProjet.put(nouveauProjet.getIdProjet(), nouveauProjet);

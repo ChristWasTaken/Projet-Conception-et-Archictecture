@@ -13,10 +13,9 @@ class ProjetTest {
 
 
     @Test
-    void ajouterUsagerAuRegistre() {
+    void testAjouterUsagerAuRegistreUsagerTechAssigneRetournTrue() {
         CompteUsagerTechDTO compteUsagerTechDTO = proxy.chercherCompteUsagerTechDTOParId(1);
         CompteUsagerTech compteUsagerTech = new CompteUsagerTech(compteUsagerTechDTO);
-        registreUsagerTechAssigne.ajouterUsager(compteUsagerTech);
-        registreUsagerTechAssigne.afficherUsager();
+        assertTrue(registreUsagerTechAssigne.ajouterUsager(compteUsagerTech));
     }
 }

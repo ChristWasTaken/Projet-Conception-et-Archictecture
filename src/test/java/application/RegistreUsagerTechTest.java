@@ -12,7 +12,7 @@ class RegistreUsagerTechTest {
     TreeMap<Integer, CompteUsagerTech> registreUsagerTech = new TreeMap<>();
 
     @Test
-    void ajouterUsager() {
+    void testAjouterUsagerVerifieSizeRegistre() {
         CompteUsagerTechDTO compteUsagerTechDTO = proxy.chercherCompteUsagerTechDTOParId(1);
         CompteUsagerTech compteUsagerTech = new CompteUsagerTech(compteUsagerTechDTO);
         registreUsagerTech.put(compteUsagerTech.getIdUsager(), compteUsagerTech);
@@ -20,7 +20,7 @@ class RegistreUsagerTechTest {
     }
 
     @Test
-    void trouverUsagerTech() {
+    void testTrouverUsagerTechRetourneUsagerDansRegistre() {
         CompteUsagerTechDTO compteUsagerTechDTO = proxy.chercherCompteUsagerTechDTOParId(1);
         CompteUsagerTech compteUsagerTech = new CompteUsagerTech(compteUsagerTechDTO);
         registreUsagerTech.put(1, compteUsagerTech);

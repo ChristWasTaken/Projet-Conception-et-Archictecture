@@ -10,8 +10,15 @@ public class RegistreUsagerTechAssigne {
         this.registreUsagerTechAssigne = new ArrayList<>();
     }
 
-    public void ajouterUsager(CompteUsagerTech compteUsagerTech){
-        this.registreUsagerTechAssigne.add(compteUsagerTech);
+    public boolean ajouterUsager(CompteUsagerTech compteUsagerTech){
+        boolean result = false;
+        try {
+            this.registreUsagerTechAssigne.add(compteUsagerTech);
+            result = true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return result;
     }
 
     public void afficherUsager(){

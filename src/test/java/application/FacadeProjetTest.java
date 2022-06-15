@@ -37,7 +37,7 @@ class FacadeProjetTest {
     }
 
     @Test
-    void TestAssignerUsagerTechAvecProjetDTOUsagerDTO() {
+    void testAssignerUsagerTechAvecProjetDTOUsagerDTO() {
         ProjetDTO projetDTO = proxy.chercherProjetDTOParId(1);
         CompteUsagerTechDTO usagerDTO = proxy.chercherCompteUsagerTechDTOParId(1);
         assertEquals(1, projetDTO.getIdProjet());
