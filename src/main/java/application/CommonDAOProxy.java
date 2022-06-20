@@ -1,12 +1,6 @@
 package application;
 
 
-import accesPersistence.CommonDAO;
-
-
-import java.time.LocalDate;
-import java.util.TreeMap;
-
 public class CommonDAOProxy {
 
     private static CommonDAOProxy instance = new CommonDAOProxy();
