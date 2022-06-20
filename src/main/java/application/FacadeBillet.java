@@ -20,11 +20,20 @@ public class FacadeBillet {
      */
     public int creerBillet(BilletDTO billetDTO) {
 
-        Historique historique = new Historique(LocalDate.now(),"Création de l'historique");
-        billetDTO.getRegistreHistorique().ajouterHistoriqueAuRegistre(historique);
+
         Billet billet = new Billet(billetDTO);
-        proxy.persisterBillet(billetDTO);
-        return registreBillet.ajouterBilletAuRegistre(billet);
+        int id = registreBillet.ajouterBilletAuRegistre(billet);
+        Historique historique = new Historique(LocalDate.now(),"Création de l'historique");
+
+        billet.setIdBillet(id);
+        historique.setIdBilletAssocie(id);
+        billet.getRegistreHistorique().ajouterHistoriqueAuRegistre(historique);
+
+        registreBillet.modifierBillet(id,billet);
+        proxy.persisterBillet(billet.asBilletDTO());
+        return id;
+
+
     }
 
     /**
@@ -82,22 +91,14 @@ public class FacadeBillet {
     }
 
 
-
-//    public TreeMap consulterListeBilletDTO(int idBillet){
-//        TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
-//
-//        return registre;
-//    }
-//
-//
-//    public TreeMap recupererRegistreBilletDTO(){
-//        TreeMap<Integer, Billet> registre = registreBillet.afficherRegistreBillet();
-//
-//        return registre;
-//    }
-
-    public TreeMap consulterListeBillet(String champs, Object object){
-        return registreBillet.consulterListeBillets(champs,object);
+    public TreeMap consulterListeBillet(String champs, Object filtre){
+        return registreBillet.consulterListeBillets(champs,filtre);
     }
+
+
+
+
+
+
 
 }

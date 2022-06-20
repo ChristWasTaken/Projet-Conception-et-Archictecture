@@ -1,5 +1,5 @@
 package accesPersistence;
 
-class HistoriqueDAO extends CommonDAO {
+class HistoriqueDAO {
 
 }

@@ -54,11 +54,8 @@ public class Coordonnateur {
 
     }
 
-    public static void main(String[] args) {
-
-
-
-
+//-------------------------------------------------------------------------------------------------------
+//Gab ok pour enlever
 //        PackPres packPres = new PackPres();
 //        RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
 //        ProjetDTO projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
@@ -107,6 +104,5 @@ public class Coordonnateur {
 //        facadeServices.afficherRegistreBillet();
 
 
-    }
 
 }

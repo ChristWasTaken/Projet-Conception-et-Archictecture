@@ -4,7 +4,7 @@ import application.CompteUsagerTechDTO;
 
 import java.util.TreeMap;
 
-public class UsagerTechDAO extends CommonDAO {
+public class UsagerTechDAO {
     private static CompteUsagerTechDTO usager1 = new CompteUsagerTechDTO(1,"Roger","mdp","email");
     private static CompteUsagerTechDTO usager2 = new CompteUsagerTechDTO(2,"Bob","mdp","courriel");
     private static CompteUsagerTechDTO usager3 = new CompteUsagerTechDTO(3,"Steve","pwd","hotmail");

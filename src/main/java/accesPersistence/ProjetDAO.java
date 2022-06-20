@@ -5,7 +5,7 @@ import application.ProjetDTO;
 import java.time.LocalDate;
 import java.util.TreeMap;
 
- class ProjetDAO extends CommonDAO {
+ class ProjetDAO {
 
     private static ProjetDTO projet1 = new ProjetDTO(1, "ProjetTopSecret1", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
     private static ProjetDTO projet2 = new ProjetDTO(2, "ProjetTopSecret2", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));

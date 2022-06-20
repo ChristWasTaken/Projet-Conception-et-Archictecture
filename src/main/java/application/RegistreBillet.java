@@ -92,59 +92,59 @@ public class RegistreBillet {
         return listeDTO;
     }
 
-    public TreeMap<Integer, BilletDTO> consulterListeBillets(String champs, Object object) {
+    public TreeMap<Integer, BilletDTO> consulterListeBillets(String champs, Object filtre) {
         TreeMap <Integer,BilletDTO> listeDTO = consulterListeBillets();
         Map<Integer, BilletDTO> listeTriee = listeDTO.entrySet()
                 .stream()
-                .filter(billetDTOEntry -> filtrerChamps(champs, object, billetDTOEntry))
+                .filter(billetDTOEntry -> filtrerChamps(champs, filtre, billetDTOEntry))
                 .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
 
         return new TreeMap<>(listeTriee);
     }
 
-    private boolean filtrerChamps(String champs, Object object, Map.Entry<Integer, BilletDTO> billetDTOEntry) {
+    private boolean filtrerChamps(String champs, Object filtre, Map.Entry<Integer, BilletDTO> billetDTOEntry) {
         Boolean reponse = false;
         switch (champs) {
             case "date":
                 if (champs.equals("date")) {
-                    Date date = (Date) object;
+                    Date date = (Date) filtre;
                     if (date.equals(billetDTOEntry.getValue().getDateDebutBillet())) {
                         reponse = true;
                     }
                 }
                 break;
             case "demandeur":
-                String demandeur = (String) object;
+                String demandeur = (String) filtre;
                 if (demandeur.equals(billetDTOEntry.getValue().getCourrielDemandeur())) {
                     reponse = true;
                 }
                 break;
             case "etat":
-                String etat = (String) object;
+                String etat = (String) filtre;
                 if (etat.equals(billetDTOEntry.getValue().getEtat())) {
                     reponse = true;
                 }
                 break;
             case "tech":
-                int usager = (int) object;
+                int usager = (int) filtre;
                 if (usager == (billetDTOEntry.getValue().getIdUsagerTechAssigne())) {
                     reponse = true;
                 }
                 break;
             case "projet":
-                int projet = (int) object;
+                int projet = (int) filtre;
                 if (projet == billetDTOEntry.getValue().getIdProjet()) {
                     reponse = true;
                 }
                 break;
             case "categorie":
-                String categorie = (String) object;
+                String categorie = (String) filtre;
                 if (categorie.equals(billetDTOEntry.getValue().getCategorie().getCategorie())) {
                     reponse = true;
                 }
                 break;
             case "gravite":
-                String gravite = (String) object;
+                String gravite = (String) filtre;
                 if (gravite.equals(billetDTOEntry.getValue().getGravite())) {
                     reponse = true;
                 }
