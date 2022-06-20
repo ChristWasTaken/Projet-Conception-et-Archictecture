@@ -7,29 +7,30 @@ public class FacadeBillet {
 
     private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
     private RegistreBillet registreBillet = RegistreBillet.getInstance();
+    private Proxy proxy = new Proxy();
 
     public FacadeBillet() {
     }
 
 
-    public int creerBillet(BilletDTO billetDto) {
+    /**
+     * Créer un billet en lui passant le billet DTO
+     * @param billetDTO
+     * @return le id du billet créé
+     */
+    public int creerBillet(BilletDTO billetDTO) {
 
-        Historique historique = new Historique(LocalDate.now()
-                ,"Création de l'historique");
-//        RegistreHistorique registreHistorique = new RegistreHistorique();
-        billetDto.getRegistreHistorique()
-                .ajouterHistoriqueAuRegistre(historique);
-//        historique.setIdHistorique(historique.getIdHistorique());
-//        billetDto.setRegistreHistorique(registreHistorique);
-
-        Billet billet = new Billet(billetDto);
-
+        Historique historique = new Historique(LocalDate.now(),"Création de l'historique");
+        billetDTO.getRegistreHistorique().ajouterHistoriqueAuRegistre(historique);
+        Billet billet = new Billet(billetDTO);
+        proxy.persisterBillet(billetDTO);
         return registreBillet.ajouterBilletAuRegistre(billet);
-
     }
 
     /**
      * Trouver un Billet par son idBillet
+     * @param idBillet
+     * @return l'objet obtenu en format billet DTO
      */
 
     public BilletDTO consulterBilletParId(int idBillet) {

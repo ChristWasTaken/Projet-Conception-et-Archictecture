@@ -1,17 +1,21 @@
 package application;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 import persistence.persistenceMock;
 
-import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FacadeBilletTest {
 
     FacadeBillet facadeBillet = new FacadeBillet();
+    RegistreBillet registreBillet = RegistreBillet.getInstance();
+
     RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
     FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
     FacadeProjet facadeProjet = new FacadeProjet();
+    Proxy proxy = new Proxy();
 
 
     @org.junit.jupiter.api.BeforeEach
@@ -61,6 +65,33 @@ class FacadeBilletTest {
     void billetExists() {
     }
 
+    //------------------------------------test pour créer billet ne fonctionne pas------------------------------------
+    @Test
+    void testCreerBilletEnPassantUnBilletDTO() {
+        BilletDTO billetDTO = new BilletDTO(4,3,"Ouvert","Urgent",
+                "utilisateur1@gmail.com","Etat du projet ne s'update pas.",
+                "J'ai redémarré et ça ne fonctionne pas.", LocalDate.now());
+
+        Historique nouvelHistorique = new Historique(LocalDate.now(),"Création de l'historique");
+        billetDTO.getRegistreHistorique().ajouterHistoriqueAuRegistre(nouvelHistorique);
+
+        assertEquals(nouvelHistorique.getIdHistorique(), 4);
+        assertEquals(nouvelHistorique.getIdBilletAssocie(), 4);
+
+//
+//
+//        Billet nouveauBillet = new Billet(billetDTO);
+//        assertEquals(nouveauBillet.getIdBillet(), billetDTO.getIdBillet());
+//        assertEquals(nouveauBillet.getEtat(), billetDTO.getEtat());
+//
+//        registreBillet.ajouterBilletAuRegistre(nouveauBillet);
+//        assertEquals(registreBillet.chercherBilletParId(nouveauBillet.getIdBillet()), nouveauBillet);
+//
+//        proxy.persisterBillet(billetDTO);
+//        BilletDTO billetTemp = proxy.chercherBilletDTOParId(4);
+//        assertEquals(billetDTO, billetTemp);
+    }
+
     @Test
     void changerEtatBillet() {
         //Debut
@@ -70,8 +101,6 @@ class FacadeBilletTest {
         assertEquals("Fermé",facadeBillet.consulterBilletParId(1).getEtat());
         System.out.println(facadeBillet.consulterBilletParId(1));
         assertEquals(2,facadeBillet.consulterBilletParId(1).getRegistreHistorique().getRegistreHistorique().size());
-
-
 
     }
 
@@ -96,4 +125,6 @@ class FacadeBilletTest {
     void consulterListeBillet() {
         System.out.println(facadeBillet.consulterListeBillet("gravite","Urgent"));
     }
+
+
 }

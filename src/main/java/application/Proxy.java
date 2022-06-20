@@ -3,7 +3,7 @@ package application;
 import accesPersistence.FacadePersistence;
 
 /**
- * Class Proxy: Sorti de la couche application pour envoyer des objets DTO a la couche accesPersistence
+ * Class Proxy: Sorti de la couche application pour envoyer des objets DTO a la couche acces Persistence
  *
  * @author Gabrielle
  * @since 2022-06-10
@@ -39,5 +39,17 @@ public class Proxy {
     public CompteUsagerTechDTO chercherCompteUsagerTechDTOParId(int id){
         CompteUsagerTechDTO compteUsagerTechDTO = facadePersistence.chercherCompteUsagerTechDTOParId(id);
         return compteUsagerTechDTO;
+    }
+
+    /**
+     * Methode pour envoyer un billet a la persistence
+     */
+    public void persisterBillet(BilletDTO billetDTO){
+        facadePersistence.persisterBillet(billetDTO);
+    }
+
+    public BilletDTO chercherBilletDTOParId(int id) {
+        BilletDTO billetDTO = facadePersistence.chercherBilletDTOParId(id);
+        return billetDTO;
     }
 }

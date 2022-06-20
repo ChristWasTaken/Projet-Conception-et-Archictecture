@@ -34,6 +34,12 @@ public class Historique {
         this.commentaires = commentaires;
     }
 
+    public Historique(int idHistorique, int idBilletAssocie, LocalDate date, String commentaires) {
+        this.idHistorique = idHistorique;
+        this.idBilletAssocie = idBilletAssocie;
+        this.date = date;
+        this.commentaires = commentaires;
+    }
     /**
      * Getters dans setters
      */

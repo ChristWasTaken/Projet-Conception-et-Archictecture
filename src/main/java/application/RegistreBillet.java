@@ -78,13 +78,17 @@ public class RegistreBillet {
         this.registreBillet.put(id, billetModifiable);
     }
 
-    // Changer le nom pour quelque chose qui indique que ça convertit la liste en DTO?
+
+
+    /**
+     * Consulter la Liste des Billets
+     * @return liste de billets de type BilletDTO
+     */
     public TreeMap<Integer, BilletDTO> consulterListeBillets(){
         TreeMap<Integer,BilletDTO> listeDTO = new TreeMap<>();
         registreBillet.forEach((key,value) -> {
             listeDTO.put(key, value.asBilletDTO());
         });
-
         return listeDTO;
     }
 

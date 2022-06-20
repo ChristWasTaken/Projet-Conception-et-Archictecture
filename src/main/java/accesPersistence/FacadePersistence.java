@@ -1,5 +1,6 @@
 package accesPersistence;
 
+import application.BilletDTO;
 import application.CompteUsagerTechDTO;
 import application.ProjetDTO;
 
@@ -12,6 +13,10 @@ import application.ProjetDTO;
 public class FacadePersistence {
     private ProjetDAO projetDAO = new ProjetDAO();
     private UsagerTechDAO  usagerTechDAO = new UsagerTechDAO();
+    private BilletDAO billetDAO = new BilletDAO();
+
+
+
     public void persisterProjet(ProjetDTO projetDTO){
         projetDAO.persisterProjet(projetDTO);
     }
@@ -28,5 +33,14 @@ public class FacadePersistence {
     public CompteUsagerTechDTO chercherCompteUsagerTechDTOParId(int id){
         CompteUsagerTechDTO compteUsagerTechDTO = usagerTechDAO.chercherCompteUsagerTechDTOParId(id);
         return compteUsagerTechDTO;
+    }
+
+    public void persisterBillet(BilletDTO billetDTO){
+        billetDAO.persisterBillet(billetDTO);
+    }
+
+    public BilletDTO chercherBilletDTOParId(int id){
+        BilletDTO billetDTO = billetDAO.chercherBilletDTOParId(id);
+        return billetDTO;
     }
 }
