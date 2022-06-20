@@ -10,10 +10,10 @@ class FacadeBilletTest {
 
     FacadeBillet facadeBillet = new FacadeBillet();
     RegistreBillet registreBillet = RegistreBillet.getInstance();
-    //
-//    RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-//    FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
-//    FacadeProjet facadeProjet = new FacadeProjet();
+
+    RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
+    FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
+    FacadeProjet facadeProjet = new FacadeProjet();
     Proxy proxy = new Proxy();
 
 
@@ -64,7 +64,7 @@ class FacadeBilletTest {
 //    void billetExists() {
 //    }
 
-    //------------------------------------test pour créer billet ne fonctionne pas------------------------------------
+
     @Test
     void testCreerBilletEnPassantUnBilletDTO() {
         BilletDTO billetDTO = new BilletDTO(3, "Ouvert", "Urgent",
