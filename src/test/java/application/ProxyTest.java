@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProxyTest {
     private FacadePersistence facadePersistence = new FacadePersistence();
+    private Proxy proxy = new Proxy();
 
     @Test
     void testPersisterProjetVerifieEqualsAvecProjetChercherAvecMemeId() {
@@ -48,5 +49,22 @@ class ProxyTest {
     void testChercherCompteUsagerTechDTOParIdNonExistantRetournUserNull(){
         CompteUsagerTechDTO usager = facadePersistence.chercherCompteUsagerTechDTOParId(13);
         assertEquals(null, usager);
+    }
+
+    @Test
+    void modifierUnProjetExistantAvecUneNouvelleCategorie() {
+        ProjetDTO projet = proxy.chercherProjetDTOParId(1);
+        projet.ajouterCategorieBillet(new Categorie("Anomalie"));
+        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getCategoriesBillet().get(0).getCategorie());
+    }
+
+    @Test
+    void modifierUnProjetExistantAvecUneNCategorieExistante() {
+        ProjetDTO projet = proxy.chercherProjetDTOParId(1);
+        projet.ajouterCategorieBillet(new Categorie("Anomalie"));
+        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getCategoriesBillet().get(0).getCategorie());
+        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getCategoriesBillet().get(0).getCategorie());
+        System.out.println(proxy.chercherProjetDTOParId(1).getCategoriesBillet());
+
     }
 }

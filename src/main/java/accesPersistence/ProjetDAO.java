@@ -32,14 +32,12 @@ import java.util.TreeMap;
 
      public ProjetDTO modifierUnProjet(ProjetDTO projetDTO){
          try {
-             this.collectionProjets.put(projetDTO.getIdProjet(), projetDTO);
-             return projetDTO;
+             return this.collectionProjets.put(projetDTO.getIdProjet(), projetDTO);
          } catch (Exception e) {
              System.out.println("Modification interromptu");
 //           persistanceProjets.transaction.rollback();  <-- rollback de la transaction dans un contexte transactionnel
              return null;
          }
-
      }
  }
 

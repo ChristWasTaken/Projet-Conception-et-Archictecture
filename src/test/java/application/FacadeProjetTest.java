@@ -33,7 +33,20 @@ class FacadeProjetTest {
     }
 
     @Test
-    void ajouterCategorie() {
+    void ajouterUneCategorieAUnProjetExistant() {
+        ProjetDTO projetExistant = facadeProjet.consulterUnProjetDTOParId(1);
+        projetExistant.ajouterCategorieBillet(new Categorie("Anomalie"));
+        assertTrue(facadeProjet.ajouterCategorie(projetExistant));
+        assertEquals("Anomalie", facadeProjet.consulterUnProjetDTOParId(1).getCategoriesBillet().get(0).getCategorie());
+        assertEquals(1, facadeProjet.consulterUnProjetDTOParId(1).getCategoriesBillet().size());
+    }
+
+    @Test
+    void ajouterUneCategorieAUnProjetNonExistant() {
+        ProjetDTO projetExistant = facadeProjet.consulterUnProjetDTOParId(1);
+        projetExistant.setIdProjet(10);
+        projetExistant.ajouterCategorieBillet(new Categorie("Anomalie"));
+        assertFalse(facadeProjet.ajouterCategorie(projetExistant));
     }
 
     @Test

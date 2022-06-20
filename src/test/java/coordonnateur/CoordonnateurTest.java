@@ -17,7 +17,14 @@ class CoordonnateurTest {
         assertTrue(coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet));
         assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getCategoriesBillet().get(0).getCategorie());
         assertEquals(1, coordonnateur.consulterUnProjetDTOParId(1).getCategoriesBillet().size());
+    }
 
+    @Test
+    void definirUneNouvelleCategorieDeBilletDansUnProjetNonExistant() {
+        ProjetDTO projetExistant = coordonnateur.consulterUnProjetDTOParId(2);
+        projetExistant.setIdProjet(5);
+        String categorieBillet = "Anomalie";
+        assertFalse(coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet));
     }
 
     @Test
