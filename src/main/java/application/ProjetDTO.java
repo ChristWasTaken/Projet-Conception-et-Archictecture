@@ -104,6 +104,8 @@ public class ProjetDTO {
                 ", nomProjet='" + nomProjet + '\'' +
                 ", dateDebut=" + dateDebut +
                 ", dateFin=" + dateFin +
-                ", registreUsagerTechAssigne=" + registreUsagerTechAssigne;
+                ", registreUsagerTechAssigne=" + registreUsagerTechAssigne +
+                ", categoriesBillet=" + categoriesBillet +
+                '}';
     }
 }

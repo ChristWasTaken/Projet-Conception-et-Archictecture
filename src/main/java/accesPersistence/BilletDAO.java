@@ -5,7 +5,7 @@ import application.BilletDTO;
 import java.time.LocalDate;
 import java.util.TreeMap;
 
-public class BilletDAO extends CommonDAO{
+class BilletDAO extends CommonDAO{
 
     private static BilletDTO billetDTO1 = new BilletDTO(1,2,"Ouvert","Urgent",
             "utilisateur1@gmail.com","Etat du projet ne s'update pas.",
@@ -33,6 +33,11 @@ public class BilletDAO extends CommonDAO{
         if(billetDTO == null){
             System.out.println("Aucun billet avec cet id");
         }
+        return billetDTO;
+    }
+
+    public BilletDTO modifierBillet(BilletDTO billetDTO) {
+        this.collectionBillets.put(billetDTO.getIdBillet(), billetDTO);
         return billetDTO;
     }
 }

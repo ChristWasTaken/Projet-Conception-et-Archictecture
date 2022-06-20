@@ -14,9 +14,19 @@ public class FacadeProjet {
         proxy.persisterProjet(projetDTO);
     }
 
-    public void ajouterCategorie(ProjetDTO projet) {
-        Projet projetExistant = new Projet(projet);
-        registreProjet.modifierProjet(projetExistant);
+    public ProjetDTO consulterUnProjetDTOParId(int id){
+        ProjetDTO projetDTO = proxy.chercherProjetDTOParId(id);
+        return projetDTO;
+    }
+
+    public boolean ajouterCategorie(ProjetDTO projet) {
+        projet = proxy.modifierUnProjet(projet);
+        if(projet != null){
+            Projet projetModifier = new Projet(projet);
+            registreProjet.modifierProjet(projetModifier);
+            return true;
+        }
+        return false;
     }
 
     public void assignerUsagerTech(CompteUsagerTechDTO usagerDTO, ProjetDTO projetDTO) {

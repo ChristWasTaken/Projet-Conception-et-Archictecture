@@ -15,15 +15,20 @@ public class Coordonnateur {
     public void creerProjet(ProjetDTO projetDTO) {
         facadeProjet.creerProjet(projetDTO);
     }
+    public ProjetDTO consulterUnProjetDTOParId(int id) {
+        return facadeProjet.consulterUnProjetDTOParId(id);
+    }
 
     public void assignerCompteUsagerTechAProjet(CompteUsagerTechDTO usagerTechDTO, ProjetDTO projetDTO) {
         facadeProjet.assignerUsagerTech(usagerTechDTO, projetDTO);
     }
 
-    public void definirCategorieDeBillet(ProjetDTO projetDto, String nouvelleCategorie) {
+    public boolean definirCategorieDeBillet(ProjetDTO projetDto, String nouvelleCategorie) {
         projetDto.ajouterCategorieBillet(new Categorie(nouvelleCategorie));
-
-        facadeProjet.ajouterCategorie(projetDto);
+        if(facadeProjet.ajouterCategorie(projetDto)){
+            return true;
+        }
+        return false;
     }
 
     public void creerBillet(BilletDTO billetDTO) {

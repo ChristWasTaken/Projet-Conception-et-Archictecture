@@ -26,6 +26,10 @@ public class FacadePersistence {
         return projetDTO;
     }
 
+    public ProjetDTO modifierUnProjet(ProjetDTO projetDTO){
+        return projetDAO.modifierUnProjet(projetDTO);
+    }
+
     public void persisterCompteUsagerTech(CompteUsagerTechDTO compteUsagerTechDTO){
         usagerTechDAO.persisterCompteUsagerTech(compteUsagerTechDTO);
     }

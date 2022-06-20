@@ -26,6 +26,10 @@ public class Proxy {
         ProjetDTO projetDTO = facadePersistence.chercherProjetDTOParId(id);
         return projetDTO;
     }
+
+    public ProjetDTO modifierUnProjet(ProjetDTO projetDTO) {
+        return facadePersistence.modifierUnProjet(projetDTO);
+    }
     /**
      * Methode pour envoyer un usager a la persistence
      */

@@ -1,7 +1,7 @@
 package application;
 
 import org.junit.jupiter.api.Test;
-import persistence.persistenceMock;
+import presentation.presentationMock;
 
 import java.time.LocalDate;
 
@@ -116,10 +116,10 @@ class FacadeBilletTest {
     void ajoutDeCategorie() {
     }
 
-    @Test
-    void assignerBillet() {
-        persistenceMock.projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-    }
+//    @Test
+//    void assignerBillet() {
+//        presentationMock.projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+//    }
 
     @Test
     void consulterListeBillet() {

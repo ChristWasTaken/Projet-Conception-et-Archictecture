@@ -29,5 +29,17 @@ import java.util.TreeMap;
          }
          return projetDTO;
      }
+
+     public ProjetDTO modifierUnProjet(ProjetDTO projetDTO){
+         try {
+             this.collectionProjets.put(projetDTO.getIdProjet(), projetDTO);
+             return projetDTO;
+         } catch (Exception e) {
+             System.out.println("Modification interromptu");
+//           persistanceProjets.transaction.rollback();  <-- rollback de la transaction dans un contexte transactionnel
+             return null;
+         }
+
+     }
  }
 

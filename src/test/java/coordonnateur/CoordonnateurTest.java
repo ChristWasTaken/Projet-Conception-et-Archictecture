@@ -1,12 +1,8 @@
 package coordonnateur;
 
-import application.BilletDTO;
-import application.CompteUsagerTechDTO;
-import application.ProjetDTO;
-import org.junit.jupiter.api.Test;
-
+import application.*;
+import org.junit.jupiter.api.*;
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CoordonnateurTest {
@@ -14,13 +10,13 @@ class CoordonnateurTest {
     Coordonnateur coordonnateur = new Coordonnateur();
 
     @Test
-    void definirCategorieDeBilletDansListeDeCategorie() {
-        ProjetDTO projetDTO = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+    void definirUneNouvelleCategorieDeBilletDansUnProjetExistant() {
+        ProjetDTO projetExistant = coordonnateur.consulterUnProjetDTOParId(1);
         String categorieBillet = "Anomalie";
 
-        coordonnateur.definirCategorieDeBillet(projetDTO, categorieBillet);
-        assertEquals(categorieBillet, projetDTO.getCategoriesBillet().get(0).getCategorie());
-        assertEquals(1, projetDTO.getCategoriesBillet().size());
+        assertTrue(coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet));
+        assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getCategoriesBillet().get(0).getCategorie());
+        assertEquals(1, coordonnateur.consulterUnProjetDTOParId(1).getCategoriesBillet().size());
 
     }
 
@@ -29,6 +25,7 @@ class CoordonnateurTest {
         CompteUsagerTechDTO usagerDTO = new CompteUsagerTechDTO(1,"Roger","mdp","email");
         BilletDTO billetDTO = new BilletDTO(1, "BilletTopSecret", "hebdo", "billet@test.ca",
                 "Corriger les Classes Blob!!", "Blobs are bad mmkay!", LocalDate.of(2022,05,28));
+//        CommonDAO commonDAO = CommonDAOProxy.getInstance();
 
         coordonnateur.assignerBilletAUsagerTech(billetDTO, usagerDTO);
 
