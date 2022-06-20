@@ -11,7 +11,7 @@ public class FacadeProjet {
     public void creerProjet(ProjetDTO projetDTO){
         Projet nouveauProjet = new Projet(projetDTO);
         registreProjet.ajouterProjet(nouveauProjet);
-        proxy.persisterProjet(projetDTO);
+        proxy.persisterProjet(nouveauProjet.asProjetDTO());
     }
 
     public ProjetDTO consulterUnProjetDTOParId(int id){
