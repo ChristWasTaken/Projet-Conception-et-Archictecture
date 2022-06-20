@@ -55,16 +55,16 @@ class ProxyTest {
     void modifierUnProjetExistantAvecUneNouvelleCategorie() {
         ProjetDTO projet = proxy.chercherProjetDTOParId(1);
         projet.ajouterCategorieBillet(new Categorie("Anomalie"));
-        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getCategoriesBillet().get(0).getCategorie());
+        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getListeCategories().get(0).getCategorie());
     }
 
     @Test
     void modifierUnProjetExistantAvecUneNCategorieExistante() {
         ProjetDTO projet = proxy.chercherProjetDTOParId(1);
         projet.ajouterCategorieBillet(new Categorie("Anomalie"));
-        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getCategoriesBillet().get(0).getCategorie());
-        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getCategoriesBillet().get(0).getCategorie());
-        System.out.println(proxy.chercherProjetDTOParId(1).getCategoriesBillet());
+        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getListeCategories().get(0).getCategorie());
+        assertEquals("Anomalie",proxy.modifierUnProjet(projet).getListeCategories().get(0).getCategorie());
+        System.out.println(proxy.chercherProjetDTOParId(1).getListeCategories());
 
     }
 }

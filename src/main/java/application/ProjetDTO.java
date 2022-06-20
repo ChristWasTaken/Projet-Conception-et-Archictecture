@@ -18,7 +18,7 @@ public class ProjetDTO {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private RegistreUsagerTechAssigne registreUsagerTechAssigne;
-    private ArrayList<Categorie> categoriesBillet;
+    private ArrayList<Categorie> listeCategories;
     /**
      * constructeurs
      */
@@ -32,7 +32,7 @@ public class ProjetDTO {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
-        this.categoriesBillet = new ArrayList<>();
+        this.listeCategories = new ArrayList<>();
     }
 
     /**
@@ -78,12 +78,22 @@ public class ProjetDTO {
         this.registreUsagerTechAssigne = registreUsagerTechAssigne;
     }
 
-    public ArrayList<Categorie> getCategoriesBillet() {
-        return categoriesBillet;
+    public ArrayList<Categorie> getListeCategories() {
+        return listeCategories;
     }
 
-    public void setCategoriesBillet(ArrayList<Categorie> categoriesBillet) {
-        this.categoriesBillet = categoriesBillet;
+    public void setListeCategories(ArrayList<Categorie> listeCategories) {
+        this.listeCategories = listeCategories;
+    }
+
+    public boolean verifierDoublonCategorie(Categorie categorie){
+        System.out.println("2");
+        if(this.listeCategories.contains(categorie)){
+            System.out.println("3");
+            return true;
+        }
+        System.out.println("4");
+        return false;
     }
 
     /**
@@ -91,7 +101,9 @@ public class ProjetDTO {
      * @param categorie
      */
     public void ajouterCategorieBillet(Categorie categorie) {
-        this.categoriesBillet.add(categorie);
+        if(!verifierDoublonCategorie(categorie)) {
+            this.listeCategories.add(categorie);
+        }
     }
 
     /**
@@ -105,7 +117,7 @@ public class ProjetDTO {
                 ", dateDebut=" + dateDebut +
                 ", dateFin=" + dateFin +
                 ", registreUsagerTechAssigne=" + registreUsagerTechAssigne +
-                ", categoriesBillet=" + categoriesBillet +
+                ", categoriesBillet=" + listeCategories +
                 '}';
     }
 }

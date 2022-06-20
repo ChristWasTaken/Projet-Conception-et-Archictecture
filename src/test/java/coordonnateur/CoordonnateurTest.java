@@ -15,8 +15,19 @@ class CoordonnateurTest {
         String categorieBillet = "Anomalie";
 
         assertTrue(coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet));
-        assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getCategoriesBillet().get(0).getCategorie());
-        assertEquals(1, coordonnateur.consulterUnProjetDTOParId(1).getCategoriesBillet().size());
+        assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().get(0).getCategorie());
+        assertEquals(1, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().size());
+    }
+
+    @Test
+    void definirUneCategorieEnDoublonDansUnProjetExistant() {
+        ProjetDTO projetExistant = coordonnateur.consulterUnProjetDTOParId(1);
+        String categorieBillet = "Anomalie";
+        coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet);
+
+        assertTrue(coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet));
+//        assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().get(0).getCategorie());
+//        assertEquals(1, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().size());
     }
 
     @Test

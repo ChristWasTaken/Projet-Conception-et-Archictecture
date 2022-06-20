@@ -40,7 +40,7 @@ class Projet {
         this.setDateDebut(projetDTO.getDateDebut());
         this.setDateFin(projetDTO.getDateFin());
         this.setRegistreUsagerTechAssigne(projetDTO.getRegistreUsagerTechAssigne());
-        this.setListeCategories(projetDTO.getCategoriesBillet());
+        this.setListeCategories(projetDTO.getListeCategories());
     }
 
     /**
@@ -56,7 +56,7 @@ class Projet {
         projetDTO.setDateDebut(this.getDateDebut());
         projetDTO.setDateFin(this.getDateFin());
         projetDTO.setRegistreUsagerTechAssigne(this.getRegistreUsagerTechAssigne());
-        projetDTO.setCategoriesBillet(this.getListeCategories());
+        projetDTO.setListeCategories(this.getListeCategories());
 
         return projetDTO;
     }
@@ -114,6 +114,13 @@ class Projet {
 
     public void setListeCategories(ArrayList<Categorie> listeCategories) {
         this.listeCategories = listeCategories;
+    }
+
+    public boolean verifierDoublonCategorie(Categorie categorie){
+        if(this.listeCategories.contains(categorie)){
+            return true;
+        }
+        return false;
     }
 
     /**

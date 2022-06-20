@@ -3,7 +3,6 @@ package application;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,8 +36,8 @@ class FacadeProjetTest {
         ProjetDTO projetExistant = facadeProjet.consulterUnProjetDTOParId(1);
         projetExistant.ajouterCategorieBillet(new Categorie("Anomalie"));
         assertTrue(facadeProjet.ajouterCategorie(projetExistant));
-        assertEquals("Anomalie", facadeProjet.consulterUnProjetDTOParId(1).getCategoriesBillet().get(0).getCategorie());
-        assertEquals(1, facadeProjet.consulterUnProjetDTOParId(1).getCategoriesBillet().size());
+        assertEquals("Anomalie", facadeProjet.consulterUnProjetDTOParId(1).getListeCategories().get(0).getCategorie());
+        assertEquals(1, facadeProjet.consulterUnProjetDTOParId(1).getListeCategories().size());
     }
 
     @Test
