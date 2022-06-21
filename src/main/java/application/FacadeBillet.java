@@ -70,7 +70,7 @@ public class FacadeBillet {
 
     /**
      * Assigner un billet à un usager
-     * Utilisation d'un BTO au lieux d'Id directement pour ultérieurement changer cette
+     * Utilisation d'un DTO au lieux d'Id directement pour ultérieurement changer cette
      * méthode qui modifie n'importe quel paramètre du billet.
      * @param billetDTO contient l'id du billet à assigner et l'id de l'usager à assigner.
      */

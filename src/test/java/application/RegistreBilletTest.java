@@ -15,11 +15,23 @@ public class RegistreBilletTest {
 
     @Test
     void testAjouterBilletAuRegistreVerifierSizeRegistre() {
-        BilletDTO billetDTO = proxy.chercherBilletDTOParId(2);
+        BilletDTO billetDTO = proxy.chercherBilletDTOParId(1);
         Billet nouveauBillet = new Billet(billetDTO);
 
         registreBillet.put(nouveauBillet.getIdBillet(), nouveauBillet);
 
         assertEquals(1, registreBillet.size());
     }
+
+    @Test
+    void testChercherBilletParIdRetourneBilletDuRegsitre() {
+        BilletDTO billetDTO = proxy.chercherBilletDTOParId(1);
+        Billet nouveauBillet = new Billet(billetDTO);
+        registreBillet.put(nouveauBillet.getIdBillet(), nouveauBillet);
+        Billet billet = registreBillet.get(nouveauBillet.getIdBillet());
+
+        assertEquals(nouveauBillet, billet);
+    }
+
+
 }
