@@ -52,7 +52,7 @@ public class FacadeBillet {
     }
 
 
-    ////// Voir à changer la méthode pour qu'elle passe seulement un DTO à partir du coordonnateur - selon réponse du prof
+
     public void changerEtatBillet(BilletDTO billetDTO, String etat, String commentaire)
     {
         billetDTO.setEtat(etat);

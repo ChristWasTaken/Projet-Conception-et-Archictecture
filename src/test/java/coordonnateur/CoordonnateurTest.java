@@ -9,6 +9,7 @@ class CoordonnateurTest {
 
     Coordonnateur coordonnateur = new Coordonnateur();
 
+
     @Test
     void definirUneNouvelleCategorieDeBilletDansUnProjetExistant() {
         ProjetDTO projetExistant = coordonnateur.consulterUnProjetDTOParId(1);

@@ -5,39 +5,86 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FacadeBilletTest {
 
-    FacadeBillet facadeBillet = new FacadeBillet();
-    RegistreBillet registreBillet = RegistreBillet.getInstance();
+    FacadeBillet facadeBillet;
+    FacadeCompteUsager facadeCompteUsager;
+    FacadeProjet facadeProjet;
+    RegistreProjet registreProjet;
+    RegistreBillet registreBillet;
+    RegistreUsagerTech registreUsagerTech;
+    Proxy proxy;
+    BilletDTO billetDTO;
+    ProjetDTO projetDTO;
+    Projet projet;
+    CompteUsagerTechDTO usagerDTO;
 
-    RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-    FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
-    FacadeProjet facadeProjet = new FacadeProjet();
-    Proxy proxy = new Proxy();
+    Categorie categorie;
+    String categorieBillet;
 
 
-//    @org.junit.jupiter.api.BeforeEach
-//    void setUp() {
-//        ProjetDTO projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-//        CompteUsagerTechDTO usagerDTO = new CompteUsagerTechDTO(1,"Roger","mdp","email");
-//        facadeCompteUsager.creerCompteUsagerTech(usagerDTO);
-//        facadeProjet.creerProjet(projet);
-//        facadeProjet.assignerUsagerTech(usagerDTO,projet);
+    @org.junit.jupiter.api.BeforeEach
+    void setUp() {
+
+        facadeBillet = new FacadeBillet();
+        facadeProjet = new FacadeProjet();
+        facadeCompteUsager = new FacadeCompteUsager();
+        registreProjet = RegistreProjet.getInstance();
+        registreBillet = RegistreBillet.getInstance();
+        registreUsagerTech = RegistreUsagerTech.getInstance();
+        proxy= new Proxy();
+
+
+        //Créer un projetDTO
+        projetDTO = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28),
+                LocalDate.of(2022,05,29));
+
+        facadeProjet.creerProjet(projetDTO);
+
+        //Créer un CompteUsagerTechniqueDTO
+        usagerDTO = new CompteUsagerTechDTO(1,"Roger","mdp","email");
+        facadeCompteUsager.creerCompteUsagerTech(usagerDTO);
+
+        //Assigner UsagerTechnique au projet
+        facadeProjet.assignerUsagerTech(usagerDTO, projetDTO);
+
+        //Créer un billetDTO
+        billetDTO = new BilletDTO(1, "Ouvert", "Urgent",
+                "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
+                "J'ai redémarré et ça ne fonctionne pas.", LocalDate.now());
+        facadeBillet.creerBillet(billetDTO);
+
+       //Ajouter une catégorie au billet
+        categorieBillet = "Anomalie";
+        projetDTO.ajouterCategorieBillet(categorieBillet);
+        projet = new Projet(projetDTO);
+        registreProjet.modifierProjet(projet);
+
+        //Ajoute une gravité au billet
+        billetDTO.setGravite("Urgent");
+        //facadeBillet.//-------------------------------faire une méthode pour modifier Billet dans Facade Billet
+        billetDTO.setGravite("Normal");
+
+
+
+
+    }
+
+
+
+
+
+
+        // Créer une catégorie de billet
+
+        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
 //
-//        // Créer une catégorie de billet
-//        String categorieBillet = "Anomalie";
-//        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
-//        projet.ajouterCategorieBillet(new Categorie(categorieBillet));
-//
-//        BilletDTO billetDto = new BilletDTO(1,"Ouvert","Urgent","demandeur@gmail.com",
-//                "Notes 1","Description1",LocalDate.now());
-//
-//        facadeBillet.creerBillet(billetDto);
-//        billetDto.setGravite("Urgent");
-//        facadeBillet.creerBillet(billetDto);
-//        billetDto.setGravite("Normal");
-//        facadeBillet.creerBillet(billetDto);
+
+
+
+
 //    }
 //
 //    @org.junit.jupiter.api.AfterEach
@@ -67,14 +114,12 @@ class FacadeBilletTest {
 
     @Test
     void testCreerBilletEnPassantUnBilletDTO() {
-        BilletDTO billetDTO = new BilletDTO(3, "Ouvert", "Urgent",
-                "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
-                "J'ai redémarré et ça ne fonctionne pas.", LocalDate.now());
+
 
         int indice = facadeBillet.creerBillet(billetDTO);
-        assertEquals(1, indice);
+        assertTrue(indice>0);
 
-        BilletDTO billetTrouve = facadeBillet.consulterBilletParId(1);
+        BilletDTO billetTrouve = facadeBillet.consulterBilletParId(indice);
 
         RegistreHistorique registreHistoriqueTrouve = billetTrouve.getRegistreHistorique();
 
@@ -83,7 +128,9 @@ class FacadeBilletTest {
         Historique historiqueTrouve = registreHistoriqueTrouve.chercherParNumero(id);
 
         assertEquals(1,historiqueTrouve.getIdHistorique());
+
     }
+
 
 
     @Test

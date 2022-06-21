@@ -33,6 +33,7 @@ class Projet {
         this.listeCategories = new ArrayList<>();
     }
 
+
     //Constructeur avec DTO
     public Projet(ProjetDTO projetDTO){
         this.setIdProjet(projetDTO.getIdProjet());

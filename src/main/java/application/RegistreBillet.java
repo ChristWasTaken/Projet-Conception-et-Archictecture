@@ -45,6 +45,8 @@ public class RegistreBillet {
 
     /**
      * Ajouter billet au registre
+     * @param nouveauBillet
+     * @return le id du billet ajouté
      */
     public int ajouterBilletAuRegistre(Billet nouveauBillet) {
         nouveauBillet.setIdBillet(this.prochainIdBillet());
@@ -54,7 +56,9 @@ public class RegistreBillet {
     }
 
     /**
-     * Récupère un Billet par son Id
+     * Chercher un Billet par son Id
+     * @param idBillet
+     * @return un Billet
      */
     public Billet chercherBilletParId(int idBillet) {
         return this.registreBillet.get(idBillet);
@@ -63,6 +67,7 @@ public class RegistreBillet {
 
     /**
      * incrémentation automatique du IDBillet
+     * @return
      */
     private int prochainIdBillet() {
         return ++dernierNumeroBilletAttribue;
