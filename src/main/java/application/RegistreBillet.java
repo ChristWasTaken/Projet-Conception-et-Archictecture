@@ -1,5 +1,6 @@
 package application;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
@@ -111,8 +112,8 @@ public class RegistreBillet {
         Boolean reponse = false;
         switch (champs) {
             case "date":
-                if (champs.equals("date")) {
-                    Date date = (Date) filtre;
+                {
+                    LocalDate date = (LocalDate) filtre;
                     if (date.equals(billetDTOEntry.getValue().getDateDebutBillet())) {
                         reponse = true;
                     }
@@ -131,13 +132,13 @@ public class RegistreBillet {
                 }
                 break;
             case "tech":
-                int usager = (int) filtre;
+                int usager = Integer.parseInt((String)filtre);
                 if (usager == (billetDTOEntry.getValue().getIdUsagerTechAssigne())) {
                     reponse = true;
                 }
                 break;
             case "projet":
-                int projet = (int) filtre;
+                int projet = Integer.parseInt((String)filtre);
                 if (projet == billetDTOEntry.getValue().getIdProjet()) {
                     reponse = true;
                 }

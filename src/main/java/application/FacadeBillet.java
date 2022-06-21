@@ -62,6 +62,8 @@ public class FacadeBillet {
         // pour que ce soit reçu en parametre.
         int usager = registreHistorique.chercherParNumero(1).getUsagerTechAssigne();
         Historique historique = new Historique(LocalDate.now(),usager,commentaire);
+        historique.setIdBilletAssocie(billetDTO.getIdBillet());
+
         registreHistorique.ajouterHistoriqueAuRegistre(historique);
         billetDTO.setRegistreHistorique(registreHistorique);
         Billet billet = new Billet(billetDTO);
