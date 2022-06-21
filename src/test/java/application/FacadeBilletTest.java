@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.TreeMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class FacadeBilletTest {
 
@@ -86,12 +85,12 @@ class FacadeBilletTest {
         int id = registreHistoriqueTrouve.getRegistreHistorique().lastKey();
 
         Historique historiqueTrouve = registreHistoriqueTrouve.chercherParNumero(id);
-        System.out.println(historiqueTrouve.getIdHistorique());
+
         assertEquals(1, historiqueTrouve.getIdHistorique());
     }
 
     @Test
-    void changerEtatBillet() {
+    void testerSiLeChangementEtatSeFaitEtSiHistoriqueUpdate() {
         //Debut
         facadeBillet.creerBillet(billetDTO1); //etat = ouvert
         BilletDTO billetDTO = facadeBillet.consulterBilletParId(1);
@@ -182,6 +181,16 @@ class FacadeBilletTest {
         TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("gravite", "Urgent");
         assertEquals(2,liste.size());
     }
+
+    @Test
+    void faireSortirUneListeVide(){
+            facadeBillet.creerBillet(billetDTO1); //urgent
+            facadeBillet.creerBillet(billetDTO2); //benin
+            facadeBillet.creerBillet(billetDTO3); //benin
+            facadeBillet.creerBillet(billetDTO4); //urgent
+            TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("gravite", "hjhdfkjhjds");
+            assertEquals(0,liste.size());
+        }
 }
 
 

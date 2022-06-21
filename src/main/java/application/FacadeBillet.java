@@ -87,7 +87,7 @@ public class FacadeBillet {
 
 
     public TreeMap consulterListeBillet(String champs, Object filtre){
-        return registreBillet.consulterListeBillets(champs,filtre);
+        return registreBillet.recupererListeBilletEnDTO(champs,filtre);
     }
 
 

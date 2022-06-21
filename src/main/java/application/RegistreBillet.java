@@ -1,7 +1,6 @@
 package application;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -26,7 +25,6 @@ public class RegistreBillet {
     private static int dernierNumeroBilletAttribue = 0;
 
 
-
     /**
      * Constructeur par défaut
      */
@@ -46,6 +44,7 @@ public class RegistreBillet {
 
     /**
      * Ajouter billet au registre
+     *
      * @param nouveauBillet
      * @return le id du billet ajouté
      */
@@ -58,6 +57,7 @@ public class RegistreBillet {
 
     /**
      * Chercher un Billet par son Id
+     *
      * @param idBillet
      * @return un Billet
      */
@@ -68,6 +68,7 @@ public class RegistreBillet {
 
     /**
      * incrémentation automatique du IDBillet
+     *
      * @return
      */
     private int prochainIdBillet() {
@@ -85,40 +86,47 @@ public class RegistreBillet {
     }
 
 
-
     /**
      * Consulter la Liste des Billets
+     *
      * @return liste de billets de type BilletDTO
      */
-    public TreeMap<Integer, BilletDTO> consulterListeBillets(){
-        TreeMap<Integer,BilletDTO> listeDTO = new TreeMap<>();
-        registreBillet.forEach((key,value) -> {
+    public TreeMap<Integer, BilletDTO> recupererListeBilletEnDTO() {
+        TreeMap<Integer, BilletDTO> listeDTO = new TreeMap<>();
+        registreBillet.forEach((key, value) -> {
             listeDTO.put(key, value.asBilletDTO());
         });
+        if (listeDTO == null) {
+            return null;
+        }
         return listeDTO;
     }
 
-    public TreeMap<Integer, BilletDTO> consulterListeBillets(String champs, Object filtre) {
-        TreeMap <Integer,BilletDTO> listeDTO = consulterListeBillets();
-        Map<Integer, BilletDTO> listeTriee = listeDTO.entrySet()
-                .stream()
-                .filter(billetDTOEntry -> filtrerChamps(champs, filtre, billetDTOEntry))
-                .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
+    public TreeMap<Integer, BilletDTO> recupererListeBilletEnDTO(String champs, Object filtre) {
+        TreeMap<Integer, BilletDTO> listeDTO = recupererListeBilletEnDTO();
+        Map<Integer, BilletDTO> listeTriee;
+        if (listeDTO != null) {
 
+            listeTriee = listeDTO.entrySet()
+                    .stream()
+                    .filter(billetDTOEntry -> filtrerChamps(champs, filtre, billetDTOEntry))
+                    .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
+        } else {
+            return null;
+        }
         return new TreeMap<>(listeTriee);
     }
 
     private boolean filtrerChamps(String champs, Object filtre, Map.Entry<Integer, BilletDTO> billetDTOEntry) {
         Boolean reponse = false;
         switch (champs) {
-            case "date":
-                {
-                    LocalDate date = (LocalDate) filtre;
-                    if (date.equals(billetDTOEntry.getValue().getDateDebutBillet())) {
-                        reponse = true;
-                    }
+            case "date": {
+                LocalDate date = (LocalDate) filtre;
+                if (date.equals(billetDTOEntry.getValue().getDateDebutBillet())) {
+                    reponse = true;
                 }
-                break;
+            }
+            break;
             case "demandeur":
                 String demandeur = (String) filtre;
                 if (demandeur.equals(billetDTOEntry.getValue().getCourrielDemandeur())) {
@@ -132,13 +140,13 @@ public class RegistreBillet {
                 }
                 break;
             case "tech":
-                int usager = Integer.parseInt((String)filtre);
+                int usager = Integer.parseInt((String) filtre);
                 if (usager == (billetDTOEntry.getValue().getIdUsagerTechAssigne())) {
                     reponse = true;
                 }
                 break;
             case "projet":
-                int projet = Integer.parseInt((String)filtre);
+                int projet = Integer.parseInt((String) filtre);
                 if (projet == billetDTOEntry.getValue().getIdProjet()) {
                     reponse = true;
                 }
@@ -160,10 +168,5 @@ public class RegistreBillet {
                 reponse = false;
         }
         return reponse;
-    }
-
-    public void clear() {
-        this.registreBillet.clear();
-        dernierNumeroBilletAttribue = 0;
     }
 }
