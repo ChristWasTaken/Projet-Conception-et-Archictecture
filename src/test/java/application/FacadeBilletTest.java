@@ -114,20 +114,24 @@ class FacadeBilletTest {
     @Test
     void changerEtatBillet() {
         //Debut
-        facadeBillet.creerBillet(billetDTO1);
+        facadeBillet.creerBillet(billetDTO1); //etat = ouvert
         BilletDTO billetDTO = facadeBillet.consulterBilletParId(1);
 
         facadeBillet.changerEtatBillet(billetDTO, "Fermé", "Travail terminé. Fermeture du billet");
         assertEquals("Fermé", facadeBillet.consulterBilletParId(1).getEtat());
 
+        //Registre historique doit contenir original + trace du changement
         assertEquals(2, facadeBillet.consulterBilletParId(1).getRegistreHistorique().getRegistreHistorique().size());
-
     }
 
 
 
     @Test
     void consulterDetailBillet() {
+        facadeBillet.creerBillet(billetDTO1);
+        BilletDTO billetVerification= facadeBillet.consulterBilletParId(1);
+        assertEquals(billetDTO1,billetVerification);
+
     }
 
     @Test

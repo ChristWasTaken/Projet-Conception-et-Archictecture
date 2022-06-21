@@ -1,6 +1,7 @@
 package application;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class BilletDTO {
 
@@ -187,5 +188,18 @@ public class BilletDTO {
                 ", dateDebutBillet=" + dateDebutBillet +
                 ", registreHistorique=" + registreHistorique +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BilletDTO billetDTO = (BilletDTO) o;
+        return idProjet == billetDTO.idProjet && idUsagerTechAssigne == billetDTO.idUsagerTechAssigne && Objects.equals(etat, billetDTO.etat) && Objects.equals(gravite, billetDTO.gravite) && Objects.equals(courrielDemandeur, billetDTO.courrielDemandeur) && Objects.equals(notes, billetDTO.notes) && Objects.equals(description, billetDTO.description) && Objects.equals(dateAssigne, billetDTO.dateAssigne) && Objects.equals(dateDebutBillet, billetDTO.dateDebutBillet) && Objects.equals(categorie, billetDTO.categorie);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idProjet, idUsagerTechAssigne, etat, gravite, courrielDemandeur, notes, description, dateAssigne, dateDebutBillet, categorie);
     }
 }

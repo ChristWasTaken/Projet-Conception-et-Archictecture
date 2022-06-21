@@ -83,7 +83,6 @@ public class FacadeBillet {
                         billetModifiable.getNotes()) );
 
         registreBillet.modifierBillet(billetModifiable.getIdBillet(), billetModifiable);
-
     }
 
 
