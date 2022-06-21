@@ -1,6 +1,5 @@
 package application;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -90,7 +89,7 @@ class FacadeBilletTest {
     }
 
     @Test
-    void testerSiLeChangementEtatSeFaitEtSiHistoriqueUpdate() {
+    void testerSiChangerEtatSeRetrouveDansLeRegistreAvecSonHistoriqueAjoute() {
         //Debut
         facadeBillet.creerBillet(billetDTO1); //etat = ouvert
         BilletDTO billetDTO = facadeBillet.consulterBilletParId(1);

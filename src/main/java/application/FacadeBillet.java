@@ -64,6 +64,7 @@ public class FacadeBillet {
 
         Billet billet = new Billet(billetDTO);
         registreBillet.modifierBillet(billet.getIdBillet(), billet);
+        proxy.persisterBillet(billet.asBilletDTO());
     }
 
 
