@@ -1,8 +1,10 @@
 package application;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.TreeMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -19,24 +21,25 @@ class FacadeBilletTest {
 
     BilletDTO billetDTO1 = new BilletDTO(1, "Ouvert", "Urgent",
             "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
-            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022,06,20));
+            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 06, 20));
     BilletDTO billetDTO2 = new BilletDTO(1, "Ouvert", "Bénin",
             "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
-            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022,06,22));
+            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 05, 18));
     BilletDTO billetDTO3 = new BilletDTO(1, "Fermé", "Bénin",
             "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
-            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022,06,22));
+            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 05, 18));
     BilletDTO billetDTO4 = new BilletDTO(1, "Fermé", "Urgent",
-            "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
-            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022,06,20));
+            "utilisateur6@gmail.com", "Etat du projet ne s'update pas.",
+            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 06, 20));
     ProjetDTO projetDTO1 =
-            new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28),
-            LocalDate.of(2022,05,29));
+            new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022, 05, 28),
+                    LocalDate.of(2022, 05, 29));
 
     Categorie categorieAnomalie = new Categorie("Anomalie");
     Categorie categorieEchec = new Categorie("Echec");
+    Categorie categorieRidicule = new Categorie("Ridicule");
     CompteUsagerTechDTO usagerDTO1 =
-            new CompteUsagerTechDTO(1,"Roger","mdp","email");
+            new CompteUsagerTechDTO(1, "Roger", "mdp", "email");
 
 
 
@@ -53,30 +56,21 @@ class FacadeBilletTest {
 
         //Ajouter une catégorie au billet
         projetDTO1.ajouterCategorieBillet(categorieAnomalie);
+        projetDTO1.ajouterCategorieBillet(categorieEchec);
+        projetDTO1.ajouterCategorieBillet(categorieRidicule);
         //Attibuer une catégorie au billet
         billetDTO1.setCategorie(categorieAnomalie);
-        //Créer un billet
-        facadeBillet.creerBillet(billetDTO1);
+        billetDTO2.setCategorie(categorieEchec);
+        billetDTO3.setCategorie(categorieAnomalie);
+        billetDTO4.setCategorie(categorieRidicule);
+
+
     }
 
 
-
-
-
-
-        // Créer une catégorie de billet
-
-        //Ajout de la catégorie au ProjetDTO avant de l'envoyer à la facade
-//
-
-
-
-
-//    }
-//
-//    @org.junit.jupiter.api.AfterEach
-//    void tearDown() {
-//    }
+    @org.junit.jupiter.api.AfterEach
+    void tearDown() {
+    }
 //
 //    @org.junit.jupiter.api.Test
 //    void assignerUsagerTech() {
@@ -93,10 +87,8 @@ class FacadeBilletTest {
 //    @org.junit.jupiter.api.Test
 //    void chercherParIdBillet() {
 //    }
-//
-//    @org.junit.jupiter.api.Test
-//    void billetExists() {
-//    }
+
+
 
 
     @Test
@@ -104,7 +96,7 @@ class FacadeBilletTest {
 
 
         int indice = facadeBillet.creerBillet(billetDTO1);
-        assertTrue(indice>0);
+        assertTrue(indice > 0);
 
         BilletDTO billetTrouve = facadeBillet.consulterBilletParId(indice);
 
@@ -113,28 +105,26 @@ class FacadeBilletTest {
         int id = registreHistoriqueTrouve.getRegistreHistorique().lastKey();
 
         Historique historiqueTrouve = registreHistoriqueTrouve.chercherParNumero(id);
-
-        assertEquals(1,historiqueTrouve.getIdHistorique());
+        System.out.println(historiqueTrouve.getIdHistorique());
+        assertEquals(1, historiqueTrouve.getIdHistorique());
 
     }
-
 
 
     @Test
     void changerEtatBillet() {
         //Debut
+        facadeBillet.creerBillet(billetDTO1);
         BilletDTO billetDTO = facadeBillet.consulterBilletParId(1);
 
         facadeBillet.changerEtatBillet(billetDTO, "Fermé", "Travail terminé. Fermeture du billet");
         assertEquals("Fermé", facadeBillet.consulterBilletParId(1).getEtat());
-        System.out.println(facadeBillet.consulterBilletParId(1));
+
         assertEquals(2, facadeBillet.consulterBilletParId(1).getRegistreHistorique().getRegistreHistorique().size());
 
     }
 
-    @Test
-    void afficherRegistreBillet() {
-    }
+
 
     @Test
     void consulterDetailBillet() {
@@ -150,16 +140,77 @@ class FacadeBilletTest {
 //    }
 
     @Test
-    void consulterListeBillet() {
-        System.out.println(facadeBillet.consulterListeBillet("date", LocalDate.of(2022,06,20)));
-        System.out.println(facadeBillet.consulterListeBillet("demandeur", "utilisateur1@gmail.com"));
-        System.out.println(facadeBillet.consulterListeBillet("etat", "Ouvert"));
-        System.out.println(facadeBillet.consulterListeBillet("tech", "0"));
-        System.out.println(facadeBillet.consulterListeBillet("projet", "1"));
-        System.out.println(facadeBillet.consulterListeBillet("categorie", "Anomalie"));
-        System.out.println(facadeBillet.consulterListeBillet("gravite", "Urgent"));
+    void faireSortirLaListedeBilletsFiltreeParDateDebut() {
+        facadeBillet.creerBillet(billetDTO1); //20 juin
+        facadeBillet.creerBillet(billetDTO2); //18 mai
+        facadeBillet.creerBillet(billetDTO3); //18 mai
+        facadeBillet.creerBillet(billetDTO4); //20 juin
+
+        TreeMap<Integer,BilletDTO> liste =facadeBillet.consulterListeBillet("date", LocalDate.of(2022, 05, 18));
+        assertEquals(2,liste.size());
+    }
+
+    @Test
+    void faireSortirLaListedeBilletsFiltreeParDemandeur() {
+        facadeBillet.creerBillet(billetDTO1); //utilisateur1@gmail.com
+        facadeBillet.creerBillet(billetDTO2); //utilisateur1@gmail.com
+        facadeBillet.creerBillet(billetDTO3); //utilisateur1@gmail.com
+        facadeBillet.creerBillet(billetDTO4); //utilisateur6@gmail.com
+        TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("demandeur", "utilisateur6@gmail.com");
+        assertEquals(1,liste.size());
+    }
+
+    @Test
+    void faireSortirLaListedeBilletsFiltreeParEtat() {
+        facadeBillet.creerBillet(billetDTO1); //ouvert
+        facadeBillet.creerBillet(billetDTO2); //ouvert
+        facadeBillet.creerBillet(billetDTO3); //fermé
+        facadeBillet.creerBillet(billetDTO4); //fermé
+        TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("etat", "Ouvert");
+        assertEquals(2,liste.size());
+    }
+
+    @Test
+    void faireSortirLaListedeBilletsFiltreeParTech() {
+        facadeBillet.creerBillet(billetDTO1); //0
+        facadeBillet.creerBillet(billetDTO2); //0
+        facadeBillet.creerBillet(billetDTO3); //0
+        facadeBillet.creerBillet(billetDTO4); //0
+        TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("tech", "0");
+        assertEquals(4,liste.size());
+    }
+
+    @Test
+    void faireSortirLaListedeBilletsFiltreeParProjet() {
+        facadeBillet.creerBillet(billetDTO1); //1
+        facadeBillet.creerBillet(billetDTO2); //1
+        facadeBillet.creerBillet(billetDTO3); //1
+        facadeBillet.creerBillet(billetDTO4); //1
+        TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("projet", "1");
+        assertEquals(4, liste.size());
 
     }
 
+    @Test
+    void faireSortirLaListedeBilletsFiltreeParCategorie() {
+        facadeBillet.creerBillet(billetDTO1); //anomalie
+        facadeBillet.creerBillet(billetDTO2); //echec
+        facadeBillet.creerBillet(billetDTO3); //anomalie
+        facadeBillet.creerBillet(billetDTO4); //ridicule
+        TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("categorie", "Ridicule");
+        assertEquals(1,liste.size());
+    }
+
+    @Test
+    void faireSortirLaListedeBilletsFiltreeParGravite() {
+        facadeBillet.creerBillet(billetDTO1); //urgent
+        facadeBillet.creerBillet(billetDTO2); //benin
+        facadeBillet.creerBillet(billetDTO3); //benin
+        facadeBillet.creerBillet(billetDTO4); //urgent
+        TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("gravite", "Urgent");
+        assertEquals(2,liste.size());
+    }
 
 }
+
+

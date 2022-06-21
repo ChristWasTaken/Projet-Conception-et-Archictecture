@@ -87,12 +87,12 @@ public class ProjetDTO {
     }
 
     public boolean verifierDoublonCategorie(Categorie categorie){
-        System.out.println("2");
+
         if(this.listeCategories.contains(categorie)){
-            System.out.println("3");
+
             return true;
         }
-        System.out.println("4");
+
         return false;
     }
 

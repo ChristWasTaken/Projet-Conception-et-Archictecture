@@ -161,4 +161,9 @@ public class RegistreBillet {
         }
         return reponse;
     }
+
+    public void clear() {
+        this.registreBillet.clear();
+        dernierNumeroBilletAttribue = 0;
+    }
 }

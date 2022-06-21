@@ -56,16 +56,12 @@ public class FacadeBillet {
     public void changerEtatBillet(BilletDTO billetDTO, String etat, String commentaire)
     {
         billetDTO.setEtat(etat);
-        RegistreHistorique registreHistorique = billetDTO.getRegistreHistorique();
 
-        // Ici on a le choix de passer le id de l'usager original (ce que ça fait actuellement), ou le changer
-        // pour que ce soit reçu en parametre.
-        int usager = registreHistorique.chercherParNumero(1).getUsagerTechAssigne();
+        int usager = billetDTO.getIdUsagerTechAssigne();
         Historique historique = new Historique(LocalDate.now(),usager,commentaire);
         historique.setIdBilletAssocie(billetDTO.getIdBillet());
+        billetDTO.getRegistreHistorique().ajouterHistoriqueAuRegistre(historique);
 
-        registreHistorique.ajouterHistoriqueAuRegistre(historique);
-        billetDTO.setRegistreHistorique(registreHistorique);
         Billet billet = new Billet(billetDTO);
         registreBillet.modifierBillet(billet.getIdBillet(), billet);
     }
@@ -80,14 +76,12 @@ public class FacadeBillet {
     public void assignerBillet(BilletDTO billetDTO){
 
         Billet billetModifiable = new Billet(billetDTO);
-        System.out.println(billetDTO);
-
 
         billetModifiable.getRegistreHistorique().ajouterHistoriqueAuRegistre(
                 new Historique(LocalDate.now(),
                         billetModifiable.getIdUsagerTechAssigne(),
                         billetModifiable.getNotes()) );
-        System.out.println(billetDTO);
+
         registreBillet.modifierBillet(billetModifiable.getIdBillet(), billetModifiable);
 
     }
