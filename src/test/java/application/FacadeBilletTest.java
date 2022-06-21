@@ -1,6 +1,7 @@
 package application;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -42,8 +43,7 @@ class FacadeBilletTest {
             new CompteUsagerTechDTO(1, "Roger", "mdp", "email");
 
 
-
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
 
         //Créer un projetDTO
@@ -63,38 +63,19 @@ class FacadeBilletTest {
         billetDTO2.setCategorie(categorieEchec);
         billetDTO3.setCategorie(categorieAnomalie);
         billetDTO4.setCategorie(categorieRidicule);
-
-
     }
 
-
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
+    @Test
+    void assignerBillet() {
+        facadeBillet.creerBillet(billetDTO1);
+        BilletDTO billetTrouve = facadeBillet.consulterBilletParId(1);
+        billetTrouve.setIdUsagerTechAssigne(1);
+        facadeBillet.assignerBillet(billetTrouve);
+        assertEquals(1,facadeBillet.consulterBilletParId(1).getIdUsagerTechAssigne());
     }
-//
-//    @org.junit.jupiter.api.Test
-//    void assignerUsagerTech() {
-//    }
-//
-//    @org.junit.jupiter.api.Test
-//    void creerProjet() {
-//    }
-//
-//    @org.junit.jupiter.api.Test
-//    void creerBillet() {
-//    }
-//
-//    @org.junit.jupiter.api.Test
-//    void chercherParIdBillet() {
-//    }
-
-
-
 
     @Test
     void testCreerBilletEnPassantUnBilletDTO() {
-
-
         int indice = facadeBillet.creerBillet(billetDTO1);
         assertTrue(indice > 0);
 
@@ -107,9 +88,7 @@ class FacadeBilletTest {
         Historique historiqueTrouve = registreHistoriqueTrouve.chercherParNumero(id);
         System.out.println(historiqueTrouve.getIdHistorique());
         assertEquals(1, historiqueTrouve.getIdHistorique());
-
     }
-
 
     @Test
     void changerEtatBillet() {
@@ -124,8 +103,6 @@ class FacadeBilletTest {
         assertEquals(2, facadeBillet.consulterBilletParId(1).getRegistreHistorique().getRegistreHistorique().size());
     }
 
-
-
     @Test
     void consulterDetailBillet() {
         facadeBillet.creerBillet(billetDTO1);
@@ -133,15 +110,6 @@ class FacadeBilletTest {
         assertEquals(billetDTO1,billetVerification);
 
     }
-
-    @Test
-    void ajoutDeCategorie() {
-    }
-
-//    @Test
-//    void assignerBillet() {
-//        presentationMock.projet = new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-//    }
 
     @Test
     void faireSortirLaListedeBilletsFiltreeParDateDebut() {
@@ -214,7 +182,6 @@ class FacadeBilletTest {
         TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("gravite", "Urgent");
         assertEquals(2,liste.size());
     }
-
 }
 
 
