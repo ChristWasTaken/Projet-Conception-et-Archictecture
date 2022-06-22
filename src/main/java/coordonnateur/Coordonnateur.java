@@ -46,12 +46,12 @@ public class Coordonnateur {
         facadeBillet.changerEtatBillet(billetDTO, etat, noteHistorique);
     }
 
-    public void consulterListeBillets() {
-
+    public void consulterListeBillets(String champs, Object filtre) {
+        facadeBillet.consulterListeBillet(champs, filtre);
     }
 
-    public void consulterDetailBillet() {
-
+    public void consulterDetailBillet(int id) {
+        facadeBillet.consulterBilletParId(id);
     }
 
 //-------------------------------------------------------------------------------------------------------
