@@ -25,4 +25,4 @@ Fonctions principales<br/>
 Implantation du composant application<br/>
           • Implantation en Java, incluant tout ce qui est nécessaire pour assembler et faire fonctionner le logiciel.<br/>
           • Vous devez démontrer le fonctionnement du composant. Il est conseillé de simuler les appels à ce composant à l’aide de tests automatisés (tests                 d’API)<br/>
-          • Il est conseillé de simuler les composants utilisés par le composant application à l’aide d’objets retournant des valeurs prédéterminées (vous                   pouvez employer des mock objects à l’aide d’une bibliothèque comme Mockito si vous le désirez)<br/>
+          • Il est conseillé de simuler les composants utilisés par le composant application à l’aide d’objets retournant des valeurs prédéterminées (vous                   pouvez employer des accesPersistence objects à l’aide d’une bibliothèque comme Mockito si vous le désirez)<br/>
