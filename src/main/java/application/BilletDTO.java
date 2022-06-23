@@ -11,27 +11,18 @@ public class BilletDTO {
     private int idBillet = 0;
     private int idProjet;
     private int idUsagerTechAssigne;
-
     private String etat;
     private String gravite;
     private String courrielDemandeur;
     private String notes;
     private String description;
-
     private LocalDate dateAssigne;
     private LocalDate dateDebutBillet;
-
     private Categorie categorie;
-
     private RegistreHistorique registreHistorique;
 
     public BilletDTO() {
     }
-
-    //Constructeur avec parametre pour add
-    //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
-    //par défaut: état: ouvert
-
 
     public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, LocalDate dateDebutBillet) {
         this.idProjet = idProjet;
@@ -46,32 +37,26 @@ public class BilletDTO {
 
     public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, Categorie categorie, LocalDate dateDebutBillet) {
 
-        this.idBillet = idBillet;
         this.idProjet = idProjet;
-        this.idUsagerTechAssigne = idUsagerTechAssigne;
         this.etat = etat;
         this.gravite = gravite;
         this.courrielDemandeur = courrielDemandeur;
         this.notes = notes;
         this.description = description;
         this.categorie = categorie;
-        this.dateAssigne = dateAssigne;
         this.dateDebutBillet = dateDebutBillet;
         this.registreHistorique = new RegistreHistorique();
-   }
+    }
 
     public BilletDTO(int idBillet, int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, LocalDate dateDebutBillet) {
 
         this.idBillet = idBillet;
         this.idProjet = idProjet;
-        this.idUsagerTechAssigne = idUsagerTechAssigne;
         this.etat = etat;
         this.gravite = gravite;
         this.courrielDemandeur = courrielDemandeur;
         this.notes = notes;
         this.description = description;
-        this.categorie = categorie;
-        this.dateAssigne = dateAssigne;
         this.dateDebutBillet = dateDebutBillet;
         this.registreHistorique = new RegistreHistorique();
     }

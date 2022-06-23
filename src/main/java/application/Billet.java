@@ -32,11 +32,6 @@ class Billet {
     public Billet() {
     }
 
-    //Constructeur avec parametre pour add
-    //--FAIRE LES SET POUR LES VALEURS PAR DÉFAUT ET LES AUTO-INCREMENTATION
-    //par défaut: état: ouvert
-
-
     public Billet(BilletDTO billet) {
         this.setIdBillet(billet.getIdBillet());;
         this.setIdProjet(billet.getIdProjet());
