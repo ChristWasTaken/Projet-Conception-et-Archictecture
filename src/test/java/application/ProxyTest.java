@@ -1,6 +1,7 @@
 package application;
 
 import accesPersistence.FacadePersistence;
+import accesPersistence.UsagerTechDAO;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -64,7 +65,20 @@ class ProxyTest {
         projet.ajouterCategorieBillet(new Categorie("Anomalie"));
         assertEquals("Anomalie",proxy.modifierUnProjet(projet).getListeCategories().get(0).getCategorie());
         assertEquals("Anomalie",proxy.modifierUnProjet(projet).getListeCategories().get(0).getCategorie());
-        System.out.println(proxy.chercherProjetDTOParId(1).getListeCategories());
+    }
 
+    @Test
+    void modifierUnBilletAvecUnUsagerBD() {
+        BilletDTO billet = proxy.chercherBilletDTOParId(3);
+        billet.setIdUsagerTechAssigne(proxy.chercherCompteUsagerTechDTOParId(1).getIdUsager());
+        assertTrue(proxy.modifierBilletDTO(billet));
+    }
+
+    @Test
+    void modifierUnBilletAvecUnUsagerNouvelleUsager() {
+        BilletDTO billet = proxy.chercherBilletDTOParId(3);
+        CompteUsagerTechDTO nouveauUsager = new CompteUsagerTechDTO(5,"Roger","mdp","email");
+        billet.setIdUsagerTechAssigne(nouveauUsager.getIdUsager());
+        assertTrue(proxy.modifierBilletDTO(billet));
     }
 }

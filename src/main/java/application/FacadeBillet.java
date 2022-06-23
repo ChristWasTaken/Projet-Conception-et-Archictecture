@@ -74,16 +74,17 @@ public class FacadeBillet {
      * méthode qui modifie n'importe quel paramètre du billet.
      * @param billetDTO contient l'id du billet à assigner et l'id de l'usager à assigner.
      */
-    public void assignerBillet(BilletDTO billetDTO){
+    public boolean assignerBillet(BilletDTO billetDTO){
 
         Billet billetModifiable = new Billet(billetDTO);
-
         billetModifiable.getRegistreHistorique().ajouterHistoriqueAuRegistre(
                 new Historique(LocalDate.now(),
                         billetModifiable.getIdUsagerTechAssigne(),
                         billetModifiable.getNotes()) );
 
         registreBillet.modifierBillet(billetModifiable.getIdBillet(), billetModifiable);
+        proxy.modifierBilletDTO(billetModifiable.asBilletDTO());
+        return true;
     }
 
 

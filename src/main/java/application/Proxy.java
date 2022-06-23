@@ -23,8 +23,7 @@ public class Proxy {
      * Methode pour chercher un projet de la persistence
      */
     public ProjetDTO chercherProjetDTOParId(int id){
-        ProjetDTO projetDTO = facadePersistence.chercherProjetDTOParId(id);
-        return projetDTO;
+        return facadePersistence.chercherProjetDTOParId(id);
     }
 
     public ProjetDTO modifierUnProjet(ProjetDTO projetDTO) {
@@ -55,5 +54,9 @@ public class Proxy {
     public BilletDTO chercherBilletDTOParId(int id) {
         BilletDTO billetDTO = facadePersistence.chercherBilletDTOParId(id);
         return billetDTO;
+    }
+
+    public boolean modifierBilletDTO(BilletDTO billetDTO) {
+        return facadePersistence.modifierBilletDTO(billetDTO);
     }
 }

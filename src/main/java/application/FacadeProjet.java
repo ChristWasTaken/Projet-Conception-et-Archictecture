@@ -15,8 +15,7 @@ public class FacadeProjet {
     }
 
     public ProjetDTO consulterUnProjetDTOParId(int id){
-        ProjetDTO projetDTO = proxy.chercherProjetDTOParId(id);
-        return projetDTO;
+        return proxy.chercherProjetDTOParId(id);
     }
 
     public boolean ajouterCategorie(ProjetDTO projet) {

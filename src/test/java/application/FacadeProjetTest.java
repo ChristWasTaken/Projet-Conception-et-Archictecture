@@ -1,11 +1,13 @@
 package application;
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.TestMethodOrder;
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class FacadeProjetTest {
     RegistreProjet registreProjet = RegistreProjet.getInstance();
     Proxy proxy = new Proxy();
@@ -14,6 +16,7 @@ class FacadeProjetTest {
     FacadeProjet facadeProjet = new FacadeProjet();
 
     @Test
+    @Order(1)
     void testCreerProjetAvecUnProjetDTO() {
         ProjetDTO projetDTO = new ProjetDTO(1, "ProjetHyperSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
 
@@ -32,6 +35,7 @@ class FacadeProjetTest {
     }
 
     @Test
+    @Order(2)
     void ajouterUneCategorieAUnProjetExistant() {
         ProjetDTO projetExistant = facadeProjet.consulterUnProjetDTOParId(1);
         projetExistant.ajouterCategorieBillet(new Categorie("Anomalie"));
@@ -41,6 +45,7 @@ class FacadeProjetTest {
     }
 
     @Test
+    @Order(3)
     void ajouterUneCategorieAUnProjetNonExistant() {
         ProjetDTO projetExistant = facadeProjet.consulterUnProjetDTOParId(1);
         projetExistant.setIdProjet(10);
@@ -49,6 +54,7 @@ class FacadeProjetTest {
     }
 
     @Test
+    @Order(4)
     void testAssignerUsagerTechAvecProjetDTOUsagerDTO() {
         ProjetDTO projetDTO = proxy.chercherProjetDTOParId(1);
         CompteUsagerTechDTO usagerDTO = proxy.chercherCompteUsagerTechDTOParId(1);

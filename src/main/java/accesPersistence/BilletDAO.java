@@ -26,6 +26,7 @@ class BilletDAO {
         BilletDTO billetDTO = this.collectionBillets.get(id);
         if(billetDTO == null){
             System.out.println("Aucun billet avec cet id");
+            return null;
         }
         return billetDTO;
     }

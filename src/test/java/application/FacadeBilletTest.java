@@ -190,6 +190,27 @@ class FacadeBilletTest {
             TreeMap<Integer,BilletDTO> liste = facadeBillet.consulterListeBillet("gravite", "hjhdfkjhjds");
             assertEquals(0,liste.size());
         }
+    @Test
+    void modifierUnBilletBDAvecUsageTechBD() {
+        BilletDTO billetDTO = proxy.chercherBilletDTOParId(1);
+        assertEquals(0, billetDTO.getIdUsagerTechAssigne());
+
+        CompteUsagerTechDTO compteUsagerTechDTO = proxy.chercherCompteUsagerTechDTOParId(1);
+        billetDTO.setIdUsagerTechAssigne(compteUsagerTechDTO.getIdUsager());
+        facadeBillet.assignerBillet(billetDTO);
+        assertEquals(1, proxy.chercherBilletDTOParId(1).getIdUsagerTechAssigne());
+    }
+
+    @Test
+    void modifierUnBilletBDAvecUsageTechBDEtVerifierChangementRegistre() {
+        BilletDTO billetDTO = proxy.chercherBilletDTOParId(1);
+        assertEquals(0, billetDTO.getIdUsagerTechAssigne());
+
+        CompteUsagerTechDTO compteUsagerTechDTO = proxy.chercherCompteUsagerTechDTOParId(1);
+        billetDTO.setIdUsagerTechAssigne(compteUsagerTechDTO.getIdUsager());
+        facadeBillet.assignerBillet(billetDTO);
+        assertEquals(1, registreBillet.chercherBilletParId(0).getIdUsagerTechAssigne());
+    }
 }
 
 

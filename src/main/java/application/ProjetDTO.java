@@ -87,12 +87,10 @@ public class ProjetDTO {
     }
 
     public boolean verifierDoublonCategorie(Categorie categorie){
-
         if(this.listeCategories.contains(categorie)){
 
             return true;
         }
-
         return false;
     }
 

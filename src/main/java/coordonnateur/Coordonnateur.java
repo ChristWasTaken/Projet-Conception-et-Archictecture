@@ -19,6 +19,10 @@ public class Coordonnateur {
         return facadeProjet.consulterUnProjetDTOParId(id);
     }
 
+    public CompteUsagerTechDTO consulterCompteUsagerTechDTO(int id) {
+        return facadeCompteUsager.consulterCompteUsagerTechDTOParId(id);
+    }
+
     public void assignerCompteUsagerTechAProjet(CompteUsagerTechDTO usagerTechDTO, ProjetDTO projetDTO) {
         facadeProjet.assignerUsagerTech(usagerTechDTO, projetDTO);
     }
@@ -35,10 +39,12 @@ public class Coordonnateur {
         facadeBillet.creerBillet(billetDTO);
 
     }
-    public void assignerBilletAUsagerTech(BilletDTO billetDTO, CompteUsagerTechDTO compteUsagerTechDTO) {
+    public boolean assignerBilletAUsagerTech(BilletDTO billetDTO, CompteUsagerTechDTO compteUsagerTechDTO) {
         billetDTO.setIdUsagerTechAssigne(compteUsagerTechDTO.getIdUsager());
-
-        facadeBillet.assignerBillet(billetDTO);
+        if(facadeBillet.assignerBillet(billetDTO)){
+           return true;
+        }
+        return false;
     }
 
 
@@ -50,8 +56,8 @@ public class Coordonnateur {
         facadeBillet.consulterListeBillet(champs, filtre);
     }
 
-    public void consulterDetailBillet(int id) {
-        facadeBillet.consulterBilletParId(id);
+    public BilletDTO consulterDetailBillet(int id) {
+        return facadeBillet.consulterBilletParId(id);
     }
 
 //-------------------------------------------------------------------------------------------------------

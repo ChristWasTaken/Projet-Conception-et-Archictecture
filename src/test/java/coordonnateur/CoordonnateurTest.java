@@ -3,12 +3,13 @@ package coordonnateur;
 import application.*;
 import org.junit.jupiter.api.*;
 import java.time.LocalDate;
+import java.util.TreeMap;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CoordonnateurTest {
 
     Coordonnateur coordonnateur = new Coordonnateur();
-
 
     @Test
     void definirUneNouvelleCategorieDeBilletDansUnProjetExistant() {
@@ -24,9 +25,11 @@ class CoordonnateurTest {
     void definirUneCategorieEnDoublonDansUnProjetExistant() {
         ProjetDTO projetExistant = coordonnateur.consulterUnProjetDTOParId(1);
         String categorieBillet = "Anomalie";
+        System.out.println(projetExistant.getListeCategories());
         coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet);
-
+        System.out.println(projetExistant.getListeCategories());
         assertTrue(coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet));
+        System.out.println(projetExistant.getListeCategories());
 //        assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().get(0).getCategorie());
 //        assertEquals(1, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().size());
     }
@@ -40,18 +43,29 @@ class CoordonnateurTest {
     }
 
     @Test
-    void assignerBilletAUsagerTech() {
-        CompteUsagerTechDTO usagerDTO = new CompteUsagerTechDTO(1,"Roger","mdp","email");
+    void assignerNouveauBilletAUsagerTechBD() {
+        CompteUsagerTechDTO usagerDTO = coordonnateur.consulterCompteUsagerTechDTO(1);
         BilletDTO billetDTO = new BilletDTO(1, "BilletTopSecret", "hebdo", "billet@test.ca",
                 "Corriger les Classes Blob!!", "Blobs are bad mmkay!", LocalDate.of(2022,05,28));
-//        CommonDAO commonDAO = CommonDAOProxy.getInstance();
 
         coordonnateur.assignerBilletAUsagerTech(billetDTO, usagerDTO);
 
         assertEquals(usagerDTO.getIdUsager(), billetDTO.getIdUsagerTechAssigne());
-
         assertEquals(billetDTO.getRegistreHistorique().chercherParNumero(1).getUsagerTechAssigne(),
                 usagerDTO.getIdUsager());
+    }
 
+    @Test
+    void assignerNouveauBilletANouveauUsagerTech() {
+        CompteUsagerTechDTO usagerDTO = new CompteUsagerTechDTO(
+                10, "NouveauUsager", "motdePasse","email@monemail.com");
+        ;
+        BilletDTO billetDTO = new BilletDTO(1, "BilletTopSecret", "hebdo", "billet@test.ca",
+                "Corriger les Classes Blob!!", "Blobs are bad mmkay!", LocalDate.of(2022,05,28));
+        coordonnateur.assignerBilletAUsagerTech(billetDTO, usagerDTO);
+
+        assertEquals(usagerDTO.getIdUsager(), billetDTO.getIdUsagerTechAssigne());
+        assertEquals(billetDTO.getRegistreHistorique().chercherParNumero(1).getUsagerTechAssigne(),
+                usagerDTO.getIdUsager());
     }
 }

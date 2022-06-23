@@ -22,8 +22,7 @@ public class FacadePersistence {
     }
 
     public ProjetDTO chercherProjetDTOParId(int id){
-        ProjetDTO projetDTO = projetDAO.chercherProjetDTOParId(id);
-        return projetDTO;
+        return projetDAO.chercherProjetDTOParId(id);
     }
 
     public ProjetDTO modifierUnProjet(ProjetDTO projetDTO){
@@ -46,5 +45,13 @@ public class FacadePersistence {
     public BilletDTO chercherBilletDTOParId(int id){
         BilletDTO billetDTO = billetDAO.chercherBilletDTOParId(id);
         return billetDTO;
+    }
+
+    public boolean modifierBilletDTO(BilletDTO billetDTO) {
+        BilletDTO billetModifie = billetDAO.modifierBillet(billetDTO);
+        if (billetModifie != null) {
+            return true;
+        }
+        return false;
     }
 }
