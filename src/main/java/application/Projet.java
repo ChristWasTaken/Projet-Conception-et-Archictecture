@@ -16,12 +16,10 @@ class Projet {
     private ArrayList<Categorie> listeCategories;
 
     /**
-     * constructeurs
+     * constructeurs par défaut
      */
-    //par défaut
     public Projet() {
     }
-
 
     //constructeur avec parametre de base
     public Projet(int idProjet, String nomProjet, LocalDate dateDebut, LocalDate dateFin) {
@@ -32,7 +30,6 @@ class Projet {
         this.registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
         this.listeCategories = new ArrayList<>();
     }
-
 
     //Constructeur avec DTO
     public Projet(ProjetDTO projetDTO){
@@ -118,7 +115,7 @@ class Projet {
     }
 
     public boolean verifierDoublonCategorie(Categorie categorie){
-        if(this.listeCategories.contains(categorie)){
+        if(!this.listeCategories.contains(categorie)){
             return true;
         }
         return false;
@@ -129,7 +126,9 @@ class Projet {
      * @param categorie
      */
     public void ajouterCategoriesBillet(Categorie categorie) {
-        this.listeCategories.add(categorie);
+        if(verifierDoublonCategorie(categorie)){
+            this.listeCategories.add(categorie);
+        }
     }
 
     /**

@@ -13,7 +13,6 @@ public class Historique {
     private int usagerTechAssigne;
     private String commentaires;
 
-
     /**
      * Constructeurs
      */

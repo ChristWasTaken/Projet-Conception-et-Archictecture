@@ -3,6 +3,9 @@ package application;
 public class Categorie {
     private String categorie;
 
+    // Implémentation de la catégorie sous forme d'objet pour
+    // options futures.
+
     public Categorie() {}
 
     public Categorie(String categorie) {

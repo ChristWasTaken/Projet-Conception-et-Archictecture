@@ -86,14 +86,6 @@ public class ProjetDTO {
         this.listeCategories = listeCategories;
     }
 
-    public boolean verifierDoublonCategorie(Categorie categorie){
-        if(this.listeCategories.contains(categorie)){
-
-            return true;
-        }
-        return false;
-    }
-
     /**
      * Ajouter une catégorie à l'ArrayList
      * @param categorie
@@ -102,6 +94,18 @@ public class ProjetDTO {
         if(!verifierDoublonCategorie(categorie)) {
             this.listeCategories.add(categorie);
         }
+    }
+    /**
+     * Vérifier si la catégorie existe déjà dans l'ArrayList
+     * @param categorie nouvelle catégorie recu du coordonateur
+     * @return
+     */
+    public boolean verifierDoublonCategorie(Categorie categorie){
+        if(this.listeCategories.contains(categorie)){
+
+            return true;
+        }
+        return false;
     }
 
     /**
