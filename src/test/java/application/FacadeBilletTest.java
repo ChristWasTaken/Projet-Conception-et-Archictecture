@@ -84,7 +84,7 @@ class FacadeBilletTest {
 
         RegistreHistorique registreHistoriqueTrouve = billetTrouve.getRegistreHistorique();
 
-        int id = registreHistoriqueTrouve.getRegistreHistorique().lastKey();
+        int id = registreHistoriqueTrouve.getInstance().lastKey();
 
         Historique historiqueTrouve = registreHistoriqueTrouve.chercherParNumero(id);
 
@@ -101,7 +101,7 @@ class FacadeBilletTest {
         assertEquals("Fermé", facadeBillet.consulterBilletParId(1).getEtat());
 
         //Registre historique doit contenir original + trace du changement
-        assertEquals(2, facadeBillet.consulterBilletParId(1).getRegistreHistorique().getRegistreHistorique().size());
+        assertEquals(2, facadeBillet.consulterBilletParId(1).getRegistreHistorique().getInstance().size());
     }
 
     @Test

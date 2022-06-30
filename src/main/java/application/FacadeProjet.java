@@ -14,10 +14,6 @@ public class FacadeProjet {
         proxy.persisterProjet(nouveauProjet.asProjetDTO());
     }
 
-    public ProjetDTO consulterUnProjetDTOParId(int id){
-        return proxy.chercherProjetDTOParId(id);
-    }
-
     public boolean ajouterCategorie(ProjetDTO projet) {
         projet = proxy.modifierUnProjet(projet);
         if(projet != null){
@@ -34,4 +30,12 @@ public class FacadeProjet {
         projetAAssigne.ajouterUsagerAuRegistre(usagerAAssigne);
         proxy.persisterProjet(projetAAssigne.asProjetDTO());
     }
+
+    public ProjetDTO consulterUnProjetDTOParId(int id){
+        return proxy.chercherProjetDTOParId(id);
+    }
+
+
+
+
 }

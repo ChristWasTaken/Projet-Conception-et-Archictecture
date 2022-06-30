@@ -26,5 +26,4 @@ public class RegistreUsagerTechAssigne {
             System.out.println(tmp);
         }
     }
-
 }

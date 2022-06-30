@@ -21,6 +21,11 @@ public class RegistreProjet {
         return Instance;
     }
 
+    public int prochainIdProjet(){
+        dernierNumeroProjetAttribue++;
+        return dernierNumeroProjetAttribue;
+    }
+
     public int ajouterProjet(Projet nouveauProjet){
         nouveauProjet.setIdProjet(this.prochainIdProjet());
         this.registreProjet.put(nouveauProjet.getIdProjet(), nouveauProjet);
@@ -28,27 +33,19 @@ public class RegistreProjet {
         return nouveauProjet.getIdProjet();
     }
 
-    public int prochainIdProjet(){
-        dernierNumeroProjetAttribue++;
-        return dernierNumeroProjetAttribue;
-    }
-
     public void modifierProjet(Projet projet){
         this.registreProjet.replace(projet.getIdProjet(), projet);
     }
 
     public Projet trouverProjet(int idProjet){
-        Projet projet = this.registreProjet.get(idProjet);
-        return projet;
+        return this.registreProjet.get(idProjet);
     }
 
-    public TreeMap recupererRegistreProjetAsDTO(){
+    public TreeMap<Integer, ProjetDTO> recupererRegistreProjetAsDTO(){
         TreeMap<Integer, ProjetDTO> registreProjetDTO = new TreeMap<Integer, ProjetDTO>();
         for(Projet projet : this.registreProjet.values()){
             registreProjetDTO.put(projet.getIdProjet(), projet.asProjetDTO());
         }
         return registreProjetDTO;
-
     }
-
 }

@@ -18,7 +18,7 @@ class CoordonnateurTest {
 
         assertTrue(coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet));
         assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().get(0).getCategorie());
-        assertEquals(1, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().size());
+        assertEquals(3, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().size());
     }
 
     @Test
@@ -58,7 +58,7 @@ class CoordonnateurTest {
     @Test
     void assignerNouveauBilletANouveauUsagerTech() {
         CompteUsagerTechDTO usagerDTO = new CompteUsagerTechDTO(
-                10, "NouveauUsager", "motdePasse","email@monemail.com");
+                1, "NouveauUsager", "motdePasse","email@monemail.com");
         ;
         BilletDTO billetDTO = new BilletDTO(1, "BilletTopSecret", "hebdo", "billet@test.ca",
                 "Corriger les Classes Blob!!", "Blobs are bad mmkay!", LocalDate.of(2022,05,28));

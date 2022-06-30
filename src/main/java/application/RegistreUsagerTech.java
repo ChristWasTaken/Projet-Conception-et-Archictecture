@@ -29,7 +29,7 @@ public class RegistreUsagerTech {
         return usager;
     }
 
-    public TreeMap recupererRegistreUsagerTechAsDTO(){
+    public TreeMap<Integer, CompteUsagerTechDTO> recupererRegistreUsagerTechAsDTO(){
         TreeMap<Integer, CompteUsagerTechDTO> registreUsagerTechDTO = new TreeMap<Integer, CompteUsagerTechDTO>();
         for(CompteUsagerTech usager : this.registreUsagerTech.values()){
             registreUsagerTechDTO.put(usager.getIdUsager(), usager.asCompteUsagerTechDTO());

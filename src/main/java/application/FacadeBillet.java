@@ -20,7 +20,6 @@ public class FacadeBillet {
      */
     public int creerBillet(BilletDTO billetDTO) {
 
-
         Billet billet = new Billet(billetDTO);
         int id = registreBillet.ajouterBilletAuRegistre(billet);
         Historique historique = new Historique(LocalDate.now(),"Création de l'historique");
@@ -32,8 +31,6 @@ public class FacadeBillet {
         registreBillet.modifierBillet(id,billet);
         proxy.persisterBillet(billet.asBilletDTO());
         return id;
-
-
     }
 
     /**

@@ -2,29 +2,24 @@ package coordonnateur;
 
 import application.*;
 
+import java.util.TreeMap;
+
 public class Coordonnateur {
 
     FacadeProjet facadeProjet = new FacadeProjet();
     FacadeBillet facadeBillet = new FacadeBillet();
     FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
 
-    public void creerCompteUsagerTech() {
-
+    public void creerCompteUsagerTech(CompteUsagerTechDTO compteDto) {
+        facadeCompteUsager.creerCompteUsagerTech(compteDto);
     }
 
     public void creerProjet(ProjetDTO projetDTO) {
         facadeProjet.creerProjet(projetDTO);
     }
-    public ProjetDTO consulterUnProjetDTOParId(int id) {
-        return facadeProjet.consulterUnProjetDTOParId(id);
-    }
 
-    public CompteUsagerTechDTO consulterCompteUsagerTechDTO(int id) {
-        return facadeCompteUsager.consulterCompteUsagerTechDTOParId(id);
-    }
-
-    public void assignerCompteUsagerTechAProjet(CompteUsagerTechDTO usagerTechDTO, ProjetDTO projetDTO) {
-        facadeProjet.assignerUsagerTech(usagerTechDTO, projetDTO);
+    public void assignerCompteUsagerTechAProjet(CompteUsagerTechDTO usagerDTO, ProjetDTO projetDTO) {
+        facadeProjet.assignerUsagerTech(usagerDTO, projetDTO);
     }
 
     public boolean definirCategorieDeBillet(ProjetDTO projetDto, String nouvelleCategorie) {
@@ -35,30 +30,35 @@ public class Coordonnateur {
         return false;
     }
 
-    public void creerBillet(BilletDTO billetDTO) {
-        facadeBillet.creerBillet(billetDTO);
-
+    public int creerBillet(BilletDTO billetDTO) {
+        return facadeBillet.creerBillet(billetDTO);
     }
+
     public boolean assignerBilletAUsagerTech(BilletDTO billetDTO, CompteUsagerTechDTO compteUsagerTechDTO) {
         billetDTO.setIdUsagerTechAssigne(compteUsagerTechDTO.getIdUsager());
         if(facadeBillet.assignerBillet(billetDTO)){
-           return true;
+            return true;
         }
         return false;
     }
 
-
-    public void changerEtatBillet(BilletDTO billetDTO, String etat, int idUsager, String noteHistorique) {
-        facadeBillet.changerEtatBillet(billetDTO, etat, noteHistorique);
+    public void changerEtatBillet(BilletDTO billetDTO, String etat, String commentaire) {
+        facadeBillet.changerEtatBillet(billetDTO, etat, commentaire);
     }
 
-    public void consulterListeBillets(String champs, Object filtre) {
-        facadeBillet.consulterListeBillet(champs, filtre);
+    public TreeMap<Integer, BilletDTO> consulterListeBillets(String champs, Object filtre) {
+        return facadeBillet.consulterListeBillet(champs, filtre);
     }
 
     public BilletDTO consulterDetailBillet(int id) {
         return facadeBillet.consulterBilletParId(id);
     }
 
+    public ProjetDTO consulterUnProjetDTOParId(int id) {
+        return facadeProjet.consulterUnProjetDTOParId(id);
+    }
 
+    public CompteUsagerTechDTO consulterCompteUsagerTechDTO(int id) {
+        return facadeCompteUsager.consulterCompteUsagerTechDTOParId(id);
+    }
 }

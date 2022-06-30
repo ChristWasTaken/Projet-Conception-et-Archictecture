@@ -3,13 +3,12 @@ package application;
 import java.util.TreeMap;
 
 public class RegistreHistorique {
-    private TreeMap<Integer, Historique> registreHistorique =  new TreeMap<>();
+    private static TreeMap<Integer, Historique> registreHistorique =  new TreeMap<>();
 
     /**
      * Dernier numéro attribué à un historique.
      */
     private static int dernierNumeroHistoriqueAttribue = 0;
-
 
     /**
      * Constructeur
@@ -21,33 +20,8 @@ public class RegistreHistorique {
      * Getters and setters
      */
 
-    public TreeMap<Integer, Historique> getRegistreHistorique() {
+    public static TreeMap<Integer, Historique> getInstance() {
         return registreHistorique;
-    }
-
-    public void setRegistreHistorique(TreeMap<Integer, Historique> registreHistorique) {
-        this.registreHistorique = registreHistorique;
-    }
-
-    /**
-     * Méthode pour Ajouter historique au registre
-     * @param historique
-     * @return le id de l'historique
-     */
-    public int ajouterHistoriqueAuRegistre(Historique historique){
-        historique.setIdHistorique(this.prochainIdHistorique());
-        this.registreHistorique.put(historique.getIdHistorique(), historique);
-        return historique.getIdHistorique();
-    }
-
-
-    /**
-     * Récupère un historique par son Id
-     * @param idHistorique
-     * @return historique
-     */
-    public Historique chercherParNumero(int idHistorique) {
-        return this.registreHistorique.get(idHistorique);
     }
 
     /**
@@ -58,15 +32,31 @@ public class RegistreHistorique {
         return ++dernierNumeroHistoriqueAttribue;
     }
 
+    /**
+     * Méthode pour Ajouter historique au registre
+     * @param historique le historique à ajouter
+     * @return le id de l'historique
+     */
+    public int ajouterHistoriqueAuRegistre(Historique historique){
+        historique.setIdHistorique(this.prochainIdHistorique());
+        registreHistorique.put(historique.getIdHistorique(), historique);
+        return historique.getIdHistorique();
+    }
 
-    public TreeMap afficherRegistreHistorique() {
+    /**
+     * Récupère un historique par son Id
+     * @param idHistorique l'id de l'historique à récupérer
+     * @return historique
+     */
+    public Historique chercherParNumero(int idHistorique) {
+        return this.registreHistorique.get(idHistorique);
+    }
+
+    public TreeMap<Integer, Historique> afficherRegistreHistorique() {
         return registreHistorique;
     }
 
-
-    public void modifierRegistreHistorique(){
-
-    }
+    public void modifierRegistreHistorique(){ }
 
     @Override
     public String toString() {
