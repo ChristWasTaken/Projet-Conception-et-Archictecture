@@ -17,11 +17,9 @@ public class Historique {
     /**
      * Constructeurs
      */
-    //par défaut
+
     public Historique() {
     }
-
-    //avec paramètres
 
     public Historique(LocalDate date, String commentaires) {
         this.date = date;

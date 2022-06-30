@@ -21,6 +21,9 @@ public class BilletDTO {
     private Categorie categorie;
     private RegistreHistorique registreHistorique;
 
+    /**
+     * constructeurs
+     */
     public BilletDTO() {
     }
 
@@ -36,7 +39,6 @@ public class BilletDTO {
     }
 
     public BilletDTO(int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, Categorie categorie, LocalDate dateDebutBillet) {
-
         this.idProjet = idProjet;
         this.etat = etat;
         this.gravite = gravite;
@@ -49,7 +51,6 @@ public class BilletDTO {
     }
 
     public BilletDTO(int idBillet, int idProjet, String etat, String gravite, String courrielDemandeur, String notes, String description, LocalDate dateDebutBillet) {
-
         this.idBillet = idBillet;
         this.idProjet = idProjet;
         this.etat = etat;
@@ -175,6 +176,11 @@ public class BilletDTO {
                 '}';
     }
 
+    /**
+     * Méthode pour comparer un objet de type Object avec un BilletDTO pour valider si c'est le même objet
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

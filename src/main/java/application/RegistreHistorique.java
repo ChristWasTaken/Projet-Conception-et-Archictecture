@@ -30,7 +30,9 @@ public class RegistreHistorique {
     }
 
     /**
-     * Ajouter historique au registre
+     * Méthode pour Ajouter historique au registre
+     * @param historique
+     * @return le id de l'historique
      */
     public int ajouterHistoriqueAuRegistre(Historique historique){
         historique.setIdHistorique(this.prochainIdHistorique());
@@ -41,6 +43,8 @@ public class RegistreHistorique {
 
     /**
      * Récupère un historique par son Id
+     * @param idHistorique
+     * @return historique
      */
     public Historique chercherParNumero(int idHistorique) {
         return this.registreHistorique.get(idHistorique);
@@ -48,6 +52,7 @@ public class RegistreHistorique {
 
     /**
      * incrémentation automatique du IDHistorique
+     * @return le nouvel id
      */
     private int prochainIdHistorique() {
         return ++dernierNumeroHistoriqueAttribue;

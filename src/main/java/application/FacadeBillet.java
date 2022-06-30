@@ -52,7 +52,13 @@ public class FacadeBillet {
     }
 
 
-
+    /**
+     * Méthode pour changer l'état du billet en lui passant le nouvel objetDTO, le nouvel état ainsi que le
+     * commentaire expliquant ce nouvel état
+     * @param billetDTO
+     * @param etat
+     * @param commentaire
+     */
     public void changerEtatBillet(BilletDTO billetDTO, String etat, String commentaire)
     {
         billetDTO.setEtat(etat);
@@ -88,6 +94,13 @@ public class FacadeBillet {
     }
 
 
+    /**
+     * Méthode qui permet de consulter la liste des billets en choisissant le type de filtre qu'on désire faire
+     * en l'indiquant dans le paramètr champs
+     * @param champs
+     * @param filtre
+     * @return
+     */
     public TreeMap consulterListeBillet(String champs, Object filtre){
         return registreBillet.recupererListeBilletEnDTO(champs,filtre);
     }

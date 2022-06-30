@@ -26,9 +26,8 @@ class Billet {
 
 
     /**
-     * constructeur
+     * constructeurs
      */
-    //par défaut
     public Billet() {
     }
 
@@ -49,8 +48,8 @@ class Billet {
 
     /**
      * Conversion du billet en DTO
+     * @return billetDTO
      */
-
     BilletDTO asBilletDTO(){
         final BilletDTO billetDTO = new BilletDTO();
 
@@ -73,7 +72,6 @@ class Billet {
     /**
      * Getters et Setters
      */
-
     public int getIdBillet() {
         return idBillet;
     }

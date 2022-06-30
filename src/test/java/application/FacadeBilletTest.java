@@ -10,6 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FacadeBilletTest {
 
+    /**
+     * Les méthodes de test de cette page doivent être testées une à la fois
+     */
     FacadeBillet facadeBillet = new FacadeBillet();
     FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
     FacadeProjet facadeProjet = new FacadeProjet();

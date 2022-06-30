@@ -9,7 +9,7 @@ public class RegistreBillet {
 
 
     /**
-     * Instance unique.
+     * Instance unique
      */
     private static RegistreBillet instance = new RegistreBillet();
 
@@ -28,13 +28,12 @@ public class RegistreBillet {
     /**
      * Constructeur par défaut
      */
-    public RegistreBillet() {
+    private RegistreBillet() {
+        this.registreBillet = new TreeMap<Integer, Billet>();
     }
-
     /**
      * Getter de l'instance
      */
-
     public static RegistreBillet getInstance() {
         if (instance == null) {
             instance = new RegistreBillet();
@@ -44,7 +43,6 @@ public class RegistreBillet {
 
     /**
      * Ajouter billet au registre
-     *
      * @param nouveauBillet
      * @return le id du billet ajouté
      */
@@ -57,7 +55,6 @@ public class RegistreBillet {
 
     /**
      * Chercher un Billet par son Id
-     *
      * @param idBillet
      * @return un Billet
      */
@@ -68,27 +65,18 @@ public class RegistreBillet {
 
     /**
      * incrémentation automatique du IDBillet
-     *
      * @return
      */
     private int prochainIdBillet() {
         return ++dernierNumeroBilletAttribue;
     }
 
-
-//    public TreeMap afficherRegistreBillet() {
-//
-//        return registreBillet;
-//    }
-
     public void modifierBillet(int id, Billet billetModifiable) {
         this.registreBillet.put(id, billetModifiable);
     }
 
-
     /**
      * Consulter la Liste des Billets
-     *
      * @return liste de billets de type BilletDTO
      */
     public TreeMap<Integer, BilletDTO> recupererListeBilletEnDTO() {
@@ -102,6 +90,12 @@ public class RegistreBillet {
         return listeDTO;
     }
 
+    /**
+     * méthode permettant de récupérer la liste des BilletsDTO seon le type de filtre demandé
+     * @param champs
+     * @param filtre
+     * @return liste de billetsDTO
+     */
     public TreeMap<Integer, BilletDTO> recupererListeBilletEnDTO(String champs, Object filtre) {
         TreeMap<Integer, BilletDTO> listeDTO = recupererListeBilletEnDTO();
         Map<Integer, BilletDTO> listeTriee;
@@ -117,6 +111,14 @@ public class RegistreBillet {
         return new TreeMap<>(listeTriee);
     }
 
+    /**
+     * Méthode qui filtre les champs afin de définir quel type de filtre sera utilisé
+     * dans la méthode: recupererListeBilletEnDTO
+     * @param champs
+     * @param filtre
+     * @param billetDTOEntry
+     * @return
+     */
     private boolean filtrerChamps(String champs, Object filtre, Map.Entry<Integer, BilletDTO> billetDTOEntry) {
         Boolean reponse = false;
         switch (champs) {
