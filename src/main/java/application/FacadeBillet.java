@@ -71,7 +71,7 @@ public class FacadeBillet {
 
 
     /**
-     * Assigner un billet à un usager en utilisation un DTO modifier préalablement.
+     * Assigner un billet à un usager en utilisant un DTO modifié préalablement.
      * @param billetDTO contient l'id du billet à assigner et l'id de l'usager à assigner.
      * @return true si l'assignation a été effectuée.
      */
@@ -89,8 +89,8 @@ public class FacadeBillet {
 
 
     /**
-     * Méthode qui permet de consulter la liste des billets en choisissant le type de filtre qu'on désire faire
-     * en l'indiquant dans le paramètr champs
+     * Méthode qui permet de consulter la liste des billets en choisissant le filtre qu'on désire faire
+     * et pour quel champs.
      * @param champs le type de filtre
      * @param filtre le filtre à appliquer
      * @return la liste des billets filtrés

@@ -10,8 +10,8 @@ public class FacadeProjet {
 
     /**
      * Méthode pour créer un projet en lui passant un objet projetDTO rempli par
-     * l'utilisateur a l'aide de formulaire dans la couche presentation. Le projet est sauvegarder en memoire dans un
-     * registre et est persister a travers le proxy vers une base de données.
+     * l'utilisateur a l'aide de formulaire dans la couche presentation. Le projet est sauvegardé en memoire dans un
+     * registre et est persisté a travers le proxy vers une base de données.
      * @param projetDTO le projet DTO
      */
     public void creerProjet(ProjetDTO projetDTO){
@@ -22,9 +22,9 @@ public class FacadeProjet {
 
     /**
      * Méthode ajouter une categorie à un projetDTO par l'entremise
-     * d'un DTO déja modifier au niveau du coordonateur
+     * d'un DTO déja modifié au niveau du coordonateur
      * @param projetDTO le projetDTO
-     * @return true si la catégorie n'existe pas déjà dans le projetDTO et a été créer avec succès,
+     * @return true si la catégorie n'existe pas déjà dans le projetDTO et a été créée avec succès,
      * false un doublon est trouvé ou la création à échouée sinon.
      */
     public boolean ajouterCategorie(ProjetDTO projetDTO) {

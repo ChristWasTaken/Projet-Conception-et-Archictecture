@@ -36,7 +36,7 @@ class BilletDAO {
             this.collectionBillets.put(billetDTO.getIdBillet(), billetDTO);
             return true;
         } catch (Exception e) {
-            System.out.println("Modification interromptue - persistence.Rollback()");
+            System.out.println("Modification interrompue - persistence.Rollback()");
             return false;
         }
     }

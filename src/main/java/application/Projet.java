@@ -102,7 +102,7 @@ class Projet {
     }
 
     /**
-     * Méthode pour ajouter un compte usager technique au registre des comptes usager technique assigné d'un projet.
+     * Méthode pour ajouter un compte usager technique au registre des comptes usagers technique assignés d'un projet.
      * @param compteUsagerTech le compte usager technique à ajouter au registre.
      */
     public void ajouterUsagerAuRegistre(CompteUsagerTech compteUsagerTech){

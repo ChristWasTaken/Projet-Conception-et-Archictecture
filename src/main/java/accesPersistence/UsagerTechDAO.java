@@ -24,7 +24,7 @@ class UsagerTechDAO {
     public CompteUsagerTechDTO chercherCompteUsagerTechDTOParId(int id){
         CompteUsagerTechDTO compteUsagerTechDTO = this.collectionsUsagers.get(id);
         if(compteUsagerTechDTO == null){
-            System.out.println("Aucun usager avec cette id");
+            System.out.println("Aucun usager avec cet id");
         }
         return compteUsagerTechDTO;
     }

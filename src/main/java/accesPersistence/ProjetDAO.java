@@ -25,7 +25,7 @@ import java.util.TreeMap;
      public ProjetDTO chercherProjetDTOParId(int id){
          ProjetDTO projetDTO = this.collectionProjets.get(id);
          if(projetDTO == null) {
-             System.out.println("Aucun projet avec cette id");
+             System.out.println("Aucun projet avec cet id");
          }
          return projetDTO;
      }
@@ -34,7 +34,7 @@ import java.util.TreeMap;
          try {
              return this.collectionProjets.put(projetDTO.getIdProjet(), projetDTO);
          } catch (Exception e) {
-             System.out.println("Modification interromptu");
+             System.out.println("Modification interrompue");
 //           persistanceProjets.transaction.rollback();  <-- rollback de la transaction dans un contexte transactionnel
              return null;
          }
