@@ -20,10 +20,18 @@ public class RegistreUsagerTech {
     }
 
 
+    /**
+     * Méthode pour ajouter un compte usager technique dans le registre de tout les comptes usagers techniques.
+     * @param  compteUsagerTech
+     */
     public void ajouterUsager(CompteUsagerTech  compteUsagerTech){
         this.registreUsagerTech.put(compteUsagerTech.getIdUsager(), compteUsagerTech);
     }
 
+    /**
+     * Méthode pour chercher un usager en particulier qui est dans le registre.
+     * @param idUsager
+     */
     public CompteUsagerTech trouverUsagerTech(int idUsager){
         CompteUsagerTech usager = this.registreUsagerTech.get(idUsager);
         return usager;

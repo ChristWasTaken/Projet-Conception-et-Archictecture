@@ -10,6 +10,11 @@ public class RegistreUsagerTechAssigne {
         this.registreUsagerTechAssigne = new ArrayList<>();
     }
 
+    /**
+     * Méthode pour ajouter un compte usager technique au registre des usager technique assigné.
+     * @param compteUsagerTech
+     * @return boolean
+     */
     public boolean ajouterUsager(CompteUsagerTech compteUsagerTech){
         boolean result = false;
         try {
