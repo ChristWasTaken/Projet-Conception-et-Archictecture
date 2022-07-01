@@ -14,10 +14,17 @@ public class FacadeProjet {
         proxy.persisterProjet(nouveauProjet.asProjetDTO());
     }
 
-    public boolean ajouterCategorie(ProjetDTO projet) {
-        projet = proxy.modifierUnProjet(projet);
-        if(projet != null){
-            Projet projetModifier = new Projet(projet);
+    /**
+     * Méthode ajouter une categorie à un projetDTO par l'entremise
+     * d'un DTO déja modifier au niveau du coordonateur
+     * @param projetDTO
+     * @return true si la catégorie n'existe pas déjà dans le projetDTO et a été créer avec succès,
+     * false un doublon est trouvé ou la création à échouée sinon.
+     */
+    public boolean ajouterCategorie(ProjetDTO projetDTO) {
+        projetDTO = proxy.modifierUnProjet(projetDTO);
+        if(projetDTO != null){
+            Projet projetModifier = new Projet(projetDTO);
             registreProjet.modifierProjet(projetModifier);
             return true;
         }

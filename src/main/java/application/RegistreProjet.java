@@ -33,6 +33,9 @@ public class RegistreProjet {
         return nouveauProjet.getIdProjet();
     }
 
+    /** Permet le remplacement d'une entrée dans le registre de projets
+     * @param projet
+     */
     public void modifierProjet(Projet projet){
         this.registreProjet.replace(projet.getIdProjet(), projet);
     }
@@ -40,7 +43,6 @@ public class RegistreProjet {
     public Projet trouverProjet(int idProjet){
         return this.registreProjet.get(idProjet);
     }
-
     public TreeMap<Integer, ProjetDTO> recupererRegistreProjetAsDTO(){
         TreeMap<Integer, ProjetDTO> registreProjetDTO = new TreeMap<Integer, ProjetDTO>();
         for(Projet projet : this.registreProjet.values()){

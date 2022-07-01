@@ -7,29 +7,29 @@ import java.util.stream.Collectors;
 
 public class RegistreBillet {
 
-    /**
+    /*
      * Instance unique
      */
     private static RegistreBillet instance = new RegistreBillet();
 
-    /**
+    /*
      * Registre des clients indexé par numéro.
      */
     private TreeMap<Integer, Billet> registreBillet = new TreeMap<>();
 
-    /**
+    /*
      * Dernier numéro attribué à un billet.
      */
     private static int dernierNumeroBilletAttribue = 0;
 
-    /**
+    /*
      * Constructeur par défaut
      */
     private RegistreBillet() {
         this.registreBillet = new TreeMap<Integer, Billet>();
     }
 
-    /**
+    /*
      * Getter de l'instance
      */
     public static RegistreBillet getInstance() {
@@ -39,7 +39,7 @@ public class RegistreBillet {
         return instance;
     }
 
-    /**
+    /*
      * incrémentation automatique du IDBillet
      * @return
      */
@@ -47,7 +47,7 @@ public class RegistreBillet {
         return ++dernierNumeroBilletAttribue;
     }
 
-    /**
+    /*
      * Ajouter billet au registre
      * @param nouveauBillet
      * @return le id du billet ajouté
@@ -68,6 +68,11 @@ public class RegistreBillet {
         return this.registreBillet.get(idBillet);
     }
 
+    /**
+     * Modifier un enregistrement dans le registre
+     * @param id id du billet à modifier
+     * @param billetModifiable billet modifié
+     */
     public void modifierBillet(int id, Billet billetModifiable) {
         this.registreBillet.put(id, billetModifiable);
     }

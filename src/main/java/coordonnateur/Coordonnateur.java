@@ -22,6 +22,12 @@ public class Coordonnateur {
         facadeProjet.assignerUsagerTech(usagerDTO, projetDTO);
     }
 
+    /**
+     * Définir une nouvelle catégorie de billet au niveau du projet.
+     * @param projetDto
+     * @param nouvelleCategorie
+     * @return true si la catégorie a été ajoutée, false sinon.
+     */
     public boolean definirCategorieDeBillet(ProjetDTO projetDto, String nouvelleCategorie) {
         projetDto.ajouterCategorieBillet(new Categorie(nouvelleCategorie));
         if(facadeProjet.ajouterCategorie(projetDto)){
@@ -34,6 +40,12 @@ public class Coordonnateur {
         return facadeBillet.creerBillet(billetDTO);
     }
 
+    /**
+     * Assigner un billet à un usager technique.
+     * @param billetDTO
+     * @param compteUsagerTechDTO
+     * @return true si le billet a été assigné, false sinon.
+     */
     public boolean assignerBilletAUsagerTech(BilletDTO billetDTO, CompteUsagerTechDTO compteUsagerTechDTO) {
         billetDTO.setIdUsagerTechAssigne(compteUsagerTechDTO.getIdUsager());
         if(facadeBillet.assignerBillet(billetDTO)){

@@ -15,8 +15,6 @@ public class FacadePersistence {
     private UsagerTechDAO  usagerTechDAO = new UsagerTechDAO();
     private BilletDAO billetDAO = new BilletDAO();
 
-
-
     public void persisterProjet(ProjetDTO projetDTO){
         projetDAO.persisterProjet(projetDTO);
     }

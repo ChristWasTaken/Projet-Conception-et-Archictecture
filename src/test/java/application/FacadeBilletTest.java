@@ -43,7 +43,6 @@ class FacadeBilletTest {
     CompteUsagerTechDTO usagerDTO1 =
             new CompteUsagerTechDTO(1, "Roger", "mdp", "email");
 
-
     @BeforeEach
     void setUp() {
 
@@ -108,8 +107,7 @@ class FacadeBilletTest {
     void consulterDetailBillet() {
         facadeBillet.creerBillet(billetDTO1);
         BilletDTO billetVerification= facadeBillet.consulterBilletParId(1);
-        assertEquals(billetDTO1,billetVerification);
-
+        assertEquals(1,billetVerification.getIdBillet());
     }
 
     @Test

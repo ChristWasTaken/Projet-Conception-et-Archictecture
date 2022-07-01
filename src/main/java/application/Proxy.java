@@ -14,6 +14,7 @@ public class Proxy {
 
     /**
      * Methode pour envoyer un projet a la persistence
+     * @param projetDTO projet a envoyer a la persistence
      */
     public void persisterProjet(ProjetDTO projetDTO){
         facadePersistence.persisterProjet(projetDTO);
@@ -28,8 +29,11 @@ public class Proxy {
         return facadePersistence.chercherProjetDTOParId(id);
     }
 
-
-
+    /**
+     * Methode pour modifier un projet déjà persisté.
+     * @param projetDTO
+     * @return ProjetDTO
+     */
     public ProjetDTO modifierUnProjet(ProjetDTO projetDTO) {
         return facadePersistence.modifierUnProjet(projetDTO);
     }
@@ -70,7 +74,11 @@ public class Proxy {
         return billetDTO;
     }
 
-
+    /**
+     * Methode pour modifier un billet déjà persisté.
+     * @param billetDTO
+     * @return true si la modification a été effectuée.
+     */
     public boolean modifierBilletDTO(BilletDTO billetDTO) {
         return facadePersistence.modifierBilletDTO(billetDTO);
     }
