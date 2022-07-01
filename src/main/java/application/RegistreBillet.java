@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class RegistreBillet {
 
     /**
-     * Instance unique
+     * Instance unique du registre
      */
     private static RegistreBillet instance = new RegistreBillet();
 
@@ -17,20 +17,16 @@ public class RegistreBillet {
      */
     private TreeMap<Integer, Billet> registreBillet = new TreeMap<>();
 
-    /**
-     * Dernier numéro attribué à un billet.
-     */
+   //Dernier numéro attribué à un billet.
     private static int dernierNumeroBilletAttribue = 0;
 
-    /**
-     * Constructeur par défaut
-     */
+    //Constructeur par défaut
     private RegistreBillet() {
         this.registreBillet = new TreeMap<Integer, Billet>();
     }
 
     /**
-     * Getter de l'instance
+     * Getter de l'instance unique
      */
     public static RegistreBillet getInstance() {
         if (instance == null) {

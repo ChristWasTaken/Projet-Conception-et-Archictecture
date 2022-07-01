@@ -4,19 +4,17 @@ import java.time.LocalDate;
 
 class Billet {
 
-    /**
-     * Attributs de la classe
-     */
+    //Attributs de la classe
     private int idBillet;
     private int idProjet;
     private int idUsagerTechAssigne;
 
-    private String etat="";
+    private String etat = "";
 
-    private String gravite="";
-    private String courrielDemandeur="";
-    private String notes="";
-    private String description="";
+    private String gravite = "";
+    private String courrielDemandeur = "";
+    private String notes = "";
+    private String description = "";
 
     private LocalDate dateAssignee;
     private LocalDate dateDebutBillet;
@@ -24,17 +22,16 @@ class Billet {
     private Categorie categorie;
     private RegistreHistorique registreHistorique;
 
-
-    /**
-     * constructeurs
-     */
+    //constructeurs
     public Billet() {
     }
 
     public Billet(BilletDTO billet) {
-        this.setIdBillet(billet.getIdBillet());;
+        this.setIdBillet(billet.getIdBillet());
+        ;
         this.setIdProjet(billet.getIdProjet());
-        this.setUsagerTechnique(billet.getIdUsagerTechAssigne());;
+        this.setUsagerTechnique(billet.getIdUsagerTechAssigne());
+        ;
         this.setEtat(billet.getEtat());
         this.setGravite(billet.getGravite());
         this.setCourrielDemandeur(billet.getCourrielDemandeur());
@@ -48,9 +45,10 @@ class Billet {
 
     /**
      * Conversion du billet en DTO
+     *
      * @return billetDTO
      */
-    BilletDTO asBilletDTO(){
+    BilletDTO asBilletDTO() {
         final BilletDTO billetDTO = new BilletDTO();
 
         billetDTO.setIdBillet(this.getIdBillet());
