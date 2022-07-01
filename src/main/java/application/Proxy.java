@@ -13,7 +13,8 @@ public class Proxy {
     private FacadePersistence facadePersistence = new FacadePersistence();
 
     /**
-     * Methode pour envoyer un projet a la persistence
+     * Methode pour envoyer un projet a l'access persistence pour le sauvegarder dans la base de données
+     * @param projetDTO
      * @param projetDTO projet a envoyer a la persistence
      */
     public void persisterProjet(ProjetDTO projetDTO){
@@ -39,7 +40,7 @@ public class Proxy {
     }
 
     /**
-     * Methode pour envoyer un usager a la persistence
+     * Methode pour envoyer un usager a l'access persistence pour le sauvegarder dans la base de données
      * @param compteUsagerTechDTO
      */
     public void persisterCompteUsagerTech(CompteUsagerTechDTO compteUsagerTechDTO){

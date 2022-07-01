@@ -102,6 +102,10 @@ class Projet {
         this.registreUsagerTechAssigne = registreUsagerTechAssigne;
     }
 
+    /**
+     * Méthode pour ajouter un compte usager technique au registre des comptes usager technique assigné d'un projet.
+     * @param compteUsagerTech
+     */
     public void ajouterUsagerAuRegistre(CompteUsagerTech compteUsagerTech){
         this.registreUsagerTechAssigne.ajouterUsager(compteUsagerTech);
     }

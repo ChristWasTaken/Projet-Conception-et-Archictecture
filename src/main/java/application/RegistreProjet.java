@@ -26,6 +26,10 @@ public class RegistreProjet {
         return dernierNumeroProjetAttribue;
     }
 
+    /**
+     * Méthode pour ajouter un projet dans le registre des projet
+     * @param nouveauProjet
+     */
     public int ajouterProjet(Projet nouveauProjet){
         nouveauProjet.setIdProjet(this.prochainIdProjet());
         this.registreProjet.put(nouveauProjet.getIdProjet(), nouveauProjet);
@@ -40,6 +44,10 @@ public class RegistreProjet {
         this.registreProjet.replace(projet.getIdProjet(), projet);
     }
 
+    /**
+     * Méthode pour trouver un projet en particulier du registre
+     * @param idProjet
+     */
     public Projet trouverProjet(int idProjet){
         return this.registreProjet.get(idProjet);
     }

@@ -8,6 +8,12 @@ public class FacadeProjet {
     public FacadeProjet() {
     }
 
+    /**
+     * Méthode pour créer un projet en lui passant un objet projetDTO rempli par
+     * l'utilisateur a l'aide de formulaire dans la couche presentation. Le projet est sauvegarder en memoire dans un
+     * registre et est persister a travers le proxy vers une base de données.
+     * @param projetDTO
+     */
     public void creerProjet(ProjetDTO projetDTO){
         Projet nouveauProjet = new Projet(projetDTO);
         registreProjet.ajouterProjet(nouveauProjet);
@@ -31,6 +37,13 @@ public class FacadeProjet {
         return false;
     }
 
+    /**
+     * Méthode pour assigner un compte usager technique a un projet. Le projet et l'usager sont choisi dans la couche
+     * presentation est passer a la facade avec des objets DTO. Le projet avec son registre d'usager assigner est
+     * persister dans la base de donnée avec une mise a jour.
+     * @param usagerDTO
+     * @param projetDTO
+     */
     public void assignerUsagerTech(CompteUsagerTechDTO usagerDTO, ProjetDTO projetDTO) {
         CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(usagerDTO.getIdUsager());
         Projet projetAAssigne = registreProjet.trouverProjet(projetDTO.getIdProjet());
