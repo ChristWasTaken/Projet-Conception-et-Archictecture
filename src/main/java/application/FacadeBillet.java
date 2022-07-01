@@ -84,8 +84,7 @@ public class FacadeBillet {
                         billetModifiable.getNotes()) );
 
         registreBillet.modifierBillet(billetModifiable.getIdBillet(), billetModifiable);
-        proxy.modifierBilletDTO(billetModifiable.asBilletDTO());
-        return true;
+        return proxy.modifierBilletDTO(billetModifiable.asBilletDTO());
     }
 
 

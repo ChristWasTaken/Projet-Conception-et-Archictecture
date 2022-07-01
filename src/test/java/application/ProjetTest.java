@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProjetTest {
     private final Proxy proxy = new Proxy();
-    RegistreUsagerTechAssigne registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
+    final RegistreUsagerTechAssigne registreUsagerTechAssigne = new RegistreUsagerTechAssigne();
 
     @Test
     void testAjouterUsagerAuRegistreUsagerTechAssigneRetournTrue() {

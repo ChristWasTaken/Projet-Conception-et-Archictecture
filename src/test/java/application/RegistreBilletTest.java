@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RegistreBilletTest {
 
 
-    TreeMap<Integer, Billet> registreBillet = new TreeMap<>();
+    final TreeMap<Integer, Billet> registreBillet = new TreeMap<>();
 
     private final Proxy proxy = new Proxy();
 

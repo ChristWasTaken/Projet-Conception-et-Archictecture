@@ -7,8 +7,8 @@ import java.util.TreeMap;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RegistreProjetTest {
-    Proxy proxy = new Proxy();
-    TreeMap<Integer, Projet> registreProjet = new TreeMap<>();
+    final Proxy proxy = new Proxy();
+    final TreeMap<Integer, Projet> registreProjet = new TreeMap<>();
 
 
     @Test

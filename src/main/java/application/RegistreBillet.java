@@ -83,9 +83,7 @@ public class RegistreBillet {
      */
     public TreeMap<Integer, BilletDTO> recupererListeBilletEnDTO() {
         TreeMap<Integer, BilletDTO> listeDTO = new TreeMap<>();
-        registreBillet.forEach((key, value) -> {
-            listeDTO.put(key, value.asBilletDTO());
-        });
+        registreBillet.forEach((key, value) -> listeDTO.put(key, value.asBilletDTO()));
         return listeDTO;
     }
 
@@ -103,7 +101,7 @@ public class RegistreBillet {
             listeTriee = listeDTO.entrySet()
                     .stream()
                     .filter(billetDTOEntry -> filtrerChamps(champs, filtre, billetDTOEntry))
-                    .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
         } else {
             return null;
         }
@@ -163,7 +161,6 @@ public class RegistreBillet {
                     reponse = true;
                 }
             }
-            default -> reponse = false;
         }
         return reponse;
     }
