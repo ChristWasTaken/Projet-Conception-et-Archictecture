@@ -1,7 +1,6 @@
 package application;
 
 import accesPersistence.FacadePersistence;
-import accesPersistence.UsagerTechDAO;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

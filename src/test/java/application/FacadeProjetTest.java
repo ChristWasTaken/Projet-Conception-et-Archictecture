@@ -18,7 +18,7 @@ class FacadeProjetTest {
     @Test
     @Order(1)
     void testCreerProjetAvecUnProjetDTO() {
-        ProjetDTO projetDTO = new ProjetDTO(1, "ProjetHyperSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+        ProjetDTO projetDTO = new ProjetDTO(1, "ProjetHyperSecret", LocalDate.of(2022,5,28), LocalDate.of(2022,5,29));
 
         Projet nouveauProjet = new Projet(projetDTO);
         assertEquals(nouveauProjet.getIdProjet(), projetDTO.getIdProjet());
