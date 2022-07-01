@@ -110,7 +110,6 @@ public class RegistreBillet {
 
     /**
      * Méthode qui détermine si le champs choisi du billetDTO est conforme au filtre ou non.
-     *
      * @param champs les champs de filtre
      * @param filtre le type de filtre
      * @param billetDTOEntry l'enregistrement à filtrer

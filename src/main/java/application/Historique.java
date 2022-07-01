@@ -4,7 +4,9 @@ import java.time.LocalDate;
 
 public class Historique {
 
-    //Attributs de la classe
+    /**
+     * Attributs de la classe
+     */
     private int idHistorique = 0;
     private int idBilletAssocie = 0;
     private LocalDate date;

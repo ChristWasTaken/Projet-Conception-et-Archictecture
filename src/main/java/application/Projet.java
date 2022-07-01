@@ -61,7 +61,6 @@ class Projet {
     /**
      * Getters and setters
      */
-
     public int getIdProjet() {
         return idProjet;
     }

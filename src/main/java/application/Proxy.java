@@ -3,8 +3,7 @@ package application;
 import accesPersistence.FacadePersistence;
 
 /**
- * Class Proxy: Sorti de la couche application pour envoyer des objets DTO a la couche acces Persistence
- *
+ * Classe Proxy: Sortie de la couche application pour envoyer des objets DTO à la couche accès Persistence
  * @author Gabrielle
  * @since 2022-06-10
  **/
@@ -13,15 +12,15 @@ public class Proxy {
     private final FacadePersistence facadePersistence = new FacadePersistence();
 
     /**
-     * Methode pour envoyer un projet a l'access persistence pour le sauvegarder dans la base de données
-     * @param projetDTO projet a envoyer a la persistence
+     * Méthode pour envoyer un projet à l'accès persistence pour le sauvegarder dans la base de données
+     * @param projetDTO projet à envoyer à la persistence
      */
     public void persisterProjet(ProjetDTO projetDTO){
         facadePersistence.persisterProjet(projetDTO);
     }
 
     /**
-     * Methode pour chercher un projet de la persistence par ID
+     * Méthode pour chercher un projet de la persistence par ID
      * @param id le ID du projet
      * @return ProjetDTO
      */
@@ -30,8 +29,8 @@ public class Proxy {
     }
 
     /**
-     * Methode pour modifier un projet déjà persisté.
-     * @param projetDTO le projet a modifier
+     * Méthode pour modifier un projet déjà persisté.
+     * @param projetDTO le projet à modifier
      * @return ProjetDTO le projet modifié
      */
     public ProjetDTO modifierUnProjet(ProjetDTO projetDTO) {
@@ -39,7 +38,7 @@ public class Proxy {
     }
 
     /**
-     * Methode pour envoyer un usager a l'access persistence pour le sauvegarder dans la base de données
+     * Méthode pour envoyer un usager à l'accès persistence pour le sauvegarder dans la base de données
      * @param compteUsagerTechDTO le compte usager technique DTO
      */
     public void persisterCompteUsagerTech(CompteUsagerTechDTO compteUsagerTechDTO){
@@ -47,7 +46,7 @@ public class Proxy {
     }
 
     /**
-     * Methode pour chercher un usager de la persistence
+     * Méthode pour chercher un usager de la persistence
      * @param id le ID de l'usager
      * @return compteUsagerTechDTO
      */
@@ -56,7 +55,7 @@ public class Proxy {
     }
 
     /**
-     * Methode pour envoyer un billetDTO à la persistence
+     * Méthode pour envoyer un billetDTO à la persistence
      * @param billetDTO le billet DTO
      */
     public void persisterBillet(BilletDTO billetDTO){
@@ -64,7 +63,7 @@ public class Proxy {
     }
 
     /**
-     * chercher un billetDTO en indiquant l'id du billet rechercé
+     * chercher un billetDTO en indiquant l'id du billet recherché
      * @param id le ID du billet
      * @return billetDTO trouvé
      */
@@ -73,7 +72,7 @@ public class Proxy {
     }
 
     /**
-     * Methode pour modifier un billet déjà persisté.
+     * Méthode pour modifier un billet déjà persisté.
      * @param billetDTO le billet DTO
      * @return true si la modification a été effectuée.
      */

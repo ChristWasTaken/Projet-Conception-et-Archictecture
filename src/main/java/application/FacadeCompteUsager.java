@@ -8,8 +8,8 @@ public class FacadeCompteUsager {
 
     /**
      * Méthode pour créer un compte usager technique en lui passant un objet compte usager technique DTO rempli par
-     * l'utilisateur a l'aide de formulaire dans la couche presentation. L'usager est sauvegarder en memoire dans un
-     * registre et est persister a travers le proxy vers une base de données.
+     * l'utilisateur à l'aide de formulaire dans la couche présentation. L'usager est sauvegardé en mémoire dans un
+     * registre et est persisté à travers le proxy vers une base de données.
      * @param compteUsagerTechDTO le compte usager technique DTO
      */
     public void creerCompteUsagerTech(CompteUsagerTechDTO compteUsagerTechDTO){

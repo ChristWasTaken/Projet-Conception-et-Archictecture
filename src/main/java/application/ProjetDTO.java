@@ -97,7 +97,7 @@ public class ProjetDTO {
     }
     /**
      * Vérifier si la catégorie existe déjà dans l'ArrayList
-     * @param categorie nouvelle catégorie recu du coordonateur
+     * @param categorie nouvelle catégorie reçue du coordonateur
      * @return true si la catégorie existe déjà, false sinon
      */
     public boolean verifierDoublonCategorie(Categorie categorie){

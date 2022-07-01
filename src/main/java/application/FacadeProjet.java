@@ -38,9 +38,9 @@ public class FacadeProjet {
     }
 
     /**
-     * Méthode pour assigner un compte usager technique a un projet. Le projet et l'usager sont choisi dans la couche
-     * presentation est passer a la facade avec des objets DTO. Le projet avec son registre d'usager assigner est
-     * persister dans la base de donnée avec une mise a jour.
+     * Méthode pour assigner un compte usager technique à un projet. Le projet et l'usager sont choisis dans la couche
+     * présentation et sont passés à la facade avec des objets DTO. Le projet avec son registre d'usagers assignés est
+     * persisté dans la base de données avec une mise à jour.
      * @param usagerDTO le compte usager technique DTO
      * @param projetDTO le projet DTO
      */

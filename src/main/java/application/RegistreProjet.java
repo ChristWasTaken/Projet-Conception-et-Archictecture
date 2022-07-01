@@ -27,8 +27,8 @@ public class RegistreProjet {
     }
 
     /**
-     * Méthode pour ajouter un projet dans le registre des projet
-     * @param nouveauProjet le projet a ajouter
+     * Méthode pour ajouter un projet dans le registre des projets
+     * @param nouveauProjet le projet à ajouter
      */
     public int ajouterProjet(Projet nouveauProjet){
         nouveauProjet.setIdProjet(this.prochainIdProjet());
@@ -38,15 +38,15 @@ public class RegistreProjet {
     }
 
     /** Permet le remplacement d'une entrée dans le registre de projets
-     * @param projet le projet a remplacer
+     * @param projet le projet à remplacer
      */
     public void modifierProjet(Projet projet){
         this.registreProjet.replace(projet.getIdProjet(), projet);
     }
 
     /**
-     * Méthode pour trouver un projet en particulier du registre
-     * @param idProjet l'id du projet a trouver
+     * Méthode pour trouver un projet en particulier dans registre
+     * @param idProjet l'id du projet à trouver
      */
     public Projet trouverProjet(int idProjet){
         return this.registreProjet.get(idProjet);

@@ -20,7 +20,6 @@ public class RegistreHistorique {
 
     /**
      * incrémentation automatique du IDHistorique
-     *
      * @return le nouvel id
      */
     private int prochainIdHistorique() {
@@ -29,8 +28,7 @@ public class RegistreHistorique {
 
     /**
      * Méthode pour Ajouter historique au registre
-     *
-     * @param historique le historique à ajouter
+     * @param historique l'historique à ajouter
      * @return le id de l'historique
      */
     public int ajouterHistoriqueAuRegistre(Historique historique) {
@@ -41,7 +39,6 @@ public class RegistreHistorique {
 
     /**
      * Récupère un historique par son Id
-     *
      * @param idHistorique l'id de l'historique à récupérer
      * @return historique
      */

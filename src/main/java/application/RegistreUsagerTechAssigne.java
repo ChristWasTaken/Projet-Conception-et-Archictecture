@@ -11,7 +11,7 @@ public class RegistreUsagerTechAssigne {
     }
 
     /**
-     * Méthode pour ajouter un compte usager technique au registre des usager technique assigné.
+     * Méthode pour ajouter un compte usager technique au registre des usagers techniques assignés.
      * @param compteUsagerTech le compte usager technique à ajouter au registre.
      * @return boolean
      */
