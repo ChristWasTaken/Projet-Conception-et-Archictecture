@@ -3,22 +3,16 @@ package application;
 import java.util.TreeMap;
 
 public class RegistreHistorique {
-    private static TreeMap<Integer, Historique> registreHistorique =  new TreeMap<>();
+    private static TreeMap<Integer, Historique> registreHistorique = new TreeMap<>();
 
-    /**
-     * Dernier numéro attribué à un historique.
-     */
+    //Dernier numéro attribué à un historique.
     private static int dernierNumeroHistoriqueAttribue = 0;
 
-    /**
-     * Constructeur
-     */
+    //Constructeur
     public RegistreHistorique() {
     }
 
-    /**
-     * Getters and setters
-     */
+    //Getters and setters
 
     public static TreeMap<Integer, Historique> getInstance() {
         return registreHistorique;
@@ -26,6 +20,7 @@ public class RegistreHistorique {
 
     /**
      * incrémentation automatique du IDHistorique
+     *
      * @return le nouvel id
      */
     private int prochainIdHistorique() {
@@ -34,10 +29,11 @@ public class RegistreHistorique {
 
     /**
      * Méthode pour Ajouter historique au registre
+     *
      * @param historique le historique à ajouter
      * @return le id de l'historique
      */
-    public int ajouterHistoriqueAuRegistre(Historique historique){
+    public int ajouterHistoriqueAuRegistre(Historique historique) {
         historique.setIdHistorique(this.prochainIdHistorique());
         registreHistorique.put(historique.getIdHistorique(), historique);
         return historique.getIdHistorique();
@@ -45,6 +41,7 @@ public class RegistreHistorique {
 
     /**
      * Récupère un historique par son Id
+     *
      * @param idHistorique l'id de l'historique à récupérer
      * @return historique
      */
@@ -56,11 +53,12 @@ public class RegistreHistorique {
         return registreHistorique;
     }
 
-    public void modifierRegistreHistorique(){ }
+    public void modifierRegistreHistorique() {
+    }
 
     @Override
     public String toString() {
-        return "RegistreHistorique{"  + "\n"+ registreHistorique  +
+        return "RegistreHistorique{" + "\n" + registreHistorique +
                 '}';
     }
 }

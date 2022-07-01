@@ -5,9 +5,7 @@ import java.util.Objects;
 
 public class BilletDTO {
 
-    /**
-     * Attributs de la classe
-     */
+   //Attributs de la classe
     private int idBillet = 0;
     private int idProjet;
     private int idUsagerTechAssigne;
@@ -21,9 +19,7 @@ public class BilletDTO {
     private Categorie categorie;
     private RegistreHistorique registreHistorique;
 
-    /**
-     * constructeurs
-     */
+   //constructeurs
     public BilletDTO() {
     }
 

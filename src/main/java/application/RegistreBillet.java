@@ -39,7 +39,7 @@ public class RegistreBillet {
         return instance;
     }
 
-    /*
+    /**
      * incrémentation automatique du IDBillet
      * @return
      */

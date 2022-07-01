@@ -4,19 +4,15 @@ import java.time.LocalDate;
 
 public class Historique {
 
-    /**
-     * Attributs de la classe
-     */
+    //Attributs de la classe
     private int idHistorique = 0;
     private int idBilletAssocie = 0;
     private LocalDate date;
     private int usagerTechAssigne;
     private String commentaires;
 
-    /**
-     * Constructeurs
-     */
 
+    //Constructeurs
     public Historique() {
     }
 
@@ -37,9 +33,8 @@ public class Historique {
         this.date = date;
         this.commentaires = commentaires;
     }
-    /**
-     * Getters dans setters
-     */
+
+    //Getters dans setters
     public int getIdHistorique() {
         return idHistorique;
     }
@@ -80,17 +75,15 @@ public class Historique {
         this.commentaires = commentaires;
     }
 
-    /**
-     * ToString
-     */
+
     @Override
     public String toString() {
-        return  "Historique{" +
+        return "Historique{" +
                 "idHistorique=" + idHistorique +
                 ", idBilletAssocié=" + idBilletAssocie +
                 ", date=" + date +
                 ", usagerTechAssigne=" + usagerTechAssigne +
                 ", commentaires='" + commentaires + '\'' +
-                '}'  +"\n";
+                '}' + "\n";
     }
 }
