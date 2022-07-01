@@ -88,7 +88,7 @@ public class RegistreBillet {
     }
 
     /**
-     * méthode permettant de récupérer la liste des BilletsDTO seon le type de filtre demandé
+     * méthode permettant de récupérer la liste des BilletsDTO selon le type de filtre demandé
      * @param champs les champs de filtre
      * @param filtre le type de filtre
      * @return liste de billetsDTO
@@ -109,8 +109,8 @@ public class RegistreBillet {
     }
 
     /**
-     * Méthode qui filtre les champs afin de définir quel type de filtre sera utilisé
-     * dans la méthode: recupererListeBilletEnDTO
+     * Méthode qui détermine si le champs choisi du billetDTO est conforme au filtre ou non.
+     *
      * @param champs les champs de filtre
      * @param filtre le type de filtre
      * @param billetDTOEntry l'enregistrement à filtrer
