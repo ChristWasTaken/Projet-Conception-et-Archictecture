@@ -27,8 +27,8 @@ class CoordonnateurTest {
         String categorieBillet = "Anomalie";
         coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet);
         assertTrue(coordonnateur.definirCategorieDeBillet(projetExistant, categorieBillet));
-//        assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().get(0).getCategorie());
-//        assertEquals(1, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().size());
+        assertEquals(categorieBillet, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().get(0).getCategorie());
+        assertEquals(2, coordonnateur.consulterUnProjetDTOParId(1).getListeCategories().size());
     }
 
     @Test
