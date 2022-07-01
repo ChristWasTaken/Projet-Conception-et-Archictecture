@@ -34,6 +34,7 @@ public class RegistreUsagerTech {
         for(CompteUsagerTech usager : this.registreUsagerTech.values()){
             registreUsagerTechDTO.put(usager.getIdUsager(), usager.asCompteUsagerTechDTO());
         }
+
         return registreUsagerTechDTO;
     }
 }
