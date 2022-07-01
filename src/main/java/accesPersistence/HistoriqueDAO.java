@@ -1,5 +1,0 @@
-package accesPersistence;
-
-class HistoriqueDAO {
-
-}

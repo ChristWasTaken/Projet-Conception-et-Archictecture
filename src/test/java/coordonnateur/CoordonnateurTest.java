@@ -3,13 +3,11 @@ package coordonnateur;
 import application.*;
 import org.junit.jupiter.api.*;
 import java.time.LocalDate;
-import java.util.TreeMap;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CoordonnateurTest {
 
-    Coordonnateur coordonnateur = new Coordonnateur();
+    private final Coordonnateur coordonnateur = new Coordonnateur();
 
     @Test
     void definirUneNouvelleCategorieDeBilletDansUnProjetExistant() {
@@ -43,7 +41,7 @@ class CoordonnateurTest {
     void assignerNouveauBilletAUsagerTechBD() {
         CompteUsagerTechDTO usagerDTO = coordonnateur.consulterCompteUsagerTechDTO(1);
         BilletDTO billetDTO = new BilletDTO(1, "BilletTopSecret", "hebdo", "billet@test.ca",
-                "Corriger les Classes Blob!!", "Blobs are bad mmkay!", LocalDate.of(2022,05,28));
+                "Corriger les Classes Blob!!", "Blobs are bad mmkay!", LocalDate.of(2022, 5,28));
 
         coordonnateur.assignerBilletAUsagerTech(billetDTO, usagerDTO);
 
@@ -56,9 +54,8 @@ class CoordonnateurTest {
     void assignerNouveauBilletANouveauUsagerTech() {
         CompteUsagerTechDTO usagerDTO = new CompteUsagerTechDTO(
                 1, "NouveauUsager", "motdePasse","email@monemail.com");
-        ;
         BilletDTO billetDTO = new BilletDTO(1, "BilletTopSecret", "hebdo", "billet@test.ca",
-                "Corriger les Classes Blob!!", "Blobs are bad mmkay!", LocalDate.of(2022,05,28));
+                "Corriger les Classes Blob!!", "Blobs are bad mmkay!", LocalDate.of(2022, 5,28));
         coordonnateur.assignerBilletAUsagerTech(billetDTO, usagerDTO);
 
         assertEquals(usagerDTO.getIdUsager(), billetDTO.getIdUsagerTechAssigne());

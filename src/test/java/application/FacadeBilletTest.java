@@ -13,34 +13,32 @@ class FacadeBilletTest {
     /**
      * Les méthodes de test de cette page doivent être testées une à la fois
      */
-    FacadeBillet facadeBillet = new FacadeBillet();
-    FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
-    FacadeProjet facadeProjet = new FacadeProjet();
-    RegistreProjet registreProjet = RegistreProjet.getInstance();
-    RegistreBillet registreBillet = RegistreBillet.getInstance();
-    RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-    Proxy proxy = new Proxy();
+    private final FacadeBillet facadeBillet = new FacadeBillet();
+    private final FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
+    private final FacadeProjet facadeProjet = new FacadeProjet();
+    private final RegistreBillet registreBillet = RegistreBillet.getInstance();
+    private final Proxy proxy = new Proxy();
 
-    BilletDTO billetDTO1 = new BilletDTO(1, "Ouvert", "Urgent",
+    private final BilletDTO billetDTO1 = new BilletDTO(1, "Ouvert", "Urgent",
             "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
-            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 06, 20));
-    BilletDTO billetDTO2 = new BilletDTO(1, "Ouvert", "Bénin",
+            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 6, 20));
+    private final BilletDTO billetDTO2 = new BilletDTO(1, "Ouvert", "Bénin",
             "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
-            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 05, 18));
-    BilletDTO billetDTO3 = new BilletDTO(1, "Fermé", "Bénin",
+            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 5, 18));
+    private final BilletDTO billetDTO3 = new BilletDTO(1, "Fermé", "Bénin",
             "utilisateur1@gmail.com", "Etat du projet ne s'update pas.",
-            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 05, 18));
-    BilletDTO billetDTO4 = new BilletDTO(1, "Fermé", "Urgent",
+            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 5, 18));
+    private final BilletDTO billetDTO4 = new BilletDTO(1, "Fermé", "Urgent",
             "utilisateur6@gmail.com", "Etat du projet ne s'update pas.",
-            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 06, 20));
-    ProjetDTO projetDTO1 =
-            new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022, 05, 28),
-                    LocalDate.of(2022, 05, 29));
+            "J'ai redémarré et ça ne fonctionne pas.", LocalDate.of(2022, 6, 20));
+    private final ProjetDTO projetDTO1 =
+            new ProjetDTO(1, "ProjetTopSecret", LocalDate.of(2022, 5, 28),
+                    LocalDate.of(2022, 5, 29));
 
-    Categorie categorieAnomalie = new Categorie("Anomalie");
-    Categorie categorieEchec = new Categorie("Echec");
-    Categorie categorieRidicule = new Categorie("Ridicule");
-    CompteUsagerTechDTO usagerDTO1 =
+    private final Categorie categorieAnomalie = new Categorie("Anomalie");
+    private final Categorie categorieEchec = new Categorie("Echec");
+    private final Categorie categorieRidicule = new Categorie("Ridicule");
+    private final CompteUsagerTechDTO usagerDTO1 =
             new CompteUsagerTechDTO(1, "Roger", "mdp", "email");
 
     @BeforeEach
@@ -83,7 +81,7 @@ class FacadeBilletTest {
 
         RegistreHistorique registreHistoriqueTrouve = billetTrouve.getRegistreHistorique();
 
-        int id = registreHistoriqueTrouve.getInstance().lastKey();
+        int id = RegistreHistorique.getInstance().lastKey();
 
         Historique historiqueTrouve = registreHistoriqueTrouve.chercherParNumero(id);
 
@@ -100,7 +98,8 @@ class FacadeBilletTest {
         assertEquals("Fermé", facadeBillet.consulterBilletParId(1).getEtat());
 
         //Registre historique doit contenir original + trace du changement
-        assertEquals(11, facadeBillet.consulterBilletParId(1).getRegistreHistorique().getInstance().size());
+        RegistreHistorique registreHistorique = facadeBillet.consulterBilletParId(1).getRegistreHistorique();
+        assertEquals(11, RegistreHistorique.getInstance().size());
     }
 
     @Test
@@ -117,7 +116,7 @@ class FacadeBilletTest {
         facadeBillet.creerBillet(billetDTO3); //18 mai
         facadeBillet.creerBillet(billetDTO4); //20 juin
 
-        TreeMap<Integer,BilletDTO> liste =facadeBillet.consulterListeBillet("date", LocalDate.of(2022, 05, 18));
+        TreeMap<Integer,BilletDTO> liste =facadeBillet.consulterListeBillet("date", LocalDate.of(2022, 5, 18));
         assertEquals(10,liste.size());
     }
 

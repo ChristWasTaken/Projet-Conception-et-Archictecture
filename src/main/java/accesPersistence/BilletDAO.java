@@ -7,13 +7,13 @@ import java.util.TreeMap;
 
 class BilletDAO {
 
-    BilletDTO billetDTO1 = new BilletDTO(1,"Ouvert", "Urgent", "courrielA@gmail.com", "Notes du billet no1", "Description du billet no1",  LocalDate.of(2022,06,19));
-    BilletDTO billetDTO2 = new BilletDTO(3,"En suspend", "Important", "courrielB@gmail.com", "Notes du billet no2", "Description du billet no2",  LocalDate.of(2022,06,20));
-    private TreeMap<Integer, BilletDTO> collectionBillets;
+    private final TreeMap<Integer, BilletDTO> collectionBillets;
 
     public BilletDAO() {
         this.collectionBillets = new TreeMap<>();
+        BilletDTO billetDTO1 = new BilletDTO(1, "Ouvert", "Urgent", "courrielA@gmail.com", "Notes du billet no1", "Description du billet no1", LocalDate.of(2022, 6, 19));
         this.collectionBillets.put(billetDTO1.getIdProjet(), billetDTO1);
+        BilletDTO billetDTO2 = new BilletDTO(3, "En suspend", "Important", "courrielB@gmail.com", "Notes du billet no2", "Description du billet no2", LocalDate.of(2022, 6, 20));
         this.collectionBillets.put(billetDTO2.getIdProjet(), billetDTO2);
     }
 

@@ -11,7 +11,7 @@ public class RegistreBilletTest {
 
     TreeMap<Integer, Billet> registreBillet = new TreeMap<>();
 
-    Proxy proxy = new Proxy();
+    private final Proxy proxy = new Proxy();
 
     @Test
     void testAjouterBilletAuRegistreVerifierSizeRegistre() {

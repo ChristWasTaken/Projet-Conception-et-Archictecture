@@ -6,9 +6,9 @@ import java.util.TreeMap;
 
 public class Coordonnateur {
 
-    FacadeProjet facadeProjet = new FacadeProjet();
-    FacadeBillet facadeBillet = new FacadeBillet();
-    FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
+    private final FacadeProjet facadeProjet = new FacadeProjet();
+    private final FacadeBillet facadeBillet = new FacadeBillet();
+    private final FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
 
     public void creerCompteUsagerTech(CompteUsagerTechDTO compteDto) {
         facadeCompteUsager.creerCompteUsagerTech(compteDto);
@@ -24,16 +24,13 @@ public class Coordonnateur {
 
     /**
      * Définir une nouvelle catégorie de billet au niveau du projet.
-     * @param projetDto
-     * @param nouvelleCategorie
+     * @param projetDto Le projet auquel on ajoute la catégorie.
+     * @param nouvelleCategorie La nouvelle catégorie à ajouter.
      * @return true si la catégorie a été ajoutée, false sinon.
      */
     public boolean definirCategorieDeBillet(ProjetDTO projetDto, String nouvelleCategorie) {
         projetDto.ajouterCategorieBillet(new Categorie(nouvelleCategorie));
-        if(facadeProjet.ajouterCategorie(projetDto)){
-            return true;
-        }
-        return false;
+        return facadeProjet.ajouterCategorie(projetDto);
     }
 
     public int creerBillet(BilletDTO billetDTO) {
@@ -42,16 +39,13 @@ public class Coordonnateur {
 
     /**
      * Assigner un billet à un usager technique.
-     * @param billetDTO
-     * @param compteUsagerTechDTO
+     * @param billetDTO Le billet à assigner.
+     * @param compteUsagerTechDTO Le compte usager technique auquel on assigne le billet.
      * @return true si le billet a été assigné, false sinon.
      */
     public boolean assignerBilletAUsagerTech(BilletDTO billetDTO, CompteUsagerTechDTO compteUsagerTechDTO) {
         billetDTO.setIdUsagerTechAssigne(compteUsagerTechDTO.getIdUsager());
-        if(facadeBillet.assignerBillet(billetDTO)){
-            return true;
-        }
-        return false;
+        return facadeBillet.assignerBillet(billetDTO);
     }
 
     public void changerEtatBillet(BilletDTO billetDTO, String etat, String commentaire) {

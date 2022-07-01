@@ -174,7 +174,7 @@ class Billet {
                 ", gravite='" + gravite + '\'' +
                 ", courrielDemandeur='" + courrielDemandeur + '\'' +
                 ", notes='" + notes + '\'' +
-                ", description='" + description + " \' "
+                ", description='" + description + " ' "
                 + categorie + '\'' +
                 ", dateAssigne=" + dateAssignee +
                 ", dateDebutBillet=" + dateDebutBillet +

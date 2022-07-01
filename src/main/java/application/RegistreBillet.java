@@ -15,7 +15,7 @@ public class RegistreBillet {
     /*
      * Registre des clients indexé par numéro.
      */
-    private TreeMap<Integer, Billet> registreBillet = new TreeMap<>();
+    private final TreeMap<Integer, Billet> registreBillet;
 
     /*
      * Dernier numéro attribué à un billet.
@@ -26,7 +26,7 @@ public class RegistreBillet {
      * Constructeur par défaut
      */
     private RegistreBillet() {
-        this.registreBillet = new TreeMap<Integer, Billet>();
+        this.registreBillet = new TreeMap<>();
     }
 
     /*
@@ -41,7 +41,7 @@ public class RegistreBillet {
 
     /**
      * incrémentation automatique du IDBillet
-     * @return
+     * @return le nouveau IDBillet
      */
     private int prochainIdBillet() {
         return ++dernierNumeroBilletAttribue;
@@ -61,7 +61,7 @@ public class RegistreBillet {
 
     /**
      * Chercher un Billet par son Id
-     * @param idBillet
+     * @param idBillet l'id du billet à trouver
      * @return un Billet
      */
     public Billet chercherBilletParId(int idBillet) {
@@ -86,16 +86,13 @@ public class RegistreBillet {
         registreBillet.forEach((key, value) -> {
             listeDTO.put(key, value.asBilletDTO());
         });
-        if (listeDTO == null) {
-            return null;
-        }
         return listeDTO;
     }
 
     /**
      * méthode permettant de récupérer la liste des BilletsDTO seon le type de filtre demandé
-     * @param champs
-     * @param filtre
+     * @param champs les champs de filtre
+     * @param filtre le type de filtre
      * @return liste de billetsDTO
      */
     public TreeMap<Integer, BilletDTO> recupererListeBilletEnDTO(String champs, Object filtre) {
@@ -116,60 +113,57 @@ public class RegistreBillet {
     /**
      * Méthode qui filtre les champs afin de définir quel type de filtre sera utilisé
      * dans la méthode: recupererListeBilletEnDTO
-     * @param champs
-     * @param filtre
-     * @param billetDTOEntry
-     * @return
+     * @param champs les champs de filtre
+     * @param filtre le type de filtre
+     * @param billetDTOEntry l'enregistrement à filtrer
+     * @return true si le filtre est respecté, false sinon
      */
     private boolean filtrerChamps(String champs, Object filtre, Map.Entry<Integer, BilletDTO> billetDTOEntry) {
-        Boolean reponse = false;
+        boolean reponse = false;
         switch (champs) {
-            case "date": {
+            case "date" -> {
                 LocalDate date = (LocalDate) filtre;
                 if (date.equals(billetDTOEntry.getValue().getDateDebutBillet())) {
                     reponse = true;
                 }
             }
-            break;
-            case "demandeur":
+            case "demandeur" -> {
                 String demandeur = (String) filtre;
                 if (demandeur.equals(billetDTOEntry.getValue().getCourrielDemandeur())) {
                     reponse = true;
                 }
-                break;
-            case "etat":
+            }
+            case "etat" -> {
                 String etat = (String) filtre;
                 if (etat.equals(billetDTOEntry.getValue().getEtat())) {
                     reponse = true;
                 }
-                break;
-            case "tech":
+            }
+            case "tech" -> {
                 int usager = Integer.parseInt((String) filtre);
                 if (usager == (billetDTOEntry.getValue().getIdUsagerTechAssigne())) {
                     reponse = true;
                 }
-                break;
-            case "projet":
+            }
+            case "projet" -> {
                 int projet = Integer.parseInt((String) filtre);
                 if (projet == billetDTOEntry.getValue().getIdProjet()) {
                     reponse = true;
                 }
-                break;
-            case "categorie":
+            }
+            case "categorie" -> {
                 String categorie = (String) filtre;
                 if (categorie.equals(billetDTOEntry.getValue().getCategorie().getCategorie())) {
                     reponse = true;
                 }
-                break;
-            case "gravite":
+            }
+            case "gravite" -> {
                 String gravite = (String) filtre;
                 if (gravite.equals(billetDTOEntry.getValue().getGravite())) {
                     reponse = true;
                 }
-                break;
-
-            default:
-                reponse = false;
+            }
+            default -> reponse = false;
         }
         return reponse;
     }

@@ -7,10 +7,10 @@ import java.util.TreeMap;
 
  class ProjetDAO {
 
-    private static ProjetDTO projet1 = new ProjetDTO(1, "ProjetTopSecret1", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-    private static ProjetDTO projet2 = new ProjetDTO(2, "ProjetTopSecret2", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-    private static ProjetDTO projet3 = new ProjetDTO(3, "ProjetTopSecret3", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
-    private TreeMap<Integer, ProjetDTO> collectionProjets;
+    private static final ProjetDTO projet1 = new ProjetDTO(1, "ProjetTopSecret1", LocalDate.of(2022, 5,28), LocalDate.of(2022, 5,29));
+    private static final ProjetDTO projet2 = new ProjetDTO(2, "ProjetTopSecret2", LocalDate.of(2022, 5,28), LocalDate.of(2022, 5,29));
+    private static final ProjetDTO projet3 = new ProjetDTO(3, "ProjetTopSecret3", LocalDate.of(2022, 5,28), LocalDate.of(2022, 5,29));
+    private final TreeMap<Integer, ProjetDTO> collectionProjets;
      public ProjetDAO() {
          this.collectionProjets = new TreeMap<>();
          this.collectionProjets.put(projet1.getIdProjet(), projet1);

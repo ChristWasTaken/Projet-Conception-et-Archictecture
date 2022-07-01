@@ -88,7 +88,7 @@ public class ProjetDTO {
 
     /**
      * Ajouter une catégorie à l'ArrayList
-     * @param categorie
+     * @param categorie la catégorie à ajouter
      */
     public void ajouterCategorieBillet(Categorie categorie) {
         if(!verifierDoublonCategorie(categorie)) {
@@ -98,14 +98,10 @@ public class ProjetDTO {
     /**
      * Vérifier si la catégorie existe déjà dans l'ArrayList
      * @param categorie nouvelle catégorie recu du coordonateur
-     * @return
+     * @return true si la catégorie existe déjà, false sinon
      */
     public boolean verifierDoublonCategorie(Categorie categorie){
-        if(this.listeCategories.contains(categorie)){
-
-            return true;
-        }
-        return false;
+        return this.listeCategories.contains(categorie);
     }
 
     /**

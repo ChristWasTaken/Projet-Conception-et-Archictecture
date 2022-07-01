@@ -5,10 +5,10 @@ import application.CompteUsagerTechDTO;
 import java.util.TreeMap;
 
 class UsagerTechDAO {
-    private static CompteUsagerTechDTO usager1 = new CompteUsagerTechDTO(1,"Roger","mdp","email");
-    private static CompteUsagerTechDTO usager2 = new CompteUsagerTechDTO(2,"Bob","mdp","courriel");
-    private static CompteUsagerTechDTO usager3 = new CompteUsagerTechDTO(3,"Steve","pwd","hotmail");
-    private TreeMap<Integer, CompteUsagerTechDTO> collectionsUsagers;
+    private final static CompteUsagerTechDTO usager1 = new CompteUsagerTechDTO(1,"Roger","mdp","email");
+    private final static CompteUsagerTechDTO usager2 = new CompteUsagerTechDTO(2,"Bob","mdp","courriel");
+    private final static CompteUsagerTechDTO usager3 = new CompteUsagerTechDTO(3,"Steve","pwd","hotmail");
+    private final TreeMap<Integer, CompteUsagerTechDTO> collectionsUsagers;
 
     public UsagerTechDAO() {
         this.collectionsUsagers = new TreeMap<>();

@@ -5,9 +5,8 @@ import java.util.TreeMap;
 
 public class FacadeBillet {
 
-    private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-    private RegistreBillet registreBillet = RegistreBillet.getInstance();
-    private Proxy proxy = new Proxy();
+    private final RegistreBillet registreBillet = RegistreBillet.getInstance();
+    private final Proxy proxy = new Proxy();
 
     public FacadeBillet() {
     }
@@ -15,7 +14,7 @@ public class FacadeBillet {
 
     /**
      * Créer un billet en lui passant le billet DTO
-     * @param billetDTO
+     * @param billetDTO le billet DTO
      * @return le id du billet créé
      */
     public int creerBillet(BilletDTO billetDTO) {
@@ -35,7 +34,7 @@ public class FacadeBillet {
 
     /**
      * Trouver un Billet par son idBillet
-     * @param idBillet
+     * @param idBillet l'id du billet à trouver
      * @return l'objet obtenu en format billet DTO
      */
 
@@ -52,9 +51,9 @@ public class FacadeBillet {
     /**
      * Méthode pour changer l'état du billet en lui passant le nouvel objetDTO, le nouvel état ainsi que le
      * commentaire expliquant ce nouvel état
-     * @param billetDTO
-     * @param etat
-     * @param commentaire
+     * @param billetDTO le billet DTO
+     * @param etat le nouvel état
+     * @param commentaire le commentaire expliquant ce nouvel état
      */
     public void changerEtatBillet(BilletDTO billetDTO, String etat, String commentaire)
     {
@@ -93,11 +92,11 @@ public class FacadeBillet {
     /**
      * Méthode qui permet de consulter la liste des billets en choisissant le type de filtre qu'on désire faire
      * en l'indiquant dans le paramètr champs
-     * @param champs
-     * @param filtre
-     * @return
+     * @param champs le type de filtre
+     * @param filtre le filtre à appliquer
+     * @return la liste des billets filtrés
      */
-    public TreeMap consulterListeBillet(String champs, Object filtre){
+    public TreeMap<Integer, BilletDTO> consulterListeBillet(String champs, Object filtre){
         return registreBillet.recupererListeBilletEnDTO(champs,filtre);
     }
 }

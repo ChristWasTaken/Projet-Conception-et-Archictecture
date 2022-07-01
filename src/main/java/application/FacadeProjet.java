@@ -2,9 +2,9 @@ package application;
 
 public class FacadeProjet {
 
-    private RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-    private RegistreProjet registreProjet = RegistreProjet.getInstance();
-    private Proxy proxy = new Proxy();
+    private final RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
+    private final RegistreProjet registreProjet = RegistreProjet.getInstance();
+    private final Proxy proxy = new Proxy();
     public FacadeProjet() {
     }
 
@@ -12,7 +12,7 @@ public class FacadeProjet {
      * Méthode pour créer un projet en lui passant un objet projetDTO rempli par
      * l'utilisateur a l'aide de formulaire dans la couche presentation. Le projet est sauvegarder en memoire dans un
      * registre et est persister a travers le proxy vers une base de données.
-     * @param projetDTO
+     * @param projetDTO le projet DTO
      */
     public void creerProjet(ProjetDTO projetDTO){
         Projet nouveauProjet = new Projet(projetDTO);
@@ -23,7 +23,7 @@ public class FacadeProjet {
     /**
      * Méthode ajouter une categorie à un projetDTO par l'entremise
      * d'un DTO déja modifier au niveau du coordonateur
-     * @param projetDTO
+     * @param projetDTO le projetDTO
      * @return true si la catégorie n'existe pas déjà dans le projetDTO et a été créer avec succès,
      * false un doublon est trouvé ou la création à échouée sinon.
      */
@@ -41,8 +41,8 @@ public class FacadeProjet {
      * Méthode pour assigner un compte usager technique a un projet. Le projet et l'usager sont choisi dans la couche
      * presentation est passer a la facade avec des objets DTO. Le projet avec son registre d'usager assigner est
      * persister dans la base de donnée avec une mise a jour.
-     * @param usagerDTO
-     * @param projetDTO
+     * @param usagerDTO le compte usager technique DTO
+     * @param projetDTO le projet DTO
      */
     public void assignerUsagerTech(CompteUsagerTechDTO usagerDTO, ProjetDTO projetDTO) {
         CompteUsagerTech usagerAAssigne = registreUsagerTech.trouverUsagerTech(usagerDTO.getIdUsager());

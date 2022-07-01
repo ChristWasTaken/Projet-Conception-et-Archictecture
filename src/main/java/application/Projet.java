@@ -104,7 +104,7 @@ class Projet {
 
     /**
      * Méthode pour ajouter un compte usager technique au registre des comptes usager technique assigné d'un projet.
-     * @param compteUsagerTech
+     * @param compteUsagerTech le compte usager technique à ajouter au registre.
      */
     public void ajouterUsagerAuRegistre(CompteUsagerTech compteUsagerTech){
         this.registreUsagerTechAssigne.ajouterUsager(compteUsagerTech);
@@ -119,15 +119,12 @@ class Projet {
     }
 
     public boolean verifierDoublonCategorie(Categorie categorie){
-        if(!this.listeCategories.contains(categorie)){
-            return true;
-        }
-        return false;
+        return !this.listeCategories.contains(categorie);
     }
 
     /**
      * Ajouter une catégorie à l'ArrayList
-     * @param categorie
+     * @param categorie la catégorie à ajouter
      */
     public void ajouterCategoriesBillet(Categorie categorie) {
         if(verifierDoublonCategorie(categorie)){

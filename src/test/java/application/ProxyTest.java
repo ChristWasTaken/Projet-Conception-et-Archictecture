@@ -8,12 +8,12 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProxyTest {
-    private FacadePersistence facadePersistence = new FacadePersistence();
-    private Proxy proxy = new Proxy();
+    private final FacadePersistence facadePersistence = new FacadePersistence();
+    private final Proxy proxy = new Proxy();
 
     @Test
     void testPersisterProjetVerifieEqualsAvecProjetChercherAvecMemeId() {
-        ProjetDTO projet = new ProjetDTO(4, "ProjetHyperSecret", LocalDate.of(2022,05,28), LocalDate.of(2022,05,29));
+        ProjetDTO projet = new ProjetDTO(4, "ProjetHyperSecret", LocalDate.of(2022, 5,28), LocalDate.of(2022, 5,29));
         facadePersistence.persisterProjet(projet);
         ProjetDTO projectTest = facadePersistence.chercherProjetDTOParId(4);
         assertEquals(projectTest, projet);
@@ -28,7 +28,7 @@ class ProxyTest {
     @Test
     void testChercherProjetNonExistantDeLaPersistanceRetourneProjetNull(){
         ProjetDTO projet = facadePersistence.chercherProjetDTOParId(15);
-        assertEquals(null, projet);
+        assertNull(projet);
     }
 
     @Test
@@ -48,7 +48,7 @@ class ProxyTest {
     @Test
     void testChercherCompteUsagerTechDTOParIdNonExistantRetournUserNull(){
         CompteUsagerTechDTO usager = facadePersistence.chercherCompteUsagerTechDTOParId(13);
-        assertEquals(null, usager);
+        assertNull(usager);
     }
 
     @Test

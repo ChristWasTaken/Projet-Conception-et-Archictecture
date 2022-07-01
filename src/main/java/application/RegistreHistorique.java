@@ -3,7 +3,7 @@ package application;
 import java.util.TreeMap;
 
 public class RegistreHistorique {
-    private static TreeMap<Integer, Historique> registreHistorique = new TreeMap<>();
+    private static final TreeMap<Integer, Historique> registreHistorique = new TreeMap<>();
 
     //Dernier numéro attribué à un historique.
     private static int dernierNumeroHistoriqueAttribue = 0;
@@ -46,14 +46,11 @@ public class RegistreHistorique {
      * @return historique
      */
     public Historique chercherParNumero(int idHistorique) {
-        return this.registreHistorique.get(idHistorique);
+        return registreHistorique.get(idHistorique);
     }
 
     public TreeMap<Integer, Historique> afficherRegistreHistorique() {
         return registreHistorique;
-    }
-
-    public void modifierRegistreHistorique() {
     }
 
     @Override

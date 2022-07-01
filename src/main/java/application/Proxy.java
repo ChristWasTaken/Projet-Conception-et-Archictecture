@@ -10,11 +10,10 @@ import accesPersistence.FacadePersistence;
  **/
 public class Proxy {
 
-    private FacadePersistence facadePersistence = new FacadePersistence();
+    private final FacadePersistence facadePersistence = new FacadePersistence();
 
     /**
      * Methode pour envoyer un projet a l'access persistence pour le sauvegarder dans la base de données
-     * @param projetDTO
      * @param projetDTO projet a envoyer a la persistence
      */
     public void persisterProjet(ProjetDTO projetDTO){
@@ -23,7 +22,7 @@ public class Proxy {
 
     /**
      * Methode pour chercher un projet de la persistence par ID
-     * @param id
+     * @param id le ID du projet
      * @return ProjetDTO
      */
     public ProjetDTO chercherProjetDTOParId(int id){
@@ -32,8 +31,8 @@ public class Proxy {
 
     /**
      * Methode pour modifier un projet déjà persisté.
-     * @param projetDTO
-     * @return ProjetDTO
+     * @param projetDTO le projet a modifier
+     * @return ProjetDTO le projet modifié
      */
     public ProjetDTO modifierUnProjet(ProjetDTO projetDTO) {
         return facadePersistence.modifierUnProjet(projetDTO);
@@ -41,7 +40,7 @@ public class Proxy {
 
     /**
      * Methode pour envoyer un usager a l'access persistence pour le sauvegarder dans la base de données
-     * @param compteUsagerTechDTO
+     * @param compteUsagerTechDTO le compte usager technique DTO
      */
     public void persisterCompteUsagerTech(CompteUsagerTechDTO compteUsagerTechDTO){
         facadePersistence.persisterCompteUsagerTech(compteUsagerTechDTO);
@@ -49,17 +48,16 @@ public class Proxy {
 
     /**
      * Methode pour chercher un usager de la persistence
-     * @param id
+     * @param id le ID de l'usager
      * @return compteUsagerTechDTO
      */
     public CompteUsagerTechDTO chercherCompteUsagerTechDTOParId(int id){
-        CompteUsagerTechDTO compteUsagerTechDTO = facadePersistence.chercherCompteUsagerTechDTOParId(id);
-        return compteUsagerTechDTO;
+        return facadePersistence.chercherCompteUsagerTechDTOParId(id);
     }
 
     /**
      * Methode pour envoyer un billetDTO à la persistence
-     * @param billetDTO
+     * @param billetDTO le billet DTO
      */
     public void persisterBillet(BilletDTO billetDTO){
         facadePersistence.persisterBillet(billetDTO);
@@ -67,17 +65,16 @@ public class Proxy {
 
     /**
      * chercher un billetDTO en indiquant l'id du billet rechercé
-     * @param id
-     * @return
+     * @param id le ID du billet
+     * @return billetDTO trouvé
      */
     public BilletDTO chercherBilletDTOParId(int id) {
-        BilletDTO billetDTO = facadePersistence.chercherBilletDTOParId(id);
-        return billetDTO;
+        return facadePersistence.chercherBilletDTOParId(id);
     }
 
     /**
      * Methode pour modifier un billet déjà persisté.
-     * @param billetDTO
+     * @param billetDTO le billet DTO
      * @return true si la modification a été effectuée.
      */
     public boolean modifierBilletDTO(BilletDTO billetDTO) {

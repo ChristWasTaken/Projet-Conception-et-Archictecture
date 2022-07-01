@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class RegistreUsagerTechAssigne {
 
-    private ArrayList<CompteUsagerTech> registreUsagerTechAssigne;
+    private final ArrayList<CompteUsagerTech> registreUsagerTechAssigne;
 
     public RegistreUsagerTechAssigne() {
         this.registreUsagerTechAssigne = new ArrayList<>();
@@ -12,7 +12,7 @@ public class RegistreUsagerTechAssigne {
 
     /**
      * Méthode pour ajouter un compte usager technique au registre des usager technique assigné.
-     * @param compteUsagerTech
+     * @param compteUsagerTech le compte usager technique à ajouter au registre.
      * @return boolean
      */
     public boolean ajouterUsager(CompteUsagerTech compteUsagerTech){

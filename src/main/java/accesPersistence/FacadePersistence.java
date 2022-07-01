@@ -10,9 +10,9 @@ import application.ProjetDTO;
  * @since 2022-06-10
  **/
 public class FacadePersistence {
-    private ProjetDAO projetDAO = new ProjetDAO();
-    private UsagerTechDAO  usagerTechDAO = new UsagerTechDAO();
-    private BilletDAO billetDAO = new BilletDAO();
+    private final ProjetDAO projetDAO = new ProjetDAO();
+    private final UsagerTechDAO  usagerTechDAO = new UsagerTechDAO();
+    private final BilletDAO billetDAO = new BilletDAO();
 
     public void persisterProjet(ProjetDTO projetDTO){
         projetDAO.persisterProjet(projetDTO);
@@ -31,8 +31,7 @@ public class FacadePersistence {
     }
 
     public CompteUsagerTechDTO chercherCompteUsagerTechDTOParId(int id){
-        CompteUsagerTechDTO compteUsagerTechDTO = usagerTechDAO.chercherCompteUsagerTechDTOParId(id);
-        return compteUsagerTechDTO;
+        return usagerTechDAO.chercherCompteUsagerTechDTOParId(id);
     }
 
     public void persisterBillet(BilletDTO billetDTO){
@@ -40,14 +39,10 @@ public class FacadePersistence {
     }
 
     public BilletDTO chercherBilletDTOParId(int id){
-        BilletDTO billetDTO = billetDAO.chercherBilletDTOParId(id);
-        return billetDTO;
+        return billetDAO.chercherBilletDTOParId(id);
     }
 
     public boolean modifierBilletDTO(BilletDTO billetDTO) {
-        if (billetDAO.modifierBillet(billetDTO)) {
-            return true;
-        }
-        return false;
+        return billetDAO.modifierBillet(billetDTO);
     }
 }

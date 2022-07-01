@@ -4,11 +4,11 @@ import java.util.TreeMap;
 
 public class RegistreUsagerTech {
     
-    private TreeMap<Integer, CompteUsagerTech> registreUsagerTech;
+    private final TreeMap<Integer, CompteUsagerTech> registreUsagerTech;
     private static RegistreUsagerTech Instance;
 
     private RegistreUsagerTech() {
-        this.registreUsagerTech = new TreeMap<Integer, CompteUsagerTech>();
+        this.registreUsagerTech = new TreeMap<>();
     }
 
     //Methode pour acceder a l'instance de la classe registreUsagerTech
@@ -22,7 +22,7 @@ public class RegistreUsagerTech {
 
     /**
      * Méthode pour ajouter un compte usager technique dans le registre de tout les comptes usagers techniques.
-     * @param  compteUsagerTech
+     * @param  compteUsagerTech le compte usager technique a ajouter
      */
     public void ajouterUsager(CompteUsagerTech  compteUsagerTech){
         this.registreUsagerTech.put(compteUsagerTech.getIdUsager(), compteUsagerTech);
@@ -30,15 +30,14 @@ public class RegistreUsagerTech {
 
     /**
      * Méthode pour chercher un usager en particulier qui est dans le registre.
-     * @param idUsager
+     * @param idUsager l'id du usager a chercher
      */
     public CompteUsagerTech trouverUsagerTech(int idUsager){
-        CompteUsagerTech usager = this.registreUsagerTech.get(idUsager);
-        return usager;
+        return this.registreUsagerTech.get(idUsager);
     }
 
     public TreeMap<Integer, CompteUsagerTechDTO> recupererRegistreUsagerTechAsDTO(){
-        TreeMap<Integer, CompteUsagerTechDTO> registreUsagerTechDTO = new TreeMap<Integer, CompteUsagerTechDTO>();
+        TreeMap<Integer, CompteUsagerTechDTO> registreUsagerTechDTO = new TreeMap<>();
         for(CompteUsagerTech usager : this.registreUsagerTech.values()){
             registreUsagerTechDTO.put(usager.getIdUsager(), usager.asCompteUsagerTechDTO());
         }

@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class FacadeProjetTest {
-    RegistreProjet registreProjet = RegistreProjet.getInstance();
-    Proxy proxy = new Proxy();
-    RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
-    FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
-    FacadeProjet facadeProjet = new FacadeProjet();
+    private final RegistreProjet registreProjet = RegistreProjet.getInstance();
+    private final Proxy proxy = new Proxy();
+    private final RegistreUsagerTech registreUsagerTech = RegistreUsagerTech.getInstance();
+    private final FacadeCompteUsager facadeCompteUsager = new FacadeCompteUsager();
+    private final FacadeProjet facadeProjet = new FacadeProjet();
 
     @Test
     @Order(1)

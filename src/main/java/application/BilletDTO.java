@@ -171,22 +171,4 @@ public class BilletDTO {
                 ", registreHistorique=" + registreHistorique +
                 '}';
     }
-
-    /**
-     * Méthode pour comparer un objet de type Object avec un BilletDTO pour valider si c'est le même objet
-     * @param o
-     * @return
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        BilletDTO billetDTO = (BilletDTO) o;
-        return idProjet == billetDTO.idProjet && idUsagerTechAssigne == billetDTO.idUsagerTechAssigne && Objects.equals(etat, billetDTO.etat) && Objects.equals(gravite, billetDTO.gravite) && Objects.equals(courrielDemandeur, billetDTO.courrielDemandeur) && Objects.equals(notes, billetDTO.notes) && Objects.equals(description, billetDTO.description) && Objects.equals(dateAssigne, billetDTO.dateAssigne) && Objects.equals(dateDebutBillet, billetDTO.dateDebutBillet) && Objects.equals(categorie, billetDTO.categorie);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idProjet, idUsagerTechAssigne, etat, gravite, courrielDemandeur, notes, description, dateAssigne, dateDebutBillet, categorie);
-    }
 }
