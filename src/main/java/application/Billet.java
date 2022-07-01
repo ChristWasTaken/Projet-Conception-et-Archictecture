@@ -28,10 +28,8 @@ class Billet {
 
     public Billet(BilletDTO billet) {
         this.setIdBillet(billet.getIdBillet());
-        ;
         this.setIdProjet(billet.getIdProjet());
         this.setUsagerTechnique(billet.getIdUsagerTechAssigne());
-        ;
         this.setEtat(billet.getEtat());
         this.setGravite(billet.getGravite());
         this.setCourrielDemandeur(billet.getCourrielDemandeur());
@@ -67,7 +65,7 @@ class Billet {
         return billetDTO;
     }
 
-    /**
+    /*
      * Getters et Setters
      */
     public int getIdBillet() {

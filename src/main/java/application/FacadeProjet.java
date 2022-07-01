@@ -22,9 +22,9 @@ public class FacadeProjet {
      * false un doublon est trouvé ou la création à échouée sinon.
      */
     public boolean ajouterCategorie(ProjetDTO projetDTO) {
-        projetDTO = proxy.modifierUnProjet(projetDTO);
-        if(projetDTO != null){
-            Projet projetModifier = new Projet(projetDTO);
+        ProjetDTO projetExistant = proxy.modifierUnProjet(projetDTO);
+        if(projetExistant != null){
+            Projet projetModifier = new Projet(projetExistant);
             registreProjet.modifierProjet(projetModifier);
             return true;
         }

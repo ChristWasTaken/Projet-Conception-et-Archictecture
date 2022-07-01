@@ -1,5 +1,4 @@
 package accesPersistence;
-
 import application.BilletDTO;
 import application.CompteUsagerTechDTO;
 import application.ProjetDTO;
@@ -46,8 +45,7 @@ public class FacadePersistence {
     }
 
     public boolean modifierBilletDTO(BilletDTO billetDTO) {
-        BilletDTO billetModifie = billetDAO.modifierBillet(billetDTO);
-        if (billetModifie != null) {
+        if (billetDAO.modifierBillet(billetDTO)) {
             return true;
         }
         return false;

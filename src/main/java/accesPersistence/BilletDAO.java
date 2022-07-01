@@ -31,8 +31,13 @@ class BilletDAO {
         return billetDTO;
     }
 
-    public BilletDTO modifierBillet(BilletDTO billetDTO) {
-        this.collectionBillets.put(billetDTO.getIdBillet(), billetDTO);
-        return billetDTO;
+    public boolean modifierBillet(BilletDTO billetDTO) {
+        try {
+            this.collectionBillets.put(billetDTO.getIdBillet(), billetDTO);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Modification interromptue - persistence.Rollback()");
+            return false;
+        }
     }
 }
