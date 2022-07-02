@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-07-01T15:41:34.694Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="Lz1KGlQZm4SL_hjvdt2S" version="20.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-02T12:02:44.638Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="hYh3adI433HD2annxLDM" version="20.0.4" type="github">
   <diagram id="52IZLL7xsQzxs3NUUl1_" name="Page-1">
-    <mxGraphModel dx="1247" dy="1804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1247" dy="1770" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,7 +16,7 @@
         <mxCell id="TzgPYY4RlzZjaDo3wwwL-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="zlBf4Wz0gLvxMZk6vgf--5" target="TzgPYY4RlzZjaDo3wwwL-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-2" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;endArrow=none;endFill=0;strokeWidth=1;" edge="1" parent="1" source="zlBf4Wz0gLvxMZk6vgf--5" target="XJ4jBkE-fNK3LaErpKET-1">
+        <mxCell id="XJ4jBkE-fNK3LaErpKET-2" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;endArrow=none;endFill=0;strokeWidth=1;" parent="1" source="zlBf4Wz0gLvxMZk6vgf--5" target="XJ4jBkE-fNK3LaErpKET-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="zlBf4Wz0gLvxMZk6vgf--5" value="FacadeProjet" style="html=1;strokeWidth=2;" parent="1" vertex="1">
@@ -39,7 +39,7 @@
             <mxPoint x="677.5" y="-270" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zlBf4Wz0gLvxMZk6vgf--13" value="8: projetModifier := modifierUnProjet(ProjetExistant):Projet" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--12" connectable="0" vertex="1">
+        <mxCell id="zlBf4Wz0gLvxMZk6vgf--13" value="7: projetModifier := modifierUnProjet(ProjetExistant):Projet" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zlBf4Wz0gLvxMZk6vgf--12" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
             <mxPoint x="51" y="-30" as="offset" />
           </mxGeometry>
@@ -68,7 +68,7 @@
             <mxPoint x="680" y="-130" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TzgPYY4RlzZjaDo3wwwL-6" value="9 : registreProjet := getInstance()&lt;br&gt;10: id := projetExistant.getIdProjet():int&lt;br&gt;11: modifierProjet(id, projetExistant)&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="TzgPYY4RlzZjaDo3wwwL-5" connectable="0" vertex="1">
+        <mxCell id="TzgPYY4RlzZjaDo3wwwL-6" value="8 : registreProjet := getInstance()&lt;br&gt;9: id := projetExistant.getIdProjet():int&lt;br&gt;10: modifierProjet(id, projetExistant)&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="TzgPYY4RlzZjaDo3wwwL-5" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
             <mxPoint x="22" y="-13" as="offset" />
           </mxGeometry>
@@ -133,58 +133,41 @@
             <mxPoint x="740.5" y="-40" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dk3OCbrw461VhQ2k63uT-59" value="12:put(id, projetExistant)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="dk3OCbrw461VhQ2k63uT-58" connectable="0" vertex="1">
+        <mxCell id="dk3OCbrw461VhQ2k63uT-59" value="11:put(id, projetExistant)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="dk3OCbrw461VhQ2k63uT-58" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
             <mxPoint x="-5" y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-10" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=21;endArrow=none;endFill=0;strokeWidth=1;" edge="1" parent="1" source="XJ4jBkE-fNK3LaErpKET-1" target="XJ4jBkE-fNK3LaErpKET-5">
+        <mxCell id="3TD3p0NHPOrvLx8HWi9s-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="XJ4jBkE-fNK3LaErpKET-1" target="3TD3p0NHPOrvLx8HWi9s-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-1" value="Proxy" style="html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="432.5" y="-160" width="120" height="50" as="geometry" />
+        <mxCell id="XJ4jBkE-fNK3LaErpKET-1" value="Proxy" style="html=1;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="432.5" y="-140" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-3" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="XJ4jBkE-fNK3LaErpKET-3" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="480" y="-220" as="sourcePoint" />
-            <mxPoint x="480" y="-170" as="targetPoint" />
+            <mxPoint x="480" y="-160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-4" value="5:modifierUnProjet(projetDTO:ProjetDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="XJ4jBkE-fNK3LaErpKET-3">
+        <mxCell id="XJ4jBkE-fNK3LaErpKET-4" value="5:modifierUnProjet(projetDTO:ProjetDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="XJ4jBkE-fNK3LaErpKET-3" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
             <mxPoint x="-100" y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-12" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=21;endArrow=none;endFill=0;strokeWidth=1;" edge="1" parent="1" source="XJ4jBkE-fNK3LaErpKET-5" target="XJ4jBkE-fNK3LaErpKET-11">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-5" value="FacadePersistence" style="html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="432.5" y="-40" width="120" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-6" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="XJ4jBkE-fNK3LaErpKET-6" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="480" y="-100" as="sourcePoint" />
-            <mxPoint x="480" y="-50" as="targetPoint" />
+            <mxPoint x="420" y="-130" as="sourcePoint" />
+            <mxPoint x="270" y="-130" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-7" value="6:modifierUnProjet(projetDTO:ProjetDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="XJ4jBkE-fNK3LaErpKET-6">
+        <mxCell id="XJ4jBkE-fNK3LaErpKET-7" value="6:modifierUnProjet(projetDTO:ProjetDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="XJ4jBkE-fNK3LaErpKET-6" connectable="0" vertex="1">
           <mxGeometry x="0.176" relative="1" as="geometry">
-            <mxPoint x="-100" y="-9" as="offset" />
+            <mxPoint x="-32" y="-20" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-11" value="ProjetDAO" style="html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="290" y="-40" width="70" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-13" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="420" y="-2" as="sourcePoint" />
-            <mxPoint x="370" y="-2" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="XJ4jBkE-fNK3LaErpKET-14" value="7:modifierUnProjet(projetDTO:ProjetDTO)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="XJ4jBkE-fNK3LaErpKET-13">
-          <mxGeometry x="0.176" relative="1" as="geometry">
-            <mxPoint x="19" y="22" as="offset" />
-          </mxGeometry>
+        <mxCell id="3TD3p0NHPOrvLx8HWi9s-2" value="FacadePersistence" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="-140" width="150" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
