@@ -59,7 +59,7 @@ class ProxyTest {
     }
 
     @Test
-    void modifierUnProjetExistantAvecUneCategorieDéjaExistante() {
+    void modifierUnProjetExistantAvecUneCategorieDejaExistante() {
         ProjetDTO projet = proxy.chercherProjetDTOParId(1);
         projet.ajouterCategorieBillet(new Categorie("Anomalie"));
         assertEquals("Anomalie",proxy.modifierUnProjet(projet).getListeCategories().get(0).getCategorie());

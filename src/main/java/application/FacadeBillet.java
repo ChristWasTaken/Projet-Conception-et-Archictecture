@@ -11,7 +11,6 @@ public class FacadeBillet {
     public FacadeBillet() {
     }
 
-
     /**
      * Créer un billet en lui passant le billet DTO
      * @param billetDTO le billet DTO

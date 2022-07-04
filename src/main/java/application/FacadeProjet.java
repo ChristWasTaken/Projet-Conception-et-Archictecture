@@ -55,7 +55,4 @@ public class FacadeProjet {
         return proxy.chercherProjetDTOParId(id);
     }
 
-
-
-
 }
